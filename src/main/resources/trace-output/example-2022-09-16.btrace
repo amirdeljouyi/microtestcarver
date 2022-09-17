@@ -1,0 +1,62 @@
+### BTrace Log: 16/09/2022, 15:41
+
+example.ExampleController.hello:{
+{personRepository=com.sun.proxy.$Proxy79@51368df6, weatherClient=example.weather.WeatherClient@608b906d, }
+
+com.sun.proxy.$Proxy79.findByLastName()
+[shrf, ]
+
+java.util.Optional.map()
+[example.ExampleController$$Lambda$1074/0x00000008007bbc40@738b79b, ]
+
+java.util.Optional.orElse()
+[Who is this 'shrf' you're talking about?, ]
+
+}
+
+example.ExampleController.weather:{
+{personRepository=com.sun.proxy.$Proxy79@51368df6, weatherClient=example.weather.WeatherClient@608b906d, }
+
+example.weather.WeatherClient.fetchWeather()
+[]
+
+example.weather.WeatherClient.fetchWeather:{
+{restTemplate=org.springframework.web.client.RestTemplate@1ac3a6f, weatherServiceUrl=https://api.openweathermap.org, weatherServiceApiKey=1254aa0ef471380373193a60dd589e35, }
+
+org.springframework.web.client.RestTemplate.getForObject()
+[https://api.openweathermap.org/data/2.5/weather?q=Hamburg,de&appid=1254aa0ef471380373193a60dd589e35, org.springframework.web.client.RestTemplate@1ac3a6f, null, ]
+
+example.weather.WeatherResponse.<init>:{
+{weather=null, }
+
+}
+
+example.weather.WeatherResponse$Weather.<init>:{
+{main=null, description=null, }
+
+}
+
+}
+
+java.util.Optional.map()
+[example.ExampleController$$Lambda$1106/0x0000000800822440@476a7db4, ]
+
+example.weather.WeatherResponse.getSummary:{
+{weather=[Weather{main='Rain', description='light rain'}], }
+
+java.util.ArrayList.stream()
+[]
+
+java.util.stream.ReferencePipeline$Head.map()
+[example.weather.WeatherResponse$$Lambda$1107/0x0000000800821840@1c04554, ]
+
+java.util.stream.ReferencePipeline$3.collect()
+[java.util.stream.Collectors$CollectorImpl@5039ac1e, ]
+
+}
+
+java.util.Optional.orElse()
+[Sorry, I couldn't fetch the weather for you :(, ]
+
+}
+
