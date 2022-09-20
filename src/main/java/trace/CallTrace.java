@@ -39,6 +39,16 @@ public class CallTrace {
             location = @Location(Kind.RETURN)
     )
     public static void onMethodReturn(@ProbeClassName String pcn, @ProbeMethodName String pmn, @Duration long d) {
-        println("}");
+        print("}:");
     }
+
+// TODO: get return item
+//    @OnMethod(
+//            clazz = "${packageName}\\..*/",
+//            method = "${methodName}/",
+//            location = @Location(Kind.RETURN)
+//    )
+//    public static void onMethodReturn(@ProbeClassName String pcn, @ProbeMethodName String pmn, @Return Object callbackData) {
+//        printFields(callbackData);
+//    }
 }
