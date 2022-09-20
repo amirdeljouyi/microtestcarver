@@ -33,7 +33,7 @@ public class TraceCommand implements Runnable {
         try {
 //            String traceClassPath = this.getClass().getClassLoader().getResource("trace/CallTrace.class").getPath();
 //            System.out.println(traceClassPath);
-            String directory = "./carving/src/main/resources";
+            String directory = "./src/main/resources";
             String filename = String.format("%s-%s.btrace", classPath, java.time.LocalDate.now());
             URL resource = getClass().getClassLoader().getResource("trace-execution.sh");
             String extPath = Paths.get(resource.toURI()).toFile().toString();
