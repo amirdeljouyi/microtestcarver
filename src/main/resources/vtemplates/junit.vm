@@ -1,0 +1,25 @@
+package ${packageName};
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.Optional;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+import static org.mockito.BDDMockito.anyString;
+import static org.mockito.BDDMockito.given;
+
+public class ${className}Test {
+
+#foreach( $method in $methods )
+    @Test
+    public void shouldTest${method.methodName}{
+        $className clazz = new ${packageName}.${className}(#foreach($arg in $args)$arg.value#if( $foreach.hasNext ), #end#end);
+        clazz.${method.methodName}(#foreach($arg in $method.args)$arg.value#if( $foreach.hasNext ), #end#end);
+    }
+
+#end
+}

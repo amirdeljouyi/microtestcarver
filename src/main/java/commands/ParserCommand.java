@@ -4,7 +4,9 @@ import parser.Parser;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
-import java.io.InputStream;
+import test_generator.VelocityRunner;
+
+import java.io.*;
 
 @Command(name = "parser")
 public class ParserCommand {
@@ -18,5 +20,9 @@ public class ParserCommand {
         InputStream inputStream = this.getClass().getResourceAsStream(fileDirectory);
         Parser parser = new Parser(inputStream);
         parser.readLines();
+
+        VelocityRunner vRunner = new VelocityRunner();
+        vRunner.setClazzSet(parser.getClazzSet());
+        vRunner.write();
     }
 }
