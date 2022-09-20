@@ -4,9 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Stack;
+import java.util.*;
 
 public class Parser {
 
@@ -15,12 +13,15 @@ public class Parser {
     private BasicMethod lastMethodClazz;
     private Stack<ClazzMethod> stackClazz;
 
+    private HashMap<String, Clazz> clazzSet;
+
     public String time;
 
     public Parser(InputStream inputStream) {
         this.inputStream = inputStream;
         this.clazzMethods = new ArrayList<>();
         this.stackClazz = new Stack<>();
+        this.clazzSet = new HashMap<>();
     }
 
     public void readLines() {
@@ -39,7 +40,7 @@ public class Parser {
                     tokenClazzArg(line);
                 } else if (line.contains("[")) {
                     tokenMethodArg(line);
-                } else if (line.contains("}")) {
+                } else if (line.contains("}:")) {
                     tokenEndClazzMethod(line);
                 }
             }
@@ -108,18 +109,32 @@ public class Parser {
         return line.split(", ");
     }
 
-    private BasicMethod methodParser(String line, boolean clazz) {
+    private BasicMethod methodParser(String line, boolean clazzMethod) {
         String[] names = line.split("\\.");
 //        System.out.println(line);
         String methodName = names[names.length - 1];
         String clazzName = names[names.length - 2];
         String packageName = String.join(".", Arrays.copyOfRange(names, 0, names.length - 2));
+        String clazzKey = packageName + "." + clazzName;
 
-        if (clazz) {
-            return new ClazzMethod(clazzName, packageName, methodName);
+        Clazz item = clazzSet.get(clazzKey);
+        if(item == null) {
+            item = new Clazz(packageName, clazzName);
         }
 
-        return new BasicMethod(clazzName, packageName, methodName);
+        BasicMethod method;
+        if (clazzMethod) {
+            method = new ClazzMethod(item, methodName);
+            item.addMethod((ClazzMethod) method);
+            clazzSet.put(clazzKey, item);
+        } else {
+            method = new BasicMethod(item, methodName);
+        }
+
+        return method;
     }
 
+    public HashMap<String, Clazz> getClazzSet() {
+        return clazzSet;
+    }
 }

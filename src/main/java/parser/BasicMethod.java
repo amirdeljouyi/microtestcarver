@@ -3,15 +3,15 @@ package parser;
 import java.util.ArrayList;
 
 public class BasicMethod {
-    public String clazzName;
-    public String packageName;
+
     public String methodName;
 
     public ArrayList<Arg> args;
 
-    public BasicMethod(String clazzName, String packageName, String methodName) {
-        this.clazzName = clazzName;
-        this.packageName = packageName;
+    public Clazz clazz;
+
+    public BasicMethod(Clazz clazz, String methodName) {
+        this.clazz = clazz;
         this.methodName = methodName;
 
         this.args = new ArrayList<>();
@@ -21,7 +21,15 @@ public class BasicMethod {
         this.args.addAll(args);
     }
 
+    public String getMethodName(){
+        return methodName;
+    }
+
+    public ArrayList<Arg> getArgs(){
+        return args;
+    }
+
     public String toString(){
-        return "Package<" + this.packageName + "> Class<" + this.clazzName + "> Method<" + this.methodName + ">";
+        return this.clazz.toString() + " Method<" + this.methodName + ">";
     }
 }

@@ -12,4 +12,12 @@ public class Arg {
     public Arg(String value){
         this.value = value;
     }
+
+    public String getKey() {
+        return key;
+    }
+
+    public String getValue() {
+        return value;
+    }
 }

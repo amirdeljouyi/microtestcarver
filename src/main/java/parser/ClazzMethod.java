@@ -6,8 +6,8 @@ public class ClazzMethod extends BasicMethod {
     public ArrayList<ClazzMethod> childrenClazz;
     public ArrayList<BasicMethod> callee;
 
-    public ClazzMethod(String clazzName, String packageName, String methodName) {
-        super(clazzName, packageName, methodName);
+    public ClazzMethod(Clazz clazz, String methodName) {
+        super(clazz, methodName);
         childrenClazz = new ArrayList<>();
         callee = new ArrayList<>();
     }
