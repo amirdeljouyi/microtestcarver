@@ -41,6 +41,8 @@ public class Parser {
                     tokenArg(line);
                 } else if (line.contains("Fields: [{")) {
                     tokenField(line);
+                } else if (line.contains("Return: {")) {
+                    tokenReturn(line);
                 } else if (line.contains("}, ]")) {
                     tokenEndArg(line);
                 } else if (line.contains("}, {")) {
@@ -59,6 +61,8 @@ public class Parser {
                     tokenObject(line);
                 } else if (line.contains("fields: ")) {
                     tokenFields(line);
+                } else if (line.equals("}")) {
+                    tokenEndArg(line);
                 }
             }
         } catch (IOException e) {
@@ -110,9 +114,9 @@ public class Parser {
     }
 
     private void tokenEndNewArg(String line) {
-        boolean isField = lastArg.isField();
+        Arg.ArgType argType = lastArg.getArgType();
 
-        if (isField &&  (lastMethodClazz instanceof ClazzMethod)){
+        if (lastArg.isField() &&  (lastMethodClazz instanceof ClazzMethod)){
             lastMethodClazz.clazz.addParam(lastArg);
             clazzSet.put(lastMethodClazz.clazz.fullName(), lastMethodClazz.clazz);
         } else {
@@ -121,18 +125,19 @@ public class Parser {
         System.out.println(lastArg);
 
 
-        Arg arg = new Arg(isField);
+        Arg arg = new Arg(argType);
         this.lastArg = arg;
     }
 
     private void tokenEndArg(String line) {
-        boolean isField = lastArg.isField();
 
-        if (isField &&  (lastMethodClazz instanceof ClazzMethod)){
+        if (lastArg.isField() &&  (lastMethodClazz instanceof ClazzMethod)){
             lastMethodClazz.clazz.addParam(lastArg);
             clazzSet.put(lastMethodClazz.clazz.fullName(), lastMethodClazz.clazz);
-        } else {
+        } else if(lastArg.isArg()) {
             lastMethodClazz.addArg(lastArg);
+        } else if (lastArg.isReturn() && (lastMethodClazz instanceof ClazzMethod)){
+            ((ClazzMethod) lastMethodClazz).returnField = lastArg;
         }
 
         if (lastMethodClazz instanceof ClazzMethod) {
@@ -178,12 +183,12 @@ public class Parser {
     }
 
     private void tokenField(String line) {
-        Arg arg = new Arg(true);
+        Arg arg = new Arg(Arg.ArgType.FIELD);
         lastArg = arg;
     }
 
     private void tokenArg(String line) {
-        Arg arg = new Arg(false);
+        Arg arg = new Arg(Arg.ArgType.ARG);
         lastArg = arg;
 
 //        if (lastMethodClazz instanceof ClazzMethod) {
@@ -192,6 +197,11 @@ public class Parser {
 //        } else {
 //            stackClazz.peek().addMethodCallee(lastMethodClazz);
 //        }
+    }
+
+    private void tokenReturn(String line) {
+        Arg arg = new Arg(Arg.ArgType.RETURN);
+        lastArg = arg;
     }
 
     private String[] splitArgs(String line) {

@@ -6,6 +6,8 @@ public class ClazzMethod extends BasicMethod {
     public ArrayList<ClazzMethod> childrenClazz;
     public ArrayList<BasicMethod> callee;
 
+    public Arg returnField;
+
     public ClazzMethod(Clazz clazz, String methodName) {
         super(clazz, methodName);
         childrenClazz = new ArrayList<>();
