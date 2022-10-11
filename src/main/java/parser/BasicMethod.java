@@ -17,12 +17,16 @@ public class BasicMethod {
         this.args = new ArrayList<>();
     }
 
-    public void setArgs(ArrayList<Arg> args){
-        this.args.addAll(args);
-    }
-
     public String getMethodName(){
         return methodName;
+    }
+
+    public void addArg(Arg arg){
+        this.args.add(arg);
+    }
+
+    public void setArgs(ArrayList<Arg> args){
+        this.args.addAll(args);
     }
 
     public ArrayList<Arg> getArgs(){

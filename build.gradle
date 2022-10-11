@@ -12,9 +12,11 @@ repositories {
 
 dependencies {
     implementation 'info.picocli:picocli:4.6.3'
+//    implementation files('libs/spring-testing-0.0.1-SNAPSHOT-all.jar')
+    implementation files('libs/btrace-client.jar')
     implementation 'org.apache.velocity:velocity-engine-core:2.3'
     annotationProcessor 'info.picocli:picocli-codegen:4.6.3'
-    implementation group: 'io.btrace', name: 'btrace-client', version: '2.2.2'
+//    implementation group: 'io.btrace', name: 'btrace-client', version: '2.2.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }

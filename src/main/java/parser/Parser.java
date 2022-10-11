@@ -13,6 +13,7 @@ public class Parser {
     private BasicMethod lastMethodClazz;
     private Stack<ClazzMethod> stackClazz;
 
+    private Arg lastArg;
     private HashMap<String, Clazz> clazzSet;
 
     public String time;
@@ -36,18 +37,115 @@ public class Parser {
                     tokenClazzMethod(line);
                 } else if (line.contains("()")) {
                     tokenMethod(line);
-                } else if (line.contains("{")) {
-                    tokenClazzArg(line);
-                } else if (line.contains("[")) {
-                    tokenMethodArg(line);
+                } else if (line.contains("Args: [{")) {
+                    tokenArg(line);
+                } else if (line.contains("Fields: [{")) {
+                    tokenField(line);
+                } else if (line.contains("}, ]")) {
+                    tokenEndArg(line);
+                } else if (line.contains("}, {")) {
+                    tokenEndNewArg(line);
                 } else if (line.contains("}:")) {
                     tokenEndClazzMethod(line);
+                } else if (line.contains("name: ")) {
+                    tokenName(line);
+                } else if (line.contains("type: ")) {
+                    tokenType(line);
+                } else if (line.contains("isPrimitive: ")) {
+                    tokenIsPrimitive(line);
+                } else if (line.contains("isInterface: ")) {
+                    tokenIsInterface(line);
+                } else if (line.contains("object: ")) {
+                    tokenObject(line);
+                } else if (line.contains("fields: ")) {
+                    tokenFields(line);
                 }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         System.out.println(clazzMethods);
+    }
+
+    private void tokenFields(String line) {
+        line = line.substring(12);
+        String[] argStrings = splitArgs(line);
+        Set<Arg> args = new HashSet<>();
+        for (String argString : argStrings) {
+            System.out.println(argString);
+            if (!argString.isEmpty() && argString != null) {
+                String[] dual = argString.split("=");
+                String[] detailedType = dual[0].split(" ");
+                String type = detailedType[1];
+                String key = detailedType[2];
+                String value = dual[1];
+                args.add(new Arg(key, value, type));
+            }
+        }
+        lastArg.params = args;
+    }
+
+    private void tokenObject(String line) {
+        line = line.substring(12, line.length()-1);
+        lastArg.value = line;
+    }
+
+    private void tokenIsInterface(String line) {
+        line = line.substring(17, line.length()-1);
+        lastArg.isInterface =  Boolean.parseBoolean(line);
+    }
+
+    private void tokenName(String line) {
+        line = line.substring(10, line.length()-1);
+        lastArg.key =  line;
+    }
+    private void tokenType(String line) {
+        line = line.substring(10, line.length()-1);
+        lastArg.type =  line;
+    }
+
+    private void tokenIsPrimitive(String line) {
+        line = line.substring(16, line.length()-1);
+        lastArg.isPrimitive =  Boolean.parseBoolean(line);
+    }
+
+    private void tokenEndNewArg(String line) {
+        boolean isField = lastArg.isField();
+
+        if (isField &&  (lastMethodClazz instanceof ClazzMethod)){
+            lastMethodClazz.clazz.addParam(lastArg);
+            clazzSet.put(lastMethodClazz.clazz.fullName(), lastMethodClazz.clazz);
+        } else {
+            lastMethodClazz.addArg(lastArg);
+        }
+        System.out.println(lastArg);
+
+
+        Arg arg = new Arg(isField);
+        this.lastArg = arg;
+    }
+
+    private void tokenEndArg(String line) {
+        boolean isField = lastArg.isField();
+
+        if (isField &&  (lastMethodClazz instanceof ClazzMethod)){
+            lastMethodClazz.clazz.addParam(lastArg);
+            clazzSet.put(lastMethodClazz.clazz.fullName(), lastMethodClazz.clazz);
+        } else {
+            lastMethodClazz.addArg(lastArg);
+        }
+
+        if (lastMethodClazz instanceof ClazzMethod) {
+            if (!stackClazz.isEmpty())
+                stackClazz.peek().addChildren((ClazzMethod) lastMethodClazz);
+        } else {
+            stackClazz.peek().addMethodCallee(lastMethodClazz);
+        }
+
+        System.out.println(lastArg);
+
+        lastArg = null;
+
     }
 
     private void tokenStart(String line) {
@@ -79,34 +177,26 @@ public class Parser {
         clazzMethods.add(stackClazz.pop());
     }
 
-    private void tokenClazzArg(String line) {
-        String[] argStrings = splitArgs(line);
-        ArrayList<Arg> args = new ArrayList<>();
-        for (String argString : argStrings) {
-            String[] dual = argString.split("=");
-            String key = dual[0];
-            String value = dual[1];
-            args.add(new Arg(key, value));
-        }
-        lastMethodClazz.setArgs(args);
-        if(!stackClazz.isEmpty())
-            stackClazz.peek().addChildren((ClazzMethod) lastMethodClazz);
+    private void tokenField(String line) {
+        Arg arg = new Arg(true);
+        lastArg = arg;
     }
 
-    private void tokenMethodArg(String line) {
-        String[] argStrings = splitArgs(line);
-        ArrayList<Arg> args = new ArrayList<>();
-        for (String argString : argStrings) {
-            args.add(new Arg(argString));
-        }
-        lastMethodClazz.setArgs(args);
-        System.out.println("Stack " + stackClazz.toArray().length);
-        stackClazz.peek().addMethodCallee(lastMethodClazz);
+    private void tokenArg(String line) {
+        Arg arg = new Arg(false);
+        lastArg = arg;
+
+//        if (lastMethodClazz instanceof ClazzMethod) {
+//            if (!stackClazz.isEmpty())
+//                stackClazz.peek().addChildren((ClazzMethod) lastMethodClazz);
+//        } else {
+//            stackClazz.peek().addMethodCallee(lastMethodClazz);
+//        }
     }
 
     private String[] splitArgs(String line) {
-        line = line.substring(1, line.length() - 1);
-        return line.split(", ");
+        line = line.substring(1, line.length() - 2);
+        return line.split("([a-zA-Z])+ ([a-zA-Z]|\\.|\\@|\\$|\\d)+ ([a-zA-Z])+=(\\[([a-zA-Z]|\\.|\\@|\\$|\\d|\\s|,)*\\]|([a-zA-Z]|\\.|\\@|\\$|\\d)*), ");
     }
 
     private BasicMethod methodParser(String line, boolean clazzMethod) {
@@ -118,7 +208,7 @@ public class Parser {
         String clazzKey = packageName + "." + clazzName;
 
         Clazz item = clazzSet.get(clazzKey);
-        if(item == null) {
+        if (item == null) {
             item = new Clazz(packageName, clazzName);
         }
 
