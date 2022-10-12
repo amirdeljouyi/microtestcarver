@@ -8,8 +8,8 @@ public class Arg {
     public String value;
     public String type;
 
-    public Boolean isPrimitive;
-    public Boolean isInterface;
+    public boolean isPrimitive;
+    public boolean isInterface;
     private ArgType argType;
 
     public Set<Arg> params;
@@ -54,14 +54,14 @@ public class Arg {
         return this.argType;
     }
 
-    public Boolean isField() {
+    public boolean isField() {
         return this.argType == ArgType.FIELD;
     }
-    public Boolean isArg() {
+    public boolean isArg() {
         return this.argType == ArgType.ARG;
     }
 
-    public Boolean isReturn() {
+    public boolean isReturn() {
         return this.argType == ArgType.RETURN;
     }
 
@@ -72,6 +72,11 @@ public class Arg {
     public String getShortType() {
         String[] names = type.split("\\.");
         return names[names.length - 1];
+    }
+
+    public boolean isPrimitiveType(){
+        Utils utils = new Utils();
+        return utils.isPrimitiveType(type);
     }
 
     @Override

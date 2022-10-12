@@ -21,4 +21,23 @@ public class ClazzMethod extends BasicMethod {
     public void addMethodCallee(BasicMethod callee){
         this.callee.add(callee);
     }
+
+    public Boolean hasReturn(){
+        if(returnField!= null){
+            return true;
+        }
+        return false;
+    }
+
+    public Arg getReturnField() {
+        return returnField;
+    }
+
+    @Override
+    public String toString(){
+        if(hasReturn())
+            return super.toString() + " Return<" + returnField.value + ">";
+        else
+            return super.toString();
+    }
 }

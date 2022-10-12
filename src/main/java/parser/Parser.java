@@ -62,7 +62,7 @@ public class Parser {
                 } else if (line.contains("fields: ")) {
                     tokenFields(line);
                 } else if (line.equals("}")) {
-                    tokenEndArg(line);
+                    tokenEndRet(line);
                 }
             }
         } catch (IOException e) {
@@ -76,7 +76,7 @@ public class Parser {
         String[] argStrings = splitArgs(line);
         Set<Arg> args = new HashSet<>();
         for (String argString : argStrings) {
-            System.out.println(argString);
+//            System.out.println(argString);
             if (!argString.isEmpty() && argString != null) {
                 String[] dual = argString.split("=");
                 String[] detailedType = dual[0].split(" ");
@@ -136,15 +136,24 @@ public class Parser {
             clazzSet.put(lastMethodClazz.clazz.fullName(), lastMethodClazz.clazz);
         } else if(lastArg.isArg()) {
             lastMethodClazz.addArg(lastArg);
-        } else if (lastArg.isReturn() && (lastMethodClazz instanceof ClazzMethod)){
-            ((ClazzMethod) lastMethodClazz).returnField = lastArg;
         }
 
-        if (lastMethodClazz instanceof ClazzMethod) {
-            if (!stackClazz.isEmpty())
-                stackClazz.peek().addChildren((ClazzMethod) lastMethodClazz);
-        } else {
+        if (!(lastMethodClazz instanceof ClazzMethod)) {
             stackClazz.peek().addMethodCallee(lastMethodClazz);
+        }
+
+        System.out.println(lastArg);
+
+        lastArg = null;
+
+    }
+
+    private void tokenEndRet(String line) {
+        System.out.println("HI");
+        ClazzMethod clazzMethod = stackClazz.peek();
+        if (lastArg.isReturn()){
+            System.out.println("SHI");
+            clazzMethod.returnField = lastArg;
         }
 
         System.out.println(lastArg);
@@ -179,7 +188,10 @@ public class Parser {
 //    }
 
     private void tokenEndClazzMethod(String line) {
-        clazzMethods.add(stackClazz.pop());
+        ClazzMethod clazz = stackClazz.pop();
+        if(!stackClazz.isEmpty())
+            stackClazz.peek().addChildren(clazz);
+        clazzMethods.add(clazz);
     }
 
     private void tokenField(String line) {
