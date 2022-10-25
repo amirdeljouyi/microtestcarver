@@ -31,7 +31,7 @@ public class CallTrace {
     @OnMethod(
             clazz = "${packageName}\\..*/",
             method = "${methodName}/",
-            location = @Location(value = Kind.CALL, clazz = "/.*/", method = "/.*/"))
+            location = @Location(value = Kind.CALL, clazz = "/.*/", method = "/.*/", where= Where.BEFORE))
     public static void onMethodCall(@Self Object self, @TargetInstance Object instance,
                                     @TargetMethodOrField String method, AnyType[] args) {
         if (instance != null) {
@@ -39,6 +39,15 @@ public class CallTrace {
 
             printDetailedArgs(args);
         }
+    }
+
+    @OnMethod(
+            clazz = "${packageName}\\..*/",
+            method = "${methodName}/",
+            location = @Location(value = Kind.CALL, clazz = "/.*/", method = "/.*/", where = Where.AFTER)
+    )
+    public static void onMethodAfterCall(@Return AnyType callbackData, AnyType inputData) {
+        printDetailedRet(callbackData);
     }
 
     @OnMethod(
