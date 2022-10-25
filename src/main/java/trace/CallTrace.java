@@ -16,7 +16,7 @@ public class CallTrace {
     public static void onMethodEntry(@Self Object o, @ProbeClassName String pcn, @ProbeMethodName String pmn, AnyType[] args) throws IllegalAccessException {
         if (o != null) {
             print(Strings.strcat(Strings.strcat(pcn, "."), pmn) + ":{");
-            printDetailedArgs(args);
+            printDetailedArray("Args", args);
             printDetailedFields(o);
         }
 //        Serialization
@@ -37,7 +37,7 @@ public class CallTrace {
         if (instance != null) {
             print(name(classOf(instance)) + "." + method + "()");
 
-            printDetailedArgs(args);
+            printDetailedArray("Args", args);
         }
     }
 
@@ -47,7 +47,7 @@ public class CallTrace {
             location = @Location(value = Kind.CALL, clazz = "/.*/", method = "/.*/", where = Where.AFTER)
     )
     public static void onMethodAfterCall(@Return AnyType callbackData, AnyType inputData) {
-        printDetailedRet(callbackData);
+        printDetailedObject("Callback", callbackData);
     }
 
     @OnMethod(
@@ -65,6 +65,6 @@ public class CallTrace {
             location = @Location(Kind.RETURN)
     )
     public static void onMethodReturn(@ProbeClassName String pcn, @ProbeMethodName String pmn, @Return AnyType callbackData) {
-        printDetailedRet(callbackData);
+        printDetailedObject("Return", callbackData);
     }
 }
