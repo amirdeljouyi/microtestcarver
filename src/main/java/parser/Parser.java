@@ -43,6 +43,8 @@ public class Parser {
                     tokenField(line);
                 } else if (line.contains("Return: {")) {
                     tokenReturn(line);
+                } else if (line.contains("Callback: {")) {
+                    tokenCallback(line);
                 } else if (line.contains("}, ]")) {
                     tokenEndArg(line);
                 } else if (line.contains("}, {")) {
@@ -149,17 +151,15 @@ public class Parser {
     }
 
     private void tokenEndRet(String line) {
-        System.out.println("HI");
         ClazzMethod clazzMethod = stackClazz.peek();
         if (lastArg.isReturn()){
-            System.out.println("SHI");
             clazzMethod.returnField = lastArg;
+        } else if (lastArg.isCallback()){
+            lastMethodClazz.returnField = lastArg;
         }
 
         System.out.println(lastArg);
-
         lastArg = null;
-
     }
 
     private void tokenStart(String line) {
@@ -213,6 +213,11 @@ public class Parser {
 
     private void tokenReturn(String line) {
         Arg arg = new Arg(Arg.ArgType.RETURN);
+        lastArg = arg;
+    }
+
+    private void tokenCallback(String line) {
+        Arg arg = new Arg(Arg.ArgType.CALLBACK);
         lastArg = arg;
     }
 

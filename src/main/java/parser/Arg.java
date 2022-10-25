@@ -65,6 +65,10 @@ public class Arg {
         return this.argType == ArgType.RETURN;
     }
 
+    public boolean isCallback() {
+        return this.argType == ArgType.CALLBACK;
+    }
+
     public String getType() {
         return type;
     }
@@ -105,6 +109,7 @@ public class Arg {
     enum ArgType {
         FIELD,
         ARG,
-        RETURN
+        RETURN,
+        CALLBACK
     }
 }

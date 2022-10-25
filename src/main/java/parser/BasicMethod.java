@@ -10,6 +10,8 @@ public class BasicMethod {
 
     public Clazz clazz;
 
+    public Arg returnField;
+
     public BasicMethod(Clazz clazz, String methodName) {
         this.clazz = clazz;
         this.methodName = methodName;
@@ -33,8 +35,22 @@ public class BasicMethod {
         return args;
     }
 
+    public Boolean hasReturn(){
+        if(returnField!= null){
+            return true;
+        }
+        return false;
+    }
+
+    public Arg getReturnField() {
+        return returnField;
+    }
+
     @Override
     public String toString(){
-        return this.clazz.toString() + " Method<" + this.methodName + ">";
+        String string = this.clazz.toString() + " Method<" + this.methodName + ">";
+        if(hasReturn())
+            return string +  " Return<" + returnField.value + ">";
+        return string;
     }
 }
