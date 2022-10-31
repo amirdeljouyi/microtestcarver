@@ -12,17 +12,18 @@ public class Parser {
     private ArrayList<ClazzMethod> clazzMethods;
     private BasicMethod lastMethodClazz;
     private Stack<ClazzMethod> stackClazz;
-
     private Arg lastArg;
     private HashMap<String, Clazz> clazzSet;
 
     public String time;
+    private Utils util;
 
     public Parser(InputStream inputStream) {
         this.inputStream = inputStream;
         this.clazzMethods = new ArrayList<>();
         this.stackClazz = new Stack<>();
         this.clazzSet = new HashMap<>();
+        util = new Utils();
     }
 
     public void readLines() {
@@ -35,10 +36,12 @@ public class Parser {
             while ((line = in.readLine()) != null) {
                 if (line.contains(":{")) {
                     tokenClazzMethod(line);
-                } else if (line.contains("()")) {
+                } else if (util.containsAll(line, new String[]{"#", "[", "]"})) {
                     tokenMethod(line);
                 } else if (line.contains("Args: [{")) {
                     tokenArg(line);
+                }  else if (line.contains("Args: []")) {
+                    tokenArgNull(line);
                 } else if (line.contains("Fields: [{")) {
                     tokenField(line);
                 } else if (line.contains("Return: {")) {
@@ -92,33 +95,34 @@ public class Parser {
     }
 
     private void tokenObject(String line) {
-        line = line.substring(12, line.length()-1);
+        line = line.substring(12, line.length() - 1);
         lastArg.value = line;
     }
 
     private void tokenIsInterface(String line) {
-        line = line.substring(17, line.length()-1);
-        lastArg.isInterface =  Boolean.parseBoolean(line);
+        line = line.substring(17, line.length() - 1);
+        lastArg.isInterface = Boolean.parseBoolean(line);
     }
 
     private void tokenName(String line) {
-        line = line.substring(10, line.length()-1);
-        lastArg.key =  line;
+        line = line.substring(10, line.length() - 1);
+        lastArg.key = line;
     }
+
     private void tokenType(String line) {
-        line = line.substring(10, line.length()-1);
-        lastArg.type =  line;
+        line = line.substring(10, line.length() - 1);
+        lastArg.type = line;
     }
 
     private void tokenIsPrimitive(String line) {
-        line = line.substring(16, line.length()-1);
-        lastArg.isPrimitive =  Boolean.parseBoolean(line);
+        line = line.substring(16, line.length() - 1);
+        lastArg.isPrimitive = Boolean.parseBoolean(line);
     }
 
     private void tokenEndNewArg(String line) {
         Arg.ArgType argType = lastArg.getArgType();
 
-        if (lastArg.isField() &&  (lastMethodClazz instanceof ClazzMethod)){
+        if (lastArg.isField() && (lastMethodClazz instanceof ClazzMethod)) {
             lastMethodClazz.clazz.addParam(lastArg);
             clazzSet.put(lastMethodClazz.clazz.fullName(), lastMethodClazz.clazz);
         } else {
@@ -133,10 +137,10 @@ public class Parser {
 
     private void tokenEndArg(String line) {
 
-        if (lastArg.isField() &&  (lastMethodClazz instanceof ClazzMethod)){
+        if (lastArg.isField() && (lastMethodClazz instanceof ClazzMethod)) {
             lastMethodClazz.clazz.addParam(lastArg);
             clazzSet.put(lastMethodClazz.clazz.fullName(), lastMethodClazz.clazz);
-        } else if(lastArg.isArg()) {
+        } else if (lastArg.isArg()) {
             lastMethodClazz.addArg(lastArg);
         }
 
@@ -152,9 +156,9 @@ public class Parser {
 
     private void tokenEndRet(String line) {
         ClazzMethod clazzMethod = stackClazz.peek();
-        if (lastArg.isReturn()){
+        if (lastArg.isReturn()) {
             clazzMethod.returnField = lastArg;
-        } else if (lastArg.isCallback()){
+        } else if (lastArg.isCallback()) {
             lastMethodClazz.returnField = lastArg;
         }
 
@@ -169,16 +173,17 @@ public class Parser {
     private void tokenClazzMethod(String line) {
         line = line.split(":")[0];
 
-        ClazzMethod cm = (ClazzMethod) methodParser(line, true);
+        ClazzMethod cm = methodParser(line);
+        if(cm.equals(lastMethodClazz)) {
+            cm.setReference(lastMethodClazz);
+        }
         lastMethodClazz = cm;
         stackClazz.push(cm);
         System.out.println("class parsed: " + cm);
     }
 
     private void tokenMethod(String line) {
-        line = line.substring(0, line.length() - 2);
-        System.out.println(line);
-        BasicMethod cm = methodParser(line, false);
+        BasicMethod cm = methodCallParser(line);
         lastMethodClazz = cm;
         System.out.println("method parsed: " + cm);
     }
@@ -189,7 +194,7 @@ public class Parser {
 
     private void tokenEndClazzMethod(String line) {
         ClazzMethod clazz = stackClazz.pop();
-        if(!stackClazz.isEmpty())
+        if (!stackClazz.isEmpty())
             stackClazz.peek().addChildren(clazz);
         clazzMethods.add(clazz);
     }
@@ -202,14 +207,14 @@ public class Parser {
     private void tokenArg(String line) {
         Arg arg = new Arg(Arg.ArgType.ARG);
         lastArg = arg;
-
-//        if (lastMethodClazz instanceof ClazzMethod) {
-//            if (!stackClazz.isEmpty())
-//                stackClazz.peek().addChildren((ClazzMethod) lastMethodClazz);
-//        } else {
-//            stackClazz.peek().addMethodCallee(lastMethodClazz);
-//        }
     }
+
+    private void tokenArgNull(String line) {
+        if (!(lastMethodClazz instanceof ClazzMethod)) {
+            stackClazz.peek().addMethodCallee(lastMethodClazz);
+        }
+    }
+
 
     private void tokenReturn(String line) {
         Arg arg = new Arg(Arg.ArgType.RETURN);
@@ -226,7 +231,48 @@ public class Parser {
         return line.split("([a-zA-Z])+ ([a-zA-Z]|\\.|\\@|\\$|\\d)+ ([a-zA-Z])+=(\\[([a-zA-Z]|\\.|\\@|\\$|\\d|\\s|,)*\\]|([a-zA-Z]|\\.|\\@|\\$|\\d)*), ");
     }
 
-    private BasicMethod methodParser(String line, boolean clazzMethod) {
+    private BasicMethod methodCallParser(String line) {
+        // Example: virtual java.lang.Object java.util.Optional#orElse(java.lang.Object)[Optional[Clear: clear sky]]
+        String[] parts = line.split(" ");
+        String clazzType = parts[0];
+        String methodReturnType = parts[1];
+
+        // split methodName and packages
+        // join if there is other spaces in third part
+        String[] clazzParts = String.join(" ", Arrays.copyOfRange(parts, 2, parts.length)).split("#");
+
+        // java.util.Optional -> Optional is clazzName, and java.util is packageName
+        String[] names = clazzParts[0].split("\\.");
+        String clazzName = names[names.length - 1];
+        String packageName = String.join(".", Arrays.copyOfRange(names, 0, names.length - 1));
+
+        // Split methodCall and instance by )[
+        String[] methodParts = clazzParts[1].split("\\)\\[");
+
+        String methodName;
+        String[] argTypes;
+        if(methodParts.length > 1) {
+
+            // Split methodName and Args
+            String[] methodCalls = methodParts[0].split("\\(");
+            methodName = methodCalls[0];
+            argTypes = methodCalls[1].split(", ");
+        } else{
+            argTypes = null;
+            methodParts = clazzParts[1].split("\\[");
+            methodName = methodParts[0];
+        }
+        // remove last [
+        String instanceObject = methodParts[1].substring(0, methodParts[1].length() - 1);
+
+        Clazz item = findOrCreateClazz(packageName, clazzName);
+        item.setType(clazzType);
+
+        BasicMethod method = new BasicMethod(item, methodName, methodReturnType, argTypes, instanceObject);
+        return method;
+    }
+
+    private ClazzMethod methodParser(String line) {
         String[] names = line.split("\\.");
 //        System.out.println(line);
         String methodName = names[names.length - 1];
@@ -234,21 +280,24 @@ public class Parser {
         String packageName = String.join(".", Arrays.copyOfRange(names, 0, names.length - 2));
         String clazzKey = packageName + "." + clazzName;
 
+        Clazz item = findOrCreateClazz(packageName, clazzName);
+
+        ClazzMethod method = new ClazzMethod(item, methodName);
+        item.addMethod(method);
+        clazzSet.put(clazzKey, item);
+
+        return method;
+    }
+
+    Clazz findOrCreateClazz(String packageName, String clazzName) {
+        String clazzKey = packageName + "." + clazzName;
+
         Clazz item = clazzSet.get(clazzKey);
         if (item == null) {
             item = new Clazz(packageName, clazzName);
         }
 
-        BasicMethod method;
-        if (clazzMethod) {
-            method = new ClazzMethod(item, methodName);
-            item.addMethod((ClazzMethod) method);
-            clazzSet.put(clazzKey, item);
-        } else {
-            method = new BasicMethod(item, methodName);
-        }
-
-        return method;
+        return item;
     }
 
     public HashMap<String, Clazz> getClazzSet() {

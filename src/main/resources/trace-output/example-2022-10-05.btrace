@@ -1,0 +1,59 @@
+### BTrace Log: 05/10/2022, 23:35
+
+example.ExampleController.hello:{
+Args: [{
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "shrf",
+    fields: [],
+}, ]
+
+Fields: [{
+    name: personRepository,
+    type: example.person.PersonRepository,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.springframework.data.jpa.repository.support.SimpleJpaRepository@12b8f5aa,
+    fields: [interface java.lang.reflect.InvocationHandler h=org.springframework.aop.framework.JdkDynamicAopProxy@71b2a105, ],
+}, {
+    name: weatherClient,
+    type: example.weather.WeatherClient,
+    isPrimitive: false,
+    isInterface: true,
+    object: example.weather.WeatherClient@508f4bb5,
+    fields: [class org.springframework.web.client.RestTemplate restTemplate=org.springframework.web.client.RestTemplate@76b642aa, class java.lang.String weatherServiceUrl=https://api.openweathermap.org, class java.lang.String weatherServiceApiKey=1254aa0ef471380373193a60dd589e35, ],
+}, ]
+
+com.sun.proxy.$Proxy77.findByLastName()
+Args: [{
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "shrf",
+    fields: [],
+}, ]
+
+java.util.Optional.map()
+Args: [{
+    name: null,
+    type: example.ExampleController$$Lambda$1081/0x00000008007f2440,
+    isPrimitive: false,
+    isInterface: true,
+    object: example.ExampleController$$Lambda$1081/0x00000008007f2440@6f18e38a,
+    fields: [],
+}, ]
+
+java.util.Optional.orElse()
+Args: [{
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Who is this 'shrf' you're talking about?",
+    fields: [],
+}, ]
+
+}:

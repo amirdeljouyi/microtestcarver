@@ -1,0 +1,53 @@
+### BTrace Log: 04/10/2022, 18:38
+
+example.ExampleController.hello:{
+Args: [{
+    type: java.lang.String
+    isPrimitive: false
+    isInterface: true
+    object: "shrf"
+    fields: []
+}, ]
+
+Fields: [{
+    type: example.person.PersonRepository
+    isPrimitive: false
+    isInterface: true
+    object: org.springframework.data.jpa.repository.support.SimpleJpaRepository@784f06ef
+    fields: [interface java.lang.reflect.InvocationHandler h=org.springframework.aop.framework.JdkDynamicAopProxy@16b2d557, ]
+}, {
+    type: example.weather.WeatherClient
+    isPrimitive: false
+    isInterface: true
+    object: example.weather.WeatherClient@687e561b
+    fields: [class org.springframework.web.client.RestTemplate restTemplate=org.springframework.web.client.RestTemplate@508f4bb5, class java.lang.String weatherServiceUrl=https://api.openweathermap.org, class java.lang.String weatherServiceApiKey=1254aa0ef471380373193a60dd589e35, ]
+}, ]
+
+com.sun.proxy.$Proxy77.findByLastName()
+Args: [{
+    type: java.lang.String
+    isPrimitive: false
+    isInterface: true
+    object: "shrf"
+    fields: []
+}, ]
+
+java.util.Optional.map()
+Args: [{
+    type: example.ExampleController$$Lambda$1076/0x00000008007cd840
+    isPrimitive: false
+    isInterface: true
+    object: example.ExampleController$$Lambda$1076/0x00000008007cd840@4c387116
+    fields: []
+}, ]
+
+java.util.Optional.orElse()
+Args: [{
+    type: java.lang.String
+    isPrimitive: false
+    isInterface: true
+    object: "Who is this 'shrf' you're talking about?"
+    fields: []
+}, ]
+
+}:

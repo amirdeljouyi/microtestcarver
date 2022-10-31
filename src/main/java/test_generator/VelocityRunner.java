@@ -5,6 +5,7 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
 import parser.Clazz;
+import parser.ClazzMethod;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -36,6 +37,13 @@ public class VelocityRunner {
             String k = entry.getKey();
             Clazz v = entry.getValue();
             VelocityContext context = new VelocityContext();
+
+            System.out.println("=========================");
+            System.out.println("Clazz: " + v.fullName());
+            System.out.println("Methods based on Fields: ");
+            for (ClazzMethod item: v.methods){
+                System.out.println(item.clazzMethodsBasedOnFields());
+            }
 
             context.put("className", v.clazzName);
             context.put("packageName", v.packageName);

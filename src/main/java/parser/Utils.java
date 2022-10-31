@@ -4,6 +4,15 @@ public class Utils {
 
     public Utils(){}
 
+    public boolean containsAll(String line, String [] words){
+        for (String word : words){
+            if(!line.contains(word)){
+                return false;
+            }
+        }
+        return true;
+    }
+
     public boolean isPrimitiveType(String type) {
         if (type == null || type == "" || type == "null")
             return true;

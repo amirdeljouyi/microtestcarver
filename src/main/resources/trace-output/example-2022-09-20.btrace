@@ -1,0 +1,68 @@
+### BTrace Log: 20/09/2022, 16:34
+
+example.ExampleController.hello:{
+[Amir, ]
+
+{personRepository=com.sun.proxy.$Proxy79@1f65dcab, weatherClient=example.weather.WeatherClient@26712838, }
+
+com.sun.proxy.$Proxy79.findByLastName()
+[Amir, ]
+
+java.util.Optional.map()
+[example.ExampleController$$Lambda$1072/0x00000008007ee440@59c47110, ]
+
+java.util.Optional.orElse()
+[Who is this 'Amir' you're talking about?, ]
+
+}:
+example.ExampleController.weather:{
+[]
+
+{personRepository=com.sun.proxy.$Proxy79@1f65dcab, weatherClient=example.weather.WeatherClient@26712838, }
+
+example.weather.WeatherClient.fetchWeather()
+[]
+
+example.weather.WeatherClient.fetchWeather:{
+[]
+
+{restTemplate=org.springframework.web.client.RestTemplate@52290e63, weatherServiceUrl=https://api.openweathermap.org, weatherServiceApiKey=1254aa0ef471380373193a60dd589e35, }
+
+org.springframework.web.client.RestTemplate.getForObject()
+[https://api.openweathermap.org/data/2.5/weather?q=Hamburg,de&appid=1254aa0ef471380373193a60dd589e35, org.springframework.web.client.RestTemplate@52290e63, null, ]
+
+example.weather.WeatherResponse.<init>:{
+[]
+
+{weather=null, }
+
+}:
+example.weather.WeatherResponse$Weather.<init>:{
+[]
+
+{main=null, description=null, }
+
+}:
+}:
+java.util.Optional.map()
+[example.ExampleController$$Lambda$1104/0x000000080080a040@7c238c28, ]
+
+example.weather.WeatherResponse.getSummary:{
+[]
+
+{weather=[Weather{main='Clouds', description='few clouds'}], }
+
+java.util.ArrayList.stream()
+[]
+
+java.util.stream.ReferencePipeline$Head.map()
+[example.weather.WeatherResponse$$Lambda$1105/0x000000080080a440@595807e8, ]
+
+java.util.stream.ReferencePipeline$3.collect()
+[java.util.stream.Collectors$CollectorImpl@4795662b, ]
+
+}:
+java.util.Optional.orElse()
+[Sorry, I couldn't fetch the weather for you :(, ]
+
+}:

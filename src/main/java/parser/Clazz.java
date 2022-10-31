@@ -9,6 +9,8 @@ public class Clazz {
     public String clazzName;
     public String packageName;
 
+    public String type;
+
     public ArrayList<ClazzMethod> methods;
     public Set<Arg> args;
     public Set<Arg> params;
@@ -54,6 +56,13 @@ public class Clazz {
         this.params.add(arg);
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     @Override
     public int hashCode(){
