@@ -49,7 +49,7 @@ public class VelocityRunner {
             context.put("packageName", v.packageName);
             context.put("methods", v.methods);
             context.put("args", v.args);
-            context.put("params", v.params);
+            context.put("params", v.uniqueParamByKey());
 
             try {
                 Writer writer = new FileWriter(new File("./test-output/" + v.clazzName + "Test.java"));

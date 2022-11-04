@@ -1,15 +1,13 @@
 package parser;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
+import java.util.*;
 
 public class BasicMethod {
 
     public String methodName;
 
-    public ArrayList<Arg> args;
-    public ArrayList<String> argTypes;
+    public Set<Arg> args;
+    public Set<String> argTypes;
 
     public Clazz clazz;
 
@@ -21,8 +19,8 @@ public class BasicMethod {
         this.clazz = clazz;
         this.methodName = methodName;
 
-        this.args = new ArrayList<>();
-        this.argTypes = new ArrayList<>();
+        this.args = new HashSet<>();
+        this.argTypes = new HashSet<>();
     }
 
     public BasicMethod(Clazz clazz, String methodName, String returnType, String[] argTypes, String instanceObject) {
@@ -30,12 +28,12 @@ public class BasicMethod {
         this.methodName = methodName;
 
         this.returnType = returnType;
-        this.argTypes = new ArrayList<>();
+        this.argTypes = new HashSet<>();
         if(argTypes != null)
             this.argTypes.addAll(Arrays.asList(argTypes));
         this.instanceObject = instanceObject;
 
-        this.args = new ArrayList<>();
+        this.args = new HashSet<>();
     }
 
     public String fullName(){
@@ -50,11 +48,11 @@ public class BasicMethod {
         this.args.add(arg);
     }
 
-    public void setArgs(ArrayList<Arg> args){
+    public void setArgs(Set<Arg> args){
         this.args.addAll(args);
     }
 
-    public ArrayList<Arg> getArgs(){
+    public Set<Arg> getArgs(){
         return args;
     }
 
@@ -93,7 +91,12 @@ public class BasicMethod {
         if (getClass() != obj.getClass())
             return false;
         BasicMethod bm = ((BasicMethod) obj);
-        return Objects.equals(methodName, bm.methodName) && Objects.equals(bm.clazz, clazz);
+        return Objects.equals(methodName, bm.methodName) &&
+                Objects.equals(clazz, bm.clazz) &&
+                Objects.equals(instanceObject, bm.instanceObject) &&
+                Objects.equals(args, bm.args) &&
+                Objects.equals(returnType, bm.returnType);
+//                Objects.equals(returnField, bm.returnField);
     }
 
 }

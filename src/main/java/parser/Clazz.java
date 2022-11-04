@@ -1,6 +1,5 @@
 package parser;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -11,7 +10,7 @@ public class Clazz {
 
     public String type;
 
-    public ArrayList<ClazzMethod> methods;
+    public Set<ClazzMethod> methods;
     public Set<Arg> args;
     public Set<Arg> params;
 
@@ -19,7 +18,7 @@ public class Clazz {
         this.packageName = packageName;
         this.clazzName = clazzName;
 
-        methods = new ArrayList<>();
+        methods = new HashSet<>();
         args = new HashSet<>();
         params = new HashSet<>();
     }
@@ -62,6 +61,22 @@ public class Clazz {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Set<Arg> uniqueArgsByKey(){
+        Set<Arg> set = new HashSet<>();
+        for(Arg arg: args){
+            set.add(new Arg(arg.key, null, arg.type, arg.getArgType()));
+        }
+        return set;
+    }
+
+    public Set<Arg> uniqueParamByKey(){
+        Set<Arg> set = new HashSet<>();
+        for(Arg arg: params){
+            set.add(new Arg(arg.key, null, arg.type, arg.getArgType()));
+        }
+        return set;
     }
 
     @Override
