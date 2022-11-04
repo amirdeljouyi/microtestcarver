@@ -1,0 +1,5941 @@
+### BTrace Log: 02/11/2022, 10:30
+
+org.springframework.samples.petclinic.vet.Vets.<init>:{
+Args: []
+
+Fields: [{
+    name: vets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: specialties,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: specialties,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: specialties,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: specialties,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: specialties,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.vet.Specialty.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.vet.Specialty.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.vet.Specialty.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.vet.Vets.getVetList:{
+Args: []
+
+Fields: [{
+    name: vets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.util.ArrayList,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    name: specialties,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "James",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Carter",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "James",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: specialties,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "James",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Carter",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Carter",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    name: specialties,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [radiology],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Helen",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leary",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Helen",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: specialties,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [radiology],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Helen",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leary",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leary",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "radiology",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "radiology",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    name: specialties,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [dentistry, surgery],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Linda",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Douglas",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 3,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Linda",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: specialties,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [dentistry, surgery],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Linda",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Douglas",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 3,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Douglas",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "surgery",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "surgery",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "dentistry",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 3,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "dentistry",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "dentistry",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 3,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "dentistry",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "surgery",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "surgery",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    name: specialties,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [surgery],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rafael",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Ortega",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 4,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rafael",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: specialties,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [surgery],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rafael",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Ortega",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 4,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Ortega",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "surgery",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "surgery",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    name: specialties,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [radiology],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Henry",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Stevens",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 5,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Henry",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: specialties,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [radiology],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Henry",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Stevens",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 5,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Stevens",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "radiology",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "radiology",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: 
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: 
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: 
+
+}:
+org.springframework.samples.petclinic.model.Person.setLastName:{
+Args: [{
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Delj",
+    fields: [],
+}, ]
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Delj",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Delj",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Delj",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Delj",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Delj",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Delj",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Delj",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Delj",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: 
+
+}:
+org.springframework.samples.petclinic.model.Person.setLastName:{
+Args: [{
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "",
+    fields: [],
+}, ]
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.PetType.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.PetType.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.PetType.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.PetType.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.PetType.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "110 W. Liberty St.",
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Madison",
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085551023",
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Leo],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "110 W. Liberty St.",
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Madison",
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085551023",
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Leo],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.toString:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-09-07,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: cat,
+    fields: [class java.lang.String name=cat, class java.lang.Integer id=1, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+virtual java.lang.String org.springframework.samples.petclinic.model.NamedEntity#getName[Leo]
+Args: []
+
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-09-07,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: cat,
+    fields: [class java.lang.String name=cat, class java.lang.Integer id=1, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}
+
+}:
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "638 Cardinal Ave.",
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Sun Prairie",
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085551749",
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Basil],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Betty",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Davis",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Betty",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "638 Cardinal Ave.",
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Sun Prairie",
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085551749",
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Basil],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Betty",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Davis",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Davis",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.toString:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2012-08-06,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: hamster,
+    fields: [class java.lang.String name=hamster, class java.lang.Integer id=6, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Basil",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2,
+    fields: [],
+}, ]
+
+virtual java.lang.String org.springframework.samples.petclinic.model.NamedEntity#getName[Basil]
+Args: []
+
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2012-08-06,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: hamster,
+    fields: [class java.lang.String name=hamster, class java.lang.Integer id=6, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Basil",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Basil",
+    fields: [],
+}
+
+}:
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Basil",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "2693 Commerce St.",
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "McFarland",
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085558763",
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Jewel, Rosy],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Eduardo",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rodriquez",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 3,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Eduardo",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "2693 Commerce St.",
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "McFarland",
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085558763",
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Jewel, Rosy],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Eduardo",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rodriquez",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 3,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rodriquez",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.toString:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-03-07,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: dog,
+    fields: [class java.lang.String name=dog, class java.lang.Integer id=2, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Jewel",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 4,
+    fields: [],
+}, ]
+
+virtual java.lang.String org.springframework.samples.petclinic.model.NamedEntity#getName[Jewel]
+Args: []
+
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-03-07,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: dog,
+    fields: [class java.lang.String name=dog, class java.lang.Integer id=2, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Jewel",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 4,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Jewel",
+    fields: [],
+}
+
+}:
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Jewel",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.toString:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2011-04-17,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: dog,
+    fields: [class java.lang.String name=dog, class java.lang.Integer id=2, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rosy",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 3,
+    fields: [],
+}, ]
+
+virtual java.lang.String org.springframework.samples.petclinic.model.NamedEntity#getName[Rosy]
+Args: []
+
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2011-04-17,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: dog,
+    fields: [class java.lang.String name=dog, class java.lang.Integer id=2, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rosy",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 3,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rosy",
+    fields: [],
+}
+
+}:
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rosy",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "563 Friendly St.",
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Windsor",
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085553198",
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Iggy],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Harold",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Davis",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 4,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Harold",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "563 Friendly St.",
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Windsor",
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085553198",
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Iggy],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Harold",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Davis",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 4,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Davis",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.toString:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-11-30,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: lizard,
+    fields: [class java.lang.String name=lizard, class java.lang.Integer id=3, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Iggy",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 5,
+    fields: [],
+}, ]
+
+virtual java.lang.String org.springframework.samples.petclinic.model.NamedEntity#getName[Iggy]
+Args: []
+
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-11-30,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: lizard,
+    fields: [class java.lang.String name=lizard, class java.lang.Integer id=3, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Iggy",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 5,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Iggy",
+    fields: [],
+}
+
+}:
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Iggy",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "2387 S. Fair Way",
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Madison",
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085552765",
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [George],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Peter",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "McTavish",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 5,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Peter",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "2387 S. Fair Way",
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Madison",
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085552765",
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [George],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Peter",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "McTavish",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 5,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "McTavish",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.toString:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-01-20,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: snake,
+    fields: [class java.lang.String name=snake, class java.lang.Integer id=4, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 6,
+    fields: [],
+}, ]
+
+virtual java.lang.String org.springframework.samples.petclinic.model.NamedEntity#getName[George]
+Args: []
+
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-01-20,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: snake,
+    fields: [class java.lang.String name=snake, class java.lang.Integer id=4, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 6,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}
+
+}:
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: 
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: 
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: 
+
+}:
+org.springframework.samples.petclinic.model.Person.setLastName:{
+Args: [{
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}, ]
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.PetType.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.<init>:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.PetType.<init>:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@2943711d,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "110 W. Liberty St.",
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Madison",
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085551023",
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Leo],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    name: address,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "110 W. Liberty St.",
+    fields: [],
+}, {
+    name: city,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Madison",
+    fields: [],
+}, {
+    name: telephone,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085551023",
+    fields: [],
+}, {
+    name: pets,
+    type: java.util.List,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Leo],
+    fields: [],
+}, {
+    name: firstName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}, {
+    name: lastName,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-09-07,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: cat,
+    fields: [class java.lang.String name=cat, class java.lang.Integer id=1, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.getBirthDate:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-09-07,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: cat,
+    fields: [class java.lang.String name=cat, class java.lang.Integer id=1, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-09-07,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.getType:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-09-07,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: cat,
+    fields: [class java.lang.String name=cat, class java.lang.Integer id=1, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: cat,
+    fields: [class java.lang.String name=cat, class java.lang.Integer id=1, ],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.toString:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "cat",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+virtual java.lang.String org.springframework.samples.petclinic.model.NamedEntity#getName[cat]
+Args: []
+
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "cat",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "cat",
+    fields: [],
+}
+
+}:
+Return: {
+    name: null,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "cat",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.getVisits:{
+Args: []
+
+Fields: [{
+    name: birthDate,
+    type: java.time.LocalDate,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-09-07,
+    fields: [],
+}, {
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    isPrimitive: false,
+    isInterface: true,
+    object: cat,
+    fields: [class java.lang.String name=cat, class java.lang.Integer id=1, ],
+}, {
+    name: visits,
+    type: java.util.Set,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}, {
+    name: name,
+    type: java.lang.String,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}, {
+    name: id,
+    type: java.lang.Integer,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    name: null,
+    type: org.hibernate.collection.internal.PersistentSet,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [],
+}
+
+}:
