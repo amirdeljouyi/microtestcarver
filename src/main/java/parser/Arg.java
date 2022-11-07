@@ -12,7 +12,7 @@ public class Arg {
     public boolean isInterface;
     private ArgType argType;
 
-    public Set<Arg> params;
+    public Set<Arg> fields;
 
     public Arg(String key, String value){
         this.key = key;
@@ -79,8 +79,8 @@ public class Arg {
     }
 
     public boolean isPrimitiveType(){
-        Utils utils = new Utils();
-        return utils.isPrimitiveType(type);
+        ParserUtils parserUtils = new ParserUtils();
+        return parserUtils.isPrimitiveType(type);
     }
 
     @Override

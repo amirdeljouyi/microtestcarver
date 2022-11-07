@@ -12,6 +12,7 @@ repositories {
 
 dependencies {
     implementation 'info.picocli:picocli:4.6.3'
+    implementation 'fr.inria.gforge.spoon:spoon-core:10.2.0'
 //    implementation files('libs/spring-testing-0.0.1-SNAPSHOT-all.jar')
     implementation files('libs/btrace-client.jar')
     implementation 'org.apache.velocity:velocity-engine-core:2.3'

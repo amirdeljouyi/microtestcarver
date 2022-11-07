@@ -21,9 +21,8 @@ public class ${className}Test {
 #foreach($param in $params)
     #if( !${param.isPrimitiveType()} )
     @Mock
-    #end
     private ${param.getShortType()} $param.key;
-
+    #end
 #end
 
     @BeforeEach
@@ -35,6 +34,15 @@ public class ${className}Test {
 #foreach( $method in $methods )
     @Test
     public void shouldTest${method.methodName}{
+        #foreach( $field in $method.getFields() )
+        #if(${field.isPrimitiveType()} )
+        #set ($combineField = $combine.setField($field))
+        #if(${combineField})
+        subject.$combineField;
+        #end
+        #end
+        #end
+
         #set ($map = $method.clazzMethodsBasedOnFields() )
         #foreach ($mapEntry in $map.entrySet())
         given(${mapEntry.value.getKey()}.${mapEntry.key.getMethodName()}(#foreach($arg in ${mapEntry.key.getArgs()})${arg.value}#if( $foreach.hasNext ), #end#end)).willReturn(${mapEntry.key.returnField.value});

@@ -7,6 +7,7 @@ public class BasicMethod {
     public String methodName;
 
     public Set<Arg> args;
+    public Set<Arg> fields;
     public Set<String> argTypes;
 
     public Clazz clazz;
@@ -21,6 +22,7 @@ public class BasicMethod {
 
         this.args = new HashSet<>();
         this.argTypes = new HashSet<>();
+        this.fields = new HashSet<>();
     }
 
     public BasicMethod(Clazz clazz, String methodName, String returnType, String[] argTypes, String instanceObject) {
@@ -34,6 +36,7 @@ public class BasicMethod {
         this.instanceObject = instanceObject;
 
         this.args = new HashSet<>();
+        this.fields = new HashSet<>();
     }
 
     public String fullName(){
@@ -54,6 +57,18 @@ public class BasicMethod {
 
     public Set<Arg> getArgs(){
         return args;
+    }
+
+    public void addField(Arg arg){
+        this.fields.add(arg);
+    }
+
+    public void setFields(Set<Arg> args){
+        this.fields.addAll(args);
+    }
+
+    public Set<Arg> getFields(){
+        return fields;
     }
 
     public Boolean hasReturn(){

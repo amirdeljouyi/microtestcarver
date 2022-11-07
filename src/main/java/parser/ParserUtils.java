@@ -1,8 +1,8 @@
 package parser;
 
-public class Utils {
+public class ParserUtils {
 
-    public Utils(){}
+    public ParserUtils(){}
 
     public boolean containsAll(String line, String [] words){
         for (String word : words){

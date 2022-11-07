@@ -16,14 +16,14 @@ public class Parser {
     private HashMap<String, Clazz> clazzSet;
 
     public String time;
-    private Utils util;
+    private ParserUtils util;
 
     public Parser(InputStream inputStream) {
         this.inputStream = inputStream;
         this.clazzMethods = new ArrayList<>();
         this.stackClazz = new Stack<>();
         this.clazzSet = new HashMap<>();
-        util = new Utils();
+        util = new ParserUtils();
     }
 
     public void readLines() {
@@ -91,7 +91,7 @@ public class Parser {
                 args.add(new Arg(key, value, type));
             }
         }
-        lastArg.params = args;
+        lastArg.fields = args;
     }
 
     private void tokenObject(String line) {
@@ -122,27 +122,15 @@ public class Parser {
     private void tokenEndNewArg(String line) {
         Arg.ArgType argType = lastArg.getArgType();
 
-        if (lastArg.isField() && (lastMethodClazz instanceof ClazzMethod)) {
-            lastMethodClazz.clazz.addParam(lastArg);
-            clazzSet.put(lastMethodClazz.clazz.fullName(), lastMethodClazz.clazz);
-        } else {
-            lastMethodClazz.addArg(lastArg);
-        }
+        addArgsFieldsParams();
         System.out.println(lastArg);
-
 
         Arg arg = new Arg(argType);
         this.lastArg = arg;
     }
 
     private void tokenEndArg(String line) {
-
-        if (lastArg.isField() && (lastMethodClazz instanceof ClazzMethod)) {
-            lastMethodClazz.clazz.addParam(lastArg);
-            clazzSet.put(lastMethodClazz.clazz.fullName(), lastMethodClazz.clazz);
-        } else if (lastArg.isArg()) {
-            lastMethodClazz.addArg(lastArg);
-        }
+        addArgsFieldsParams();
 
         if (!(lastMethodClazz instanceof ClazzMethod)) {
             stackClazz.peek().addMethodCallee(lastMethodClazz);
@@ -152,6 +140,18 @@ public class Parser {
 
         lastArg = null;
 
+    }
+
+    private void addArgsFieldsParams(){
+        if (lastArg.isField() && (lastMethodClazz instanceof ClazzMethod)) {
+            // Add a Param to Clazz
+            lastMethodClazz.clazz.addParam(lastArg);
+            clazzSet.put(lastMethodClazz.clazz.fullName(), lastMethodClazz.clazz);
+            // Add a Field to ClazzMethod
+            lastMethodClazz.addField(lastArg);
+        } else if (lastArg.isArg()) {
+            lastMethodClazz.addArg(lastArg);
+        }
     }
 
     private void tokenEndRet(String line) {
@@ -214,7 +214,6 @@ public class Parser {
             stackClazz.peek().addMethodCallee(lastMethodClazz);
         }
     }
-
 
     private void tokenReturn(String line) {
         Arg arg = new Arg(Arg.ArgType.RETURN);

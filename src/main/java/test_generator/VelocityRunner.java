@@ -17,13 +17,15 @@ import java.util.Map;
 public class VelocityRunner {
 
     private HashMap<String, Clazz> clazzSet;
+    private String sourceDirectory;
     VelocityEngine velocityEngine;
     Template template;
 
-    public VelocityRunner(){
+    public VelocityRunner(String sourceDirectory){
         clazzSet = new HashMap<>();
+        this.sourceDirectory = sourceDirectory;
 
-        VelocityEngine velocityEngine = new VelocityEngine();
+       velocityEngine = new VelocityEngine();
 
         velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADER, "class,file");
         velocityEngine.setProperty("class.resource.loader.class", "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
@@ -37,6 +39,7 @@ public class VelocityRunner {
             String k = entry.getKey();
             Clazz v = entry.getValue();
             VelocityContext context = new VelocityContext();
+            CombineClazz combineClazz = new CombineClazz(v, sourceDirectory);
 
             System.out.println("=========================");
             System.out.println("Clazz: " + v.fullName());
@@ -45,11 +48,14 @@ public class VelocityRunner {
                 System.out.println(item.clazzMethodsBasedOnFields());
             }
 
+            System.out.println(combineClazz);
+
             context.put("className", v.clazzName);
             context.put("packageName", v.packageName);
             context.put("methods", v.methods);
             context.put("args", v.args);
             context.put("params", v.uniqueParamByKey());
+            context.put("combine", combineClazz);
 
             try {
                 Writer writer = new FileWriter(new File("./test-output/" + v.clazzName + "Test.java"));

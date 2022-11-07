@@ -12,8 +12,11 @@ import java.lang.reflect.Field;
 
 @Command(name = "parser")
 public class ParserCommand {
-    @Option(names = {"-f", "--file"}, description = "File Name, Required", required = true)
+    @Option(names = {"-f", "--file"}, description = "File Name")
     String file;
+
+    @Option(names = {"-i", "--input"}, description = "Source Directory")
+    String input;
 
 
     @Command
@@ -23,7 +26,7 @@ public class ParserCommand {
         Parser parser = new Parser(inputStream);
         parser.readLines();
 
-        VelocityRunner vRunner = new VelocityRunner();
+        VelocityRunner vRunner = new VelocityRunner(input);
         vRunner.setClazzSet(parser.getClazzSet());
         vRunner.write();
     }
