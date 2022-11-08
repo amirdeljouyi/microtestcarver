@@ -35,7 +35,7 @@ public class CombineClazz {
         this.staticClazz = mainClass;
     }
 
-    public String setField(Arg field){
+    public String setDeclarationField(Arg field){
         String fieldName = field.getKey();
         System.out.println("FieldName :" + fieldName);
         CtFieldReference stReferenceField = this.staticClazz.getDeclaredOrInheritedField(fieldName);
@@ -44,8 +44,30 @@ public class CombineClazz {
             return null;
         CtField stField =  stReferenceField.getFieldDeclaration();
         System.out.println("FieldDeclaration: " + stField);
+        return getFieldSetter(stField, fieldName, field.getValue());
+    }
+
+    public String setField(Arg field){
+        String fieldName = field.getKey();
+        System.out.println("FieldName :" + fieldName);
+        CtField stField = this.staticClazz.getField(fieldName);
+        System.out.println("Field: " + stField);
+        if(stField == null)
+            return null;
+
+        return getFieldSetter(stField, fieldName, field.getValue());
+    }
+
+    public String setFields(Arg field){
+        String string = setField(field);
+        if(string == null)
+            return setDeclarationField(field);
+        return string;
+    }
+
+    private String getFieldSetter(CtField stField, String fieldName, String fieldValue){
         if(stField.isPublic()){
-            return fieldName + " = " + field.getValue();
+            return fieldName + " = " + fieldValue;
         } else{
             String setterName = "set" + fieldName.substring(0,1).toUpperCase() + fieldName.substring(1).toLowerCase();
 
@@ -60,9 +82,11 @@ public class CombineClazz {
             }
             System.out.println("StMethod: " + stMethod);
             if(stMethod != null && !stMethod.isPrivate())
-                return setterName + "(" + field.value + ")";
+                return setterName + "(" + fieldValue + ")";
 //            }
         }
         return null;
     }
+
+
 }
