@@ -151,6 +151,9 @@ public class Parser {
             lastMethodClazz.addField(lastArg);
         } else if (lastArg.isArg()) {
             lastMethodClazz.addArg(lastArg);
+            if(lastMethodClazz instanceof ClazzMethod)
+                if(((ClazzMethod) lastMethodClazz).isInitMethod)
+                    lastMethodClazz.clazz.addArg(lastArg);
         }
     }
 
@@ -282,7 +285,12 @@ public class Parser {
         Clazz item = findOrCreateClazz(packageName, clazzName);
 
         ClazzMethod method = new ClazzMethod(item, methodName);
-        item.addMethod(method);
+        if(methodName.equals("<init>")) {
+            method.isInitMethod = true;
+            item.initMethod = method;
+        }else {
+            item.addMethod(method);
+        }
         clazzSet.put(clazzKey, item);
 
         return method;

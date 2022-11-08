@@ -14,6 +14,8 @@ public class Clazz {
     public Set<Arg> args;
     public Set<Arg> params;
 
+    public ClazzMethod initMethod;
+
     public Clazz(String packageName, String clazzName){
         this.packageName = packageName;
         this.clazzName = clazzName;

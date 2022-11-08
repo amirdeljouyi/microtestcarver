@@ -36,7 +36,7 @@ public class ${className}Test {
     public void shouldTest${method.methodName}{
         #foreach( $field in $method.getFields() )
         #if(${field.isPrimitiveType()} )
-        #set ($combineField = $combine.setField($field))
+        #set ($combineField = $combine.setFields($field))
         #if(${combineField})
         subject.$combineField;
         #end
