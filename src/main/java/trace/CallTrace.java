@@ -66,7 +66,7 @@ public class CallTrace {
             method = "${methodName}/",
             location = @Location(Kind.RETURN)
     )
-    public static void onMethodReturn(@Return AnyType callbackData) {
+    public static void onMethodReturnWithCallback(@Return AnyType callbackData) {
         printDetailedObject("Return", callbackData);
     }
 }

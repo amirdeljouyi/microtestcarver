@@ -12,7 +12,7 @@ public class Clazz {
 
     public Set<ClazzMethod> methods;
     public Set<Arg> args;
-    public Set<Arg> params;
+    public Set<Arg> fields;
 
     public ClazzMethod initMethod;
 
@@ -22,7 +22,7 @@ public class Clazz {
 
         methods = new HashSet<>();
         args = new HashSet<>();
-        params = new HashSet<>();
+        fields = new HashSet<>();
     }
 
     public String fullName(){
@@ -54,7 +54,7 @@ public class Clazz {
     }
 
     public void addParam(Arg arg){
-        this.params.add(arg);
+        this.fields.add(arg);
     }
 
     public String getType() {
@@ -75,7 +75,7 @@ public class Clazz {
 
     public Set<Arg> uniqueParamByKey(){
         Set<Arg> set = new HashSet<>();
-        for(Arg arg: params){
+        for(Arg arg: fields){
             set.add(new Arg(arg.key, null, arg.type, arg.getArgType()));
         }
         return set;
