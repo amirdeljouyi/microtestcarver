@@ -107,6 +107,61 @@ public class Clazz {
         return mockableFields;
     }
 
+    public Set<Arg> uniqueFieldsNotMockable(){
+        Set<Arg> mockableFields = mockableFields();
+        Set<Arg> uniqueFields = uniqueParamByKey();
+        Set<Arg> set = new HashSet<>();
+
+        for (Arg field :uniqueFields){
+            if(!mockableFields.contains(field))
+                set.add(field);
+        }
+
+        return set;
+    }
+
+    public Set<Arg> initialFieldState(){
+        Set<Arg> uniqueFields = uniqueFieldsNotMockable();
+
+        // init
+        Map<String, NavigableMap> priorityMap = new HashMap<>();
+        for(Arg field: uniqueFields){
+            NavigableMap<String, ArgRepetition> maxHeap = new TreeMap<>();
+            priorityMap.put(field.getKey(), maxHeap);
+        }
+
+        for(ClazzMethod method: methods){
+            for(Arg field: method.getFields()){
+                addOrIncreaseMapItem(priorityMap, field);
+            }
+        }
+        for(Arg field: fields){
+            addOrIncreaseMapItem(priorityMap, field);
+        }
+
+        Set<Arg> set = new HashSet<>();
+        for(NavigableMap map: priorityMap.values()){
+            Map.Entry<String, ArgRepetition> entry = map.firstEntry();
+            System.out.println("ARG: " + entry.getValue().getArg() + " REPETITION: "+ entry.getValue().getRepetition());
+            set.add(entry.getValue().getArg());
+        }
+        return set;
+    }
+
+    private void addOrIncreaseMapItem(Map<String, NavigableMap> priorityMap, Arg field) {
+        NavigableMap<String, ArgRepetition> map = priorityMap.get(field.getKey());
+        if (map == null)
+            return;
+
+        if(!map.containsKey(field.getValue())) {
+            map.put(field.getValue(), new ArgRepetition(field));
+        } else{
+            ArgRepetition arg = map.get(field.getValue());
+            arg.increaseRepetition();
+        }
+
+    }
+
     @Override
     public int hashCode(){
         return Objects.hash(packageName, clazzName);

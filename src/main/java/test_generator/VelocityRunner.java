@@ -56,6 +56,7 @@ public class VelocityRunner {
             context.put("args", v.args);
             context.put("params", v.mockableFields());
             context.put("combine", combineClazz);
+            context.put("initialFields", v.initialFieldState());
 
             try {
                 Writer writer = new FileWriter(new File("./test-output/" + v.clazzName + "Test.java"));
