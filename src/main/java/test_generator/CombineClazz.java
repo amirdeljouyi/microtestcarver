@@ -69,9 +69,9 @@ public class CombineClazz {
         if(stField.isPublic()){
             return fieldName + " = " + fieldValue;
         } else{
-            String setterName = "set" + fieldName.substring(0,1).toUpperCase() + fieldName.substring(1).toLowerCase();
+            String setterName = "set" + fieldName.substring(0,1).toUpperCase() + fieldName.substring(1);
 
-            System.out.println("setterName: "+ setterName);
+            System.out.println("setterName: " + setterName);
             Set<CtMethod> allMethods = staticClazz.getAllMethods();
             CtMethod stMethod = null;
             for(CtMethod method: allMethods){
