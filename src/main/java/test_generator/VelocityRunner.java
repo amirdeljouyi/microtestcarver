@@ -54,7 +54,7 @@ public class VelocityRunner {
             context.put("packageName", v.packageName);
             context.put("methods", v.methods);
             context.put("args", v.args);
-            context.put("params", v.uniqueParamByKey());
+            context.put("params", v.mockableFields());
             context.put("combine", combineClazz);
 
             try {

@@ -1,8 +1,6 @@
 package parser;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Clazz {
     public String clazzName;
@@ -79,6 +77,34 @@ public class Clazz {
             set.add(new Arg(arg.key, null, arg.type, arg.getArgType()));
         }
         return set;
+    }
+
+    public Set<Arg> complexUniqueParams(){
+        Set<Arg> params = uniqueParamByKey();
+        Set<Arg> set = new HashSet<>();
+        for(Arg arg: fields){
+            if(!arg.isPrimitiveType())
+                set.add(arg);
+        }
+        return set;
+    }
+
+    public Set<Arg> mockableFields(){
+        Set<Arg> params = complexUniqueParams();
+        Set<Arg> mockableFields = new HashSet<>();
+        for(ClazzMethod method: methods){
+            Collection<BasicMethod> calleeSet = method.calleeAndChildren().values();
+            for (Arg param: params){
+                for(BasicMethod ce : calleeSet){
+                    if(param.value.isEmpty())
+                        continue;
+                    if(param.value.equals(ce.instanceObject)){
+                        mockableFields.add(param);
+                    }
+                }
+            }
+        }
+        return mockableFields;
     }
 
     @Override

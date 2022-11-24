@@ -1,0 +1,8 @@
+    private ${className} subject;
+
+#foreach($param in $params)
+    #if( !${param.isPrimitiveType()} )
+    @Mock
+    private ${param.getShortType()} $param.key;
+    #end
+#end
