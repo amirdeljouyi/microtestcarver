@@ -48,7 +48,7 @@ public class Parser {
                     tokenReturn(line);
                 } else if (line.contains("Callback: {")) {
                     tokenCallback(line);
-                } else if (line.contains("}, ]")) {
+                } else if (line.equals("}, ]")) {
                     tokenEndArg(line);
                 } else if (line.contains("}, {")) {
                     tokenEndNewArg(line);
@@ -85,8 +85,14 @@ public class Parser {
             if (!argString.isEmpty() && argString != null) {
                 String[] dual = argString.split("=");
                 String[] detailedType = dual[0].split(" ");
-                String type = detailedType[1];
-                String key = detailedType[2];
+                String key;
+                String type = "class";
+                if(detailedType.length == 2){
+                    key = detailedType[1];
+                } else {
+                    type = detailedType[1];
+                    key = detailedType[2];
+                }
                 String value = dual[1];
                 args.add(new Arg(key, value, type));
             }
@@ -263,8 +269,11 @@ public class Parser {
             argTypes = null;
             methodParts = clazzParts[1].split("\\[");
             methodName = methodParts[0];
+            if(methodParts.length>2){
+                methodParts[1] = (String) walkFindNotNull(Arrays.asList(methodParts), 1, methodParts.length);
+            }
         }
-        // remove last [
+
         String instanceObject = methodParts[1].substring(0, methodParts[1].length() - 1);
 
         Clazz item = findOrCreateClazz(packageName, clazzName);
@@ -309,5 +318,21 @@ public class Parser {
 
     public HashMap<String, Clazz> getClazzSet() {
         return clazzSet;
+    }
+
+    private Object walkFindNotNull(List list, int from, int to){
+        for(int i=from; i<to; i++){
+            Object object = list.get(i);
+            if(object != null){
+                if (object.getClass().getTypeName().equals("java.lang.String")){
+                    if(!((String) object).isEmpty()){
+                        return object;
+                    }
+                }else {
+                    return object;
+                }
+            }
+        }
+        return null;
     }
 }

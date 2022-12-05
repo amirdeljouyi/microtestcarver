@@ -33,7 +33,7 @@ public class ${className}Test {
 
 #foreach( $method in $methods )
     @Test
-    public void shouldTest${method.methodName}{
+    public void shouldTest${method.methodName}(){
         #foreach($field in $method.getFields() )
         #if(!$initialFields.contains($field))
         #set($combineField = $combine.setFields($field))
