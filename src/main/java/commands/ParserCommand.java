@@ -18,12 +18,16 @@ public class ParserCommand {
     @Option(names = {"-i", "--input"}, description = "Source Directory")
     String input;
 
+    @Option(names = {"-p", "--pool"}, description = "Pool Folder Directory")
+    String poolDir;
+
 
     @Command
     void parse() {
         String fileDirectory = "/trace-output/" + file;
+        poolDir = "/trace-output/" + poolDir;
         InputStream inputStream = this.getClass().getResourceAsStream(fileDirectory);
-        Parser parser = new Parser(inputStream);
+        Parser parser = new Parser(inputStream, poolDir);
         parser.readLines();
 
         VelocityRunner vRunner = new VelocityRunner(input);

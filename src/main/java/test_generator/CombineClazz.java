@@ -29,7 +29,7 @@ public class CombineClazz {
         Factory spoon = launcher.getFactory();
 //        CtModel model = spoon.getModel();
         CtType<?> mainClass = spoon.Type().get(dynamicClazz.fullName());
-        System.out.println(mainClass.getAllMethods());
+//        System.out.println(mainClass.getAllMethods());
 
         this.dynamicClazz = dynamicClazz;
         this.staticClazz = mainClass;
@@ -37,21 +37,21 @@ public class CombineClazz {
 
     public String setDeclarationField(Arg field){
         String fieldName = field.getKey();
-        System.out.println("FieldName :" + fieldName);
+//        System.out.println("FieldName :" + fieldName);
         CtFieldReference stReferenceField = this.staticClazz.getDeclaredOrInheritedField(fieldName);
-        System.out.println("FieldReference: "+ stReferenceField);
+//        System.out.println("FieldReference: "+ stReferenceField);
         if(stReferenceField == null)
             return null;
         CtField stField =  stReferenceField.getFieldDeclaration();
-        System.out.println("FieldDeclaration: " + stField);
+//        System.out.println("FieldDeclaration: " + stField);
         return getFieldSetter(stField, fieldName, field.getValue());
     }
 
     public String setField(Arg field){
         String fieldName = field.getKey();
-        System.out.println("FieldName :" + fieldName);
+//        System.out.println("FieldName :" + fieldName);
         CtField stField = this.staticClazz.getField(fieldName);
-        System.out.println("Field: " + stField);
+//        System.out.println("Field: " + stField);
         if(stField == null)
             return null;
 
@@ -71,7 +71,7 @@ public class CombineClazz {
         } else{
             String setterName = "set" + fieldName.substring(0,1).toUpperCase() + fieldName.substring(1);
 
-            System.out.println("setterName: " + setterName);
+//            System.out.println("setterName: " + setterName);
             Set<CtMethod> allMethods = staticClazz.getAllMethods();
             CtMethod stMethod = null;
             for(CtMethod method: allMethods){
@@ -80,7 +80,7 @@ public class CombineClazz {
                     break;
                 }
             }
-            System.out.println("StMethod: " + stMethod);
+//            System.out.println("StMethod: " + stMethod);
             if(stMethod != null && !stMethod.isPrivate())
                 return setterName + "(" + fieldValue + ")";
 //            }

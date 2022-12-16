@@ -1,5 +1,10 @@
 package parser;
 
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvider;
+import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
+import com.thoughtworks.xstream.security.AnyTypePermission;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,22 +13,32 @@ import java.util.*;
 
 public class Parser {
 
+    public String poolDir;
     public InputStream inputStream;
+
+
+    private XStream xstream;
+    public String time;
+    private ParserUtils util;
+
     private ArrayList<ClazzMethod> clazzMethods;
     private BasicMethod lastMethodClazz;
     private Stack<ClazzMethod> stackClazz;
     private Arg lastArg;
     private HashMap<String, Clazz> clazzSet;
 
-    public String time;
-    private ParserUtils util;
-
-    public Parser(InputStream inputStream) {
+    public Parser(InputStream inputStream, String poolDir) {
         this.inputStream = inputStream;
+        this.poolDir = poolDir;
         this.clazzMethods = new ArrayList<>();
         this.stackClazz = new Stack<>();
         this.clazzSet = new HashMap<>();
         util = new ParserUtils();
+
+        xstream = new XStream(new SunUnsafeReflectionProvider(), new JettisonMappedXmlDriver());
+        xstream.setMode(XStream.NO_REFERENCES);
+        xstream.ignoreUnknownElements();
+        xstream.addPermission(AnyTypePermission.ANY);
     }
 
     public void readLines() {
@@ -54,10 +69,14 @@ public class Parser {
                     tokenEndNewArg(line);
                 } else if (line.contains("}:")) {
                     tokenEndClazzMethod(line);
+                } else if (line.contains("hash: ")) {
+                    tokenHash(line);
                 } else if (line.contains("name: ")) {
                     tokenName(line);
                 } else if (line.contains("type: ")) {
                     tokenType(line);
+                } else if (line.contains("serialized: ")) {
+                    tokenSerialized(line);
                 } else if (line.contains("isPrimitive: ")) {
                     tokenIsPrimitive(line);
                 } else if (line.contains("isInterface: ")) {
@@ -73,7 +92,7 @@ public class Parser {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(clazzMethods);
+//        System.out.println(clazzMethods);
     }
 
     private void tokenFields(String line) {
@@ -110,6 +129,11 @@ public class Parser {
         lastArg.isInterface = Boolean.parseBoolean(line);
     }
 
+    private void tokenHash(String line) {
+        line = line.substring(10, line.length() - 1);
+        lastArg.hash = line;
+    }
+
     private void tokenName(String line) {
         line = line.substring(10, line.length() - 1);
         lastArg.key = line;
@@ -120,6 +144,20 @@ public class Parser {
         lastArg.type = line;
     }
 
+    private void tokenSerialized(String line) {
+        line = line.substring(16, line.length() - 1);
+        lastArg.serialized = Boolean.parseBoolean(line);
+        if(lastArg.serialized){
+            String fileName = poolDir + "/" + lastArg.hash + ".json";
+            InputStream inputStream = this.getClass().getResourceAsStream(fileName);
+            lastArg.serializedValue = xstream.fromXML(inputStream);
+            System.out.println("Serialized Object: " + lastArg.serializedValue);
+            if(lastArg.serializedValue != null)
+                System.out.println("Class: " + lastArg.serializedValue.getClass());
+        }
+    }
+
+
     private void tokenIsPrimitive(String line) {
         line = line.substring(16, line.length() - 1);
         lastArg.isPrimitive = Boolean.parseBoolean(line);
@@ -129,7 +167,7 @@ public class Parser {
         Arg.ArgType argType = lastArg.getArgType();
 
         addArgsFieldsParams();
-        System.out.println(lastArg);
+//        System.out.println(lastArg);
 
         Arg arg = new Arg(argType);
         this.lastArg = arg;
@@ -142,7 +180,7 @@ public class Parser {
             stackClazz.peek().addMethodCallee(lastMethodClazz);
         }
 
-        System.out.println(lastArg);
+//        System.out.println(lastArg);
 
         lastArg = null;
 
@@ -171,7 +209,7 @@ public class Parser {
             lastMethodClazz.returnField = lastArg;
         }
 
-        System.out.println(lastArg);
+//        System.out.println(lastArg);
         lastArg = null;
     }
 
@@ -188,13 +226,13 @@ public class Parser {
         }
         lastMethodClazz = cm;
         stackClazz.push(cm);
-        System.out.println("class parsed: " + cm);
+//        System.out.println("class parsed: " + cm);
     }
 
     private void tokenMethod(String line) {
         BasicMethod cm = methodCallParser(line);
         lastMethodClazz = cm;
-        System.out.println("method parsed: " + cm);
+//        System.out.println("method parsed: " + cm);
     }
 
 //    private void tokenStartClazzMethod(String line){

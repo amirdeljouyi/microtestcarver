@@ -7,6 +7,10 @@ public class Arg {
     public String key;
     public String value;
     public String type;
+    public String hash;
+
+    public Boolean serialized;
+    public Object serializedValue;
 
     public boolean isPrimitive;
     public boolean isInterface;
