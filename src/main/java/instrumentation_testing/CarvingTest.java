@@ -1,5 +1,8 @@
 package instrumentation_testing;
 
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvider;
+import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
 import org.openjdk.btrace.core.BTraceUtils;
 
 import java.lang.reflect.Field;
@@ -19,45 +22,66 @@ public class CarvingTest {
 
     public static Field[] getAllFields(Class<?> clazz) {
         return AccessController.doPrivileged(
-                (PrivilegedAction<Field[]>)
-                        () -> {
-                            try {
-                                Field[] fields = clazz.getDeclaredFields();
-                                for (Field f : fields) {
-                                    f.setAccessible(true);
-                                }
-                                return fields;
-                            } catch (Exception exp) {
-                                throw translate(exp);
-                            }
-                        });
+            (PrivilegedAction<Field[]>)
+                () -> {
+                    try {
+                        Field[] fields = clazz.getDeclaredFields();
+                        for (Field f : fields) {
+                            f.setAccessible(true);
+                        }
+                        return fields;
+                    } catch (Exception exp) {
+                        throw translate(exp);
+                    }
+                });
     }
 
     public static void main(String[] args) {
         ATest aTest = new ATest();
         aTest.a.add(10);
+        aTest.a.add(20);
         aTest.s = "amir";
         String s = "sd";
+        aTest.bs.add(new BTest(2, "ads"));
+        XStream xstream = new XStream(new SunUnsafeReflectionProvider(), new JettisonMappedXmlDriver());
+        xstream.getConverterLookup().lookupConverterForType(aTest.getClass());
+        xstream.setMode(XStream.NO_REFERENCES);
+        xstream.ignoreUnknownElements();
+        String dataJson = xstream.toXML(aTest);
+        System.out.println(dataJson);
+
         Field[] fields = getAllFields(aTest.getClass());
         for (Field f: fields){
-            System.out.println(f.getGenericType().getTypeName());
+//            System.out.println(f.getGenericType().getTypeName());
             try {
                 FieldDetailed fieldDetailed = new FieldDetailed(f.getName(), f.getGenericType().getTypeName(), f.getType().isPrimitive(), f.get(aTest));
-                System.out.println(fieldDetailed);
+//                System.out.println(fieldDetailed);
+                if(fieldDetailed.object != null)
+                    System.out.println(xstream.toXML(fieldDetailed.object));
             } catch (IllegalAccessException e) {
                 throw translate(e);
             }
-
         }
     }
 
     public static class ATest{
         public ArrayList<Integer> a;
+        public ArrayList<BTest> bs;
         public String s;
         public String s2;
         ATest(){
              a = new ArrayList<>();
+             bs = new ArrayList<>();
 
+        }
+    }
+
+    public static class BTest{
+        public int a;
+        public String s;
+        BTest(int a, String s){
+            this.a = a;
+            this.s = s;
         }
     }
 
