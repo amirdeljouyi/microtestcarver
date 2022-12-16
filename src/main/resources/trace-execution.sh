@@ -5,6 +5,7 @@ cd "$DIR_PATH"
 pwd=$(pwd)
 echo "$pwd"
 TRACE_CLASS_PATH=../java/trace/CallTrace.java
+source ./.env
 #OUTPUT_PATH="$pwd/trace-output/$5"
 OUTPUT_PATH=$5
 PACKAGE_NAME=/$2
