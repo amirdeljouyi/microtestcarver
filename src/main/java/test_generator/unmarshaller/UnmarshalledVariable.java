@@ -9,12 +9,12 @@ public class UnmarshalledVariable {
     Object source;
     Arg arg;
     UnmarshalMode mode;
-    InitializeMode initMode;
+    InitializeMode initMode = InitializeMode.INLINE;
 
     String variableName;
 
 
-    UnmarshalledVariable(Arg arg){
+    public UnmarshalledVariable(Arg arg){
         this.arg = arg;
 
         if(arg.serialized){
@@ -29,7 +29,7 @@ public class UnmarshalledVariable {
         }
     }
 
-    UnmarshalledVariable(Object source){
+    public UnmarshalledVariable(Object source){
         this.source = source;
         this.mode = UnmarshalMode.DESERIALIZE;
     }
@@ -41,34 +41,42 @@ public class UnmarshalledVariable {
 
     public void unmarshal(StringBuilder buf){
         if(mode.equals(UnmarshalMode.DESERIALIZE)){
-            unmarshalDeserialize();
+            unmarshalDeserialize(buf);
         } else if (mode.equals(UnmarshalMode.TO_STRING)){
-            unmarshalToString();
+            unmarshalToString(buf);
         } else if (mode.equals(UnmarshalMode.GUESS)){
-            unmarshalGuess();
+            unmarshalGuess(buf);
         }
     }
 
-    private void unmarshalDeserialize(){
+    private void unmarshalDeserialize(StringBuilder buf){
+        if(source == null)
+            return;
+
         if(source.getClass().equals(Optional.class)){
-
+            OptionalUnmarshaller unmarshaller = new OptionalUnmarshaller(buf);
+//            unmarshaller.unmarshalString(source);
+            System.out.println("buf: " + buf);
+        } else {
+            ReflectionUnmarshaller unmarshaller = new ReflectionUnmarshaller(buf);
+//            unmarshaller.unmarshalString(source);
         }
     }
 
-    public String getInlineOrVariable(){
+    public String getInlineOrVariable(StringBuilder buf){
         if(initMode.equals(InitializeMode.INLINE)){
-            // TODO
-            return null;
+            unmarshal(buf);
+            return buf.toString();
         } else{
             return variableName;
         }
     }
 
-    private void unmarshalToString(){
+    private void unmarshalToString(StringBuilder buf){
 
     }
 
-    private void unmarshalGuess(){
+    private void unmarshalGuess(StringBuilder buf){
 
     }
 

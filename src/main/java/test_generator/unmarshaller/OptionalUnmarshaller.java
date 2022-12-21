@@ -1,5 +1,7 @@
 package test_generator.unmarshaller;
 
+import spoon.reflect.declaration.CtType;
+
 import java.util.Optional;
 
 public class OptionalUnmarshaller extends AbstractUnmarshaller{
@@ -9,15 +11,16 @@ public class OptionalUnmarshaller extends AbstractUnmarshaller{
     }
 
     @Override
-    public String instantiate(Object source) {
+    public StringBuilder instantiate(Object source, CtType staticClazz) {
         Optional typedSource = (Optional) source;
         if(typedSource.isEmpty()){
-            return "Optional.empty();";
+            buf.append("Optional.empty();");
         } else {
             UnmarshalledVariable uv = new UnmarshalledVariable(typedSource.get());
             uv.unmarshal(buf);
-            return "Optional.of(" + uv.getInlineOrVariable() + ")";
+            buf.append("Optional.of(" + uv.getInlineOrVariable(buf) + ")");
         }
+        return buf;
     }
 
     @Override

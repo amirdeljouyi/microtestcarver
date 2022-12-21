@@ -1,5 +1,7 @@
 package test_generator.unmarshaller;
 
+import spoon.reflect.declaration.CtType;
+
 public class CollectionUnmarshaller extends AbstractUnmarshaller{
 
     CollectionUnmarshaller(StringBuilder buf) {
@@ -7,7 +9,7 @@ public class CollectionUnmarshaller extends AbstractUnmarshaller{
     }
 
     @Override
-    public String instantiate(Object source) {
+    public StringBuilder instantiate(Object source, CtType staticClazz) {
         return null;
     }
 

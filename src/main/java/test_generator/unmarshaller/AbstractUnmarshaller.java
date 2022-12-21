@@ -1,5 +1,7 @@
 package test_generator.unmarshaller;
 
+import spoon.reflect.declaration.CtType;
+
 public abstract class AbstractUnmarshaller {
 
     StringBuilder buf;
@@ -8,14 +10,14 @@ public abstract class AbstractUnmarshaller {
         this.buf = buf;
     }
 
-    public StringBuilder unmarshalString(Object source){
-        buf.append(instantiate(source));
+    public StringBuilder unmarshalString(Object source,  CtType staticClazz){
+        buf.append(instantiate(source, staticClazz));
         buf.append("\n");
         buf.append(populate(source));
         return buf;
     }
 
-    public abstract String instantiate(Object source);
+    public abstract StringBuilder instantiate(Object source, CtType staticClazz);
 
     public abstract String populate(Object source);
     // canUnmarshal
