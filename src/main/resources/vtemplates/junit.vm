@@ -44,12 +44,12 @@ public class ${className}Test {
         #end
         #set ($map = $method.clazzMethodsBasedOnFields() )
         #foreach ($mapEntry in $map.entrySet())
-        given(${mapEntry.value.getKey()}.${mapEntry.key.getMethodName()}(#foreach($arg in ${mapEntry.key.getArgs()})${arg.value}#if( $foreach.hasNext ), #end#end)).willReturn(${mapEntry.key.returnField.value});
+        given(${mapEntry.value.getKey()}.${mapEntry.key.getMethodName()}(#foreach($arg in ${mapEntry.key.getArgs()})${arg.value}#if( $foreach.hasNext ), #end#end)).willReturn($combine.revealObject($mapEntry.key.returnField));
         #end
         #if($method.hasReturn())
         #parse("vtemplates/assertion.vm")
         #else
-        subject.${method.methodName}(#foreach($arg in ${method.getArgs()})${arg.getValue}#if( $foreach.hasNext ), #end#end);
+        subject.${method.methodName}(#foreach($arg in ${method.getArgs()})${arg.getValue()}#if( $foreach.hasNext ), #end#end);
         #end
     }
 
