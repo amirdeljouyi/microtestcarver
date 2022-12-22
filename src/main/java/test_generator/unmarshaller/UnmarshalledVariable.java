@@ -38,31 +38,30 @@ public class UnmarshalledVariable {
         this.mode = UnmarshalMode.DESERIALIZE;
     }
 
-    public void unmarshal() {
+    public String unmarshal() {
         StringBuilder buf = new StringBuilder();
-        unmarshal(buf);
+        return unmarshal(buf);
     }
 
-    public void unmarshal(StringBuilder buf){
+    public String unmarshal(StringBuilder buf){
         if(mode.equals(UnmarshalMode.DESERIALIZE)){
-            unmarshalDeserialize(buf);
+            return unmarshalDeserialize(buf);
         } else if (mode.equals(UnmarshalMode.TO_STRING)){
-            unmarshalToString(buf);
+            return unmarshalToString(buf);
         } else if (mode.equals(UnmarshalMode.GUESS)){
-            unmarshalGuess(buf);
+            return unmarshalGuess(buf);
         }
+        return null;
     }
 
-    private void unmarshalDeserialize(StringBuilder buf){
-        if(source == null)
-            return;
+    private String unmarshalDeserialize(StringBuilder buf){
 
         if(source.getClass().equals(Optional.class)){
             OptionalUnmarshaller unmarshaller = new OptionalUnmarshaller(buf);
-            unmarshaller.unmarshalString(source, root);
+            return unmarshaller.unmarshalString(source, root);
         } else {
             ReflectionUnmarshaller unmarshaller = new ReflectionUnmarshaller(buf);
-            unmarshaller.unmarshalString(source, root);
+            return unmarshaller.unmarshalString(source, root);
         }
     }
 
@@ -78,21 +77,19 @@ public class UnmarshalledVariable {
             return source.toString();
         }
         if(initMode.equals(InitializeMode.INLINE)){
-            unmarshal(buf);
-            System.out.println("Buffer " + buf);
-            return buf.toString();
+            return unmarshal(buf);
         } else{
             unmarshal(buf);
             return variableName;
         }
     }
 
-    private void unmarshalToString(StringBuilder buf){
-
+    private String unmarshalToString(StringBuilder buf){
+        return null;
     }
 
-    private void unmarshalGuess(StringBuilder buf){
-
+    private String unmarshalGuess(StringBuilder buf){
+        return null;
     }
 
     enum UnmarshalMode{

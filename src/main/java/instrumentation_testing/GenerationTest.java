@@ -6,10 +6,13 @@ import spoon.reflect.declaration.CtType;
 import spoon.reflect.factory.Factory;
 import test_generator.unmarshaller.UnmarshalledVariable;
 
+import java.util.Optional;
+
 public class GenerationTest {
 
     public static void main(String[] args) throws IllegalAccessException {
         ATest aTest = new ATest(new BTest("Clouds", "few clouds"));
+        Optional optional = Optional.of(aTest);
         Object object = aTest;
         System.out.println(aTest);
         final Launcher launcher = new Launcher();
@@ -20,7 +23,7 @@ public class GenerationTest {
         Factory spoon = launcher.getFactory();
         CtModel model = spoon.getModel();
         CtType<?> aClass = spoon.Type().get(ATest.class.getName());
-        UnmarshalledVariable uv = new UnmarshalledVariable(aTest, aClass);
+        UnmarshalledVariable uv = new UnmarshalledVariable(optional, aClass);
         System.out.println(uv.getInlineOrVariable());
     }
 

@@ -17,7 +17,6 @@ public class OptionalUnmarshaller extends AbstractUnmarshaller{
             return ("Optional.empty();");
         } else {
             UnmarshalledVariable uv = new UnmarshalledVariable(typedSource.get(), staticClazz);
-            uv.unmarshal(buf);
             return ("Optional.of(" + uv.getInlineOrVariable(buf) + ")");
         }
     }
