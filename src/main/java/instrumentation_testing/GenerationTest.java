@@ -6,14 +6,16 @@ import spoon.reflect.declaration.CtType;
 import spoon.reflect.factory.Factory;
 import test_generator.unmarshaller.UnmarshalledVariable;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 public class GenerationTest {
 
     public static void main(String[] args) throws IllegalAccessException {
-        ATest aTest = new ATest(new BTest("Clouds", "few clouds"));
+        ATest aTest = new ATest("Clouds", "few clouds");
+//        ATest aTest = new ATest("Clouds", "few clouds");
         Optional optional = Optional.of(aTest);
-        Object object = aTest;
         System.out.println(aTest);
         final Launcher launcher = new Launcher();
         System.out.println(System.getProperty("user.dir"));
@@ -28,18 +30,18 @@ public class GenerationTest {
     }
 
     public static class ATest {
-        private BTest bTest;
+        private List<BTest> bTest;
 
         ATest() {
         }
 
-        ATest(BTest btest) {
-            this.bTest = btest;
-        }
-
-//        ATest(String a, String b) {
-//            this.bTest = new BTest(a, b);
+//        ATest(BTest btest) {
+//            this.bTest = btest;
 //        }
+
+        ATest(String a, String b) {
+            this.bTest = Collections.singletonList(new BTest(a, b));
+        }
 
         @Override
         public String toString() {

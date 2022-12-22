@@ -12,6 +12,7 @@ import spoon.reflect.visitor.filter.FieldAccessFilter;
 import spoon.reflect.visitor.filter.VariableAccessFilter;
 import spoon.support.reflect.code.CtConstructorCallImpl;
 import spoon.support.reflect.code.CtFieldWriteImpl;
+import spoon.support.reflect.code.CtInvocationImpl;
 import spoon.support.reflect.code.CtVariableReadImpl;
 import test_generator.SpoonMapper;
 
@@ -107,6 +108,16 @@ public class ReflectionSpoonUtil {
                         } catch (IllegalAccessException e) {
                             throw new RuntimeException(e);
                         }
+                    } if(assignmentExp instanceof CtInvocationImpl){
+                        CtInvocationImpl invocation = (CtInvocationImpl) assignmentExp;
+                        Field runField = mapFields.get(field);
+                        Object fieldObject = null;
+                        try {
+                            fieldObject = reflectionUtil.getFieldValue(object, runField);
+                        } catch (IllegalAccessException e) {
+                            throw new RuntimeException(e);
+                        }
+                        getResolvedParametersByInvoke(invocation, unresolvedParameters, resolvedParameters, fieldObject);
                     }
 
                 }
@@ -241,6 +252,29 @@ public class ReflectionSpoonUtil {
                 }
             }
 
+        }
+    }
+
+    public void getResolvedParametersByInvoke (
+            CtInvocationImpl invocation,
+            Set<CtParameter> unresolvedParameters,
+            List<ResolvedParameter> resolvedParameters,
+            Object object){
+        // convert list of args to array
+
+        if(object instanceof Collection<?>) {
+            List objectList = ((List) object);
+            if(objectList.size() > 0)
+                object = objectList.get(0);
+        }
+
+
+        for(Object argObj :invocation.getArguments()){
+            CtExpression arg = (CtExpression) argObj;
+            if (arg instanceof CtConstructorCallImpl) {
+                CtConstructorCallImpl consCall = (CtConstructorCallImpl) arg;
+                getResolvedParametersByCall(consCall, unresolvedParameters,resolvedParameters, object);
+            }
         }
     }
 }
