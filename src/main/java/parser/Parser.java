@@ -4,7 +4,6 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvider;
 import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
 import com.thoughtworks.xstream.security.AnyTypePermission;
-import test_generator.unmarshaller.UnmarshalledVariable;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -153,11 +152,6 @@ public class Parser {
             InputStream inputStream = this.getClass().getResourceAsStream(fileName);
             lastArg.serializedValue = xstream.fromXML(inputStream);
             System.out.println("Serialized Object: " + lastArg.serializedValue);
-            if(lastArg.serializedValue != null)
-                System.out.println("Class: " + lastArg.serializedValue.getClass());
-            System.out.println("Hey It's me");
-            UnmarshalledVariable uv = new UnmarshalledVariable(lastArg.serializedValue);
-            uv.unmarshal();
         }
     }
 

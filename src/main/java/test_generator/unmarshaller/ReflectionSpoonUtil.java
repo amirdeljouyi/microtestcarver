@@ -38,7 +38,7 @@ public class ReflectionSpoonUtil {
         reflectionUtil = new ReflectionUtil();
     }
 
-    public ResolvedConstructor resolveConstructor(CtType root, Object object) throws IllegalAccessException {
+    public ResolvedConstructor resolveConstructor(CtType root, Object object) {
 //        Collection<CtFieldReference<?>> fields = aClass.getAllFields();
         CtClass ctClass = (CtClass) root;
         Set<CtConstructor> ctConstructorSet = ctClass.getConstructors();
@@ -83,7 +83,12 @@ public class ReflectionSpoonUtil {
                     if (assignmentExp instanceof CtConstructorCallImpl) {
                         CtConstructorCallImpl consCall = (CtConstructorCallImpl) assignmentExp;
                         Field runField = mapFields.get(field);
-                        Object fieldObject = reflectionUtil.getFieldValue(object, runField);
+                        Object fieldObject = null;
+                        try {
+                            fieldObject = reflectionUtil.getFieldValue(object, runField);
+                        } catch (IllegalAccessException e) {
+                            throw new RuntimeException(e);
+                        }
                         getResolvedParametersByCall(consCall, unresolvedParameters,resolvedParameters, fieldObject);
                     } else if(assignmentExp instanceof CtVariableReadImpl){
                         CtVariableReadImpl variableRead = (CtVariableReadImpl) assignmentExp;
@@ -126,6 +131,9 @@ public class ReflectionSpoonUtil {
     }
 
     public List<CtFieldReference> modifiedFieldsOfConstructor(CtConstructor constructor, Set<CtFieldReference> fields){
+        if(constructor == null)
+            return null;
+
         ArrayList<CtFieldReference> fieldsOfCons = new ArrayList<>();
 
         for(CtFieldReference field: fields){

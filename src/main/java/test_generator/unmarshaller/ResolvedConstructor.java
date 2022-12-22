@@ -14,31 +14,27 @@ public class ResolvedConstructor {
     }
 
     public String paramsToString(){
-        StringBuilder buf = new StringBuilder();
+        StringBuilder string = new StringBuilder();
         for(ResolvedParameter param : parameters){
-            buf.append(param.parameter + " <" + param.value + ">" + ", ");
+            string.append(param.parameter + " <" + param.value + ">" + ", ");
         }
-        return buf.toString();
+        return string.toString();
     }
 
     public String paramsToUnmarshal(){
-        StringBuilder buf = new StringBuilder();
+        StringBuilder string = new StringBuilder();
         Iterator it = parameters.iterator();
         while (it.hasNext()) {
             ResolvedParameter param = (ResolvedParameter) it.next();
-            Boolean string = param.value.getClass().equals(String.class);
-            if(string){
-                buf.append("'");
-            }
-            buf.append(param.value);
-            if(string){
-                buf.append("'");
-            }
+            UnmarshalledVariable uv = new UnmarshalledVariable(param.value, param.parameter.getType().getTypeDeclaration());
+            String s = uv.getInlineOrVariable();
+            string.append(s);
+
             if (it.hasNext()) {
-                buf.append(", ");
+                string.append(", ");
             }
         }
-        return buf.toString();
+        return string.toString();
     }
 
     @Override

@@ -1,11 +1,13 @@
 package test_generator.unmarshaller;
 
 import parser.Arg;
+import spoon.reflect.declaration.CtType;
 
 import java.util.Optional;
 
 public class UnmarshalledVariable {
 
+    CtType root;
     Object source;
     Arg arg;
     UnmarshalMode mode;
@@ -14,7 +16,8 @@ public class UnmarshalledVariable {
     String variableName;
 
 
-    public UnmarshalledVariable(Arg arg){
+    public UnmarshalledVariable(Arg arg, CtType root){
+        this.root = root;
         this.arg = arg;
 
         if(arg.serialized){
@@ -29,7 +32,8 @@ public class UnmarshalledVariable {
         }
     }
 
-    public UnmarshalledVariable(Object source){
+    public UnmarshalledVariable(Object source, CtType root){
+        this.root = root;
         this.source = source;
         this.mode = UnmarshalMode.DESERIALIZE;
     }
@@ -55,19 +59,30 @@ public class UnmarshalledVariable {
 
         if(source.getClass().equals(Optional.class)){
             OptionalUnmarshaller unmarshaller = new OptionalUnmarshaller(buf);
-//            unmarshaller.unmarshalString(source);
-            System.out.println("buf: " + buf);
+            unmarshaller.unmarshalString(source, root);
         } else {
             ReflectionUnmarshaller unmarshaller = new ReflectionUnmarshaller(buf);
-//            unmarshaller.unmarshalString(source);
+            unmarshaller.unmarshalString(source, root);
         }
     }
 
+    public String getInlineOrVariable(){
+        StringBuilder buf = new StringBuilder();
+        return getInlineOrVariable(buf);
+    }
     public String getInlineOrVariable(StringBuilder buf){
+        if(source.getClass().equals(String.class)) {
+            return ("'" + source + "'");
+        }
+        if(source.getClass().isPrimitive()){
+            return source.toString();
+        }
         if(initMode.equals(InitializeMode.INLINE)){
             unmarshal(buf);
+            System.out.println("Buffer " + buf);
             return buf.toString();
         } else{
+            unmarshal(buf);
             return variableName;
         }
     }

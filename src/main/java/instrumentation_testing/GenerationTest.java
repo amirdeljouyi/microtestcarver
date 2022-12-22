@@ -4,8 +4,7 @@ import spoon.Launcher;
 import spoon.reflect.CtModel;
 import spoon.reflect.declaration.CtType;
 import spoon.reflect.factory.Factory;
-import test_generator.unmarshaller.ReflectionSpoonUtil;
-import test_generator.unmarshaller.ResolvedConstructor;
+import test_generator.unmarshaller.UnmarshalledVariable;
 
 public class GenerationTest {
 
@@ -21,32 +20,8 @@ public class GenerationTest {
         Factory spoon = launcher.getFactory();
         CtModel model = spoon.getModel();
         CtType<?> aClass = spoon.Type().get(ATest.class.getName());
-        ReflectionSpoonUtil spoonUtil = new ReflectionSpoonUtil();
-        ResolvedConstructor constructor = spoonUtil.resolveConstructor(aClass, aTest);
-        System.out.println(constructor.toUnmarshal());
-
-
-//        Constructor[] constructors = aTest.getClass().getDeclaredConstructors();
-//
-//        for (int i = 0; i < constructors.length; i++) {
-//            final Constructor constructor = constructors[i];
-//            System.out.println("constructor: " + constructor);
-//
-//            if (constructor.getParameterTypes().length == 0) {
-//                if (!constructor.isAccessible()) {
-//                    constructor.setAccessible(true);
-//                }
-//                try {
-//                    constructor.newInstance(new Object[0]);
-//                } catch (InstantiationException e) {
-//                    throw new RuntimeException(e);
-//                } catch (IllegalAccessException e) {
-//                    throw new RuntimeException(e);
-//                } catch (InvocationTargetException e) {
-//                    throw new RuntimeException(e);
-//                }
-//            }
-//        }
+        UnmarshalledVariable uv = new UnmarshalledVariable(aTest, aClass);
+        System.out.println(uv.getInlineOrVariable());
     }
 
     public static class ATest {

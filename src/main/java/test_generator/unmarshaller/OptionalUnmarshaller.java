@@ -11,16 +11,15 @@ public class OptionalUnmarshaller extends AbstractUnmarshaller{
     }
 
     @Override
-    public StringBuilder instantiate(Object source, CtType staticClazz) {
+    public String instantiate(Object source, CtType staticClazz) {
         Optional typedSource = (Optional) source;
         if(typedSource.isEmpty()){
-            buf.append("Optional.empty();");
+            return ("Optional.empty();");
         } else {
-            UnmarshalledVariable uv = new UnmarshalledVariable(typedSource.get());
+            UnmarshalledVariable uv = new UnmarshalledVariable(typedSource.get(), staticClazz);
             uv.unmarshal(buf);
-            buf.append("Optional.of(" + uv.getInlineOrVariable(buf) + ")");
+            return ("Optional.of(" + uv.getInlineOrVariable(buf) + ")");
         }
-        return buf;
     }
 
     @Override

@@ -9,7 +9,7 @@ public class CollectionUnmarshaller extends AbstractUnmarshaller{
     }
 
     @Override
-    public StringBuilder instantiate(Object source, CtType staticClazz) {
+    public String instantiate(Object source, CtType staticClazz) {
         return null;
     }
 

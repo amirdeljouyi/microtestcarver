@@ -148,6 +148,10 @@ public class ReflectionUtil {
         return  clazz.isArray() && clazz.getComponentType().isPrimitive();
     }
 
+    private boolean isObjectOfPrimitiveTypes(final Class clazz) {
+        return clazz.isPrimitive();
+    }
+
     /*
      * Retrieves current class and all superclasses except Object.
      *

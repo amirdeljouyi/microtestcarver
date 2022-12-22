@@ -11,13 +11,15 @@ public abstract class AbstractUnmarshaller {
     }
 
     public StringBuilder unmarshalString(Object source,  CtType staticClazz){
-        buf.append(instantiate(source, staticClazz));
-        buf.append("\n");
-        buf.append(populate(source));
+        String instantiate = instantiate(source, staticClazz);
+        System.out.println("instantiate: " + instantiate);
+        buf.append(instantiate);
+//        buf.append("\n");
+//        buf.append(populate(source));
         return buf;
     }
 
-    public abstract StringBuilder instantiate(Object source, CtType staticClazz);
+    public abstract String instantiate(Object source, CtType staticClazz);
 
     public abstract String populate(Object source);
     // canUnmarshal
