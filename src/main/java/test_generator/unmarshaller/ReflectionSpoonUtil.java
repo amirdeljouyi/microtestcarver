@@ -38,6 +38,13 @@ public class ReflectionSpoonUtil {
         reflectionUtil = new ReflectionUtil();
     }
 
+    public UnmarshalledVariable instantiateRelateToType(Object source, CtType root){
+        CtType ctType = root.getFactory().Type().get(source.getClass().getName());
+        if(ctType!=null)
+            return new UnmarshalledVariable(source, ctType);
+        return new UnmarshalledVariable(source, root);
+    }
+
     public ResolvedConstructor resolveConstructor(CtType root, Object object) {
 //        Collection<CtFieldReference<?>> fields = aClass.getAllFields();
         CtClass ctClass = (CtClass) root;

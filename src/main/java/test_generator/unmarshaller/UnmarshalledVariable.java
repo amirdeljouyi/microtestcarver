@@ -70,6 +70,9 @@ public class UnmarshalledVariable {
         return getInlineOrVariable(buf);
     }
     public String getInlineOrVariable(StringBuilder buf){
+        if(source == null)
+            return null;
+
         if(source.getClass().equals(String.class)) {
             return ("'" + source + "'");
         }

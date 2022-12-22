@@ -8,6 +8,7 @@ import spoon.reflect.declaration.CtMethod;
 import spoon.reflect.declaration.CtType;
 import spoon.reflect.factory.Factory;
 import spoon.reflect.reference.CtFieldReference;
+import test_generator.unmarshaller.UnmarshalledVariable;
 
 import java.util.Set;
 
@@ -56,6 +57,22 @@ public class CombineClazz {
             return null;
 
         return getFieldSetter(stField, fieldName, field.getValue());
+    }
+
+    public String revealObject(Arg arg){
+        if(arg == null || arg.getValue() == null)
+            return null;
+
+        if(arg.isPrimitiveType())
+            return arg.getValue();
+
+        UnmarshalledVariable uv = new UnmarshalledVariable(arg, staticClazz);
+        String revealedObject = uv.getInlineOrVariable();
+
+        if(revealedObject == null)
+            return arg.getValue();
+
+        return revealedObject;
     }
 
     public String setFields(Arg field){

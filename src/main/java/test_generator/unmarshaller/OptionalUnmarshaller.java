@@ -16,7 +16,8 @@ public class OptionalUnmarshaller extends AbstractUnmarshaller{
         if(typedSource.isEmpty()){
             return ("Optional.empty();");
         } else {
-            UnmarshalledVariable uv = new UnmarshalledVariable(typedSource.get(), staticClazz);
+            ReflectionSpoonUtil spoonUtil = new ReflectionSpoonUtil();
+            UnmarshalledVariable uv = spoonUtil.instantiateRelateToType(typedSource.get(), staticClazz);
             return ("Optional.of(" + uv.getInlineOrVariable(buf) + ")");
         }
     }
