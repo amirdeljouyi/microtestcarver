@@ -5,6 +5,7 @@ import spoon.reflect.declaration.CtType;
 import test_generator.unmarshaller.types.EnumUnmarshaller;
 import test_generator.unmarshaller.types.OptionalUnmarshaller;
 import test_generator.unmarshaller.types.ReflectionUnmarshaller;
+import test_generator.unmarshaller.utils.InitializeMode;
 
 import java.util.Optional;
 
@@ -75,7 +76,12 @@ public class UnmarshalledVariable {
             return unmarshaller.unmarshalString(source, root);
         } else {
             ReflectionUnmarshaller unmarshaller = new ReflectionUnmarshaller(buf);
-            return unmarshaller.unmarshalString(source, root);
+            String unmarshalString = unmarshaller.unmarshalString(source, root);
+            if(unmarshaller.isMultiline()){
+                initMode = InitializeMode.MULTILINE;
+                variableName = unmarshaller.getVariableName();
+            }
+            return unmarshalString;
         }
     }
 
@@ -90,7 +96,6 @@ public class UnmarshalledVariable {
         System.out.println("Source: " + source);
         System.out.println("Source Class: " + source.getClass());
         System.out.println("isEnum: " + source.getClass().isEnum());
-        System.out.println("Source Static: " + root);
 
         if(source.getClass().equals(String.class)) {
             return ("'" + source + "'");
@@ -98,10 +103,13 @@ public class UnmarshalledVariable {
         if(source.getClass().isPrimitive()){
             return source.toString();
         }
+
+        String unmarshalValue = unmarshal(buf);
+
         if(initMode.equals(InitializeMode.INLINE)){
-            return unmarshal(buf);
+            return unmarshalValue;
         } else{
-            unmarshal(buf);
+            buf.append(unmarshalValue);
             return variableName;
         }
     }
@@ -114,14 +122,13 @@ public class UnmarshalledVariable {
         return null;
     }
 
+    public Boolean isMultiline(){
+        return this.initMode.equals(InitializeMode.MULTILINE);
+    }
+
     enum UnmarshalMode{
         DESERIALIZE,
         TO_STRING,
         GUESS
-    }
-
-    enum InitializeMode{
-        INLINE,
-        MULTILINE
     }
 }

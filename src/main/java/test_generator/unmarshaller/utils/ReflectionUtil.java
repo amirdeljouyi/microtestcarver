@@ -78,19 +78,29 @@ public class ReflectionUtil {
      * @return the value of the field.
      * @throws IllegalAccessException if field cannot be accessed.
      */
-    public Object getFieldValue(final Object resultObject, final Field field) throws IllegalAccessException {
+    public Object getFieldValue(final Object resultObject, final Field field) {
         field.setAccessible(true);
-        final Object fieldVal = field.get(resultObject);
+        Object fieldVal;
+        try {
+            fieldVal = field.get(resultObject);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
         field.setAccessible(false);
 
         return fieldVal;
     }
 
-    public Object getFieldValue(final Object resultObject, final String fieldName) throws IllegalAccessException {
+    public Object getFieldValue(final Object resultObject, final String fieldName) {
         for(Field field: getNotNullFields(resultObject)){
             if(field.getName().equals(fieldName)){
                 field.setAccessible(true);
-                final Object fieldVal = field.get(resultObject);
+                Object fieldVal;
+                try {
+                    fieldVal = field.get(resultObject);
+                } catch (IllegalAccessException e) {
+                    throw new RuntimeException(e);
+                }
                 field.setAccessible(false);
 
                 return fieldVal;
@@ -181,18 +191,18 @@ public class ReflectionUtil {
     }
 
     public List<Field> getNotNullFields(final Object object){
-        Class clazz = object.getClass();
+        Class rootClazz = object.getClass();
         List<Field> fields = new ArrayList<>();
-        for(Field field:clazz.getDeclaredFields()){
-            try {
+
+        for(Class clazz: getClassHierarchy(rootClazz)){
+            for(Field field: clazz.getDeclaredFields()){
                 Object fieldValue = getFieldValue(object, field);
                 if(fieldValue != null){
                     fields.add(field);
                 }
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
             }
         }
+
         return fields;
     }
 

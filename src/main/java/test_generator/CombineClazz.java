@@ -4,22 +4,23 @@ import parser.Arg;
 import parser.Clazz;
 import spoon.Launcher;
 import spoon.reflect.declaration.CtField;
-import spoon.reflect.declaration.CtMethod;
 import spoon.reflect.declaration.CtType;
 import spoon.reflect.factory.Factory;
 import spoon.reflect.reference.CtFieldReference;
 import test_generator.unmarshaller.UnmarshalledVariable;
-
-import java.util.Set;
+import test_generator.unmarshaller.utils.ReflectionSpoonUtil;
 
 public class CombineClazz {
 
     Clazz dynamicClazz;
     CtType staticClazz;
 
+    private ReflectionSpoonUtil spoonUtil;
+
     public CombineClazz(Clazz dynamicClazz, CtType staticClazz){
         this.dynamicClazz = dynamicClazz;
         this.staticClazz = staticClazz;
+        this.spoonUtil = new ReflectionSpoonUtil();
     }
 
     public CombineClazz(Clazz dynamicClazz, String sourceDirectory){
@@ -32,12 +33,14 @@ public class CombineClazz {
         CtType<?> mainClass = spoon.Type().get(dynamicClazz.fullName());
 //        System.out.println(mainClass.getAllMethods());
 
+        this.spoonUtil = new ReflectionSpoonUtil();
         this.dynamicClazz = dynamicClazz;
         this.staticClazz = mainClass;
     }
 
     public String setDeclarationField(Arg field){
         String fieldName = field.getKey();
+
 //        System.out.println("FieldName :" + fieldName);
         CtFieldReference stReferenceField = this.staticClazz.getDeclaredOrInheritedField(fieldName);
 //        System.out.println("FieldReference: "+ stReferenceField);
@@ -45,21 +48,22 @@ public class CombineClazz {
             return null;
         CtField stField =  stReferenceField.getFieldDeclaration();
 //        System.out.println("FieldDeclaration: " + stField);
-        return getFieldSetter(stField, fieldName, field.getValue());
+        return spoonUtil.getFieldSetter(this.staticClazz, stField, fieldName, field.getValue());
     }
 
     public String setField(Arg field){
         String fieldName = field.getKey();
-//        System.out.println("FieldName :" + fieldName);
+        System.out.println("FieldName: " + fieldName);
         CtField stField = this.staticClazz.getField(fieldName);
-//        System.out.println("Field: " + stField);
+        System.out.println("Field: " + stField);
+        System.out.println("FieldValue: " + field.getValue());
         if(stField == null)
             return null;
 
-        return getFieldSetter(stField, fieldName, field.getValue());
+        return spoonUtil.getFieldSetter(this.staticClazz, stField, fieldName, field.getValue());
     }
 
-    public String revealObject(Arg arg){
+    public String revealObject(Arg arg, StringBuilder buf){
         if(arg == null || arg.getValue() == null)
             return null;
 
@@ -67,7 +71,13 @@ public class CombineClazz {
             return arg.getValue();
 
         UnmarshalledVariable uv = new UnmarshalledVariable(arg, staticClazz);
-        String revealedObject = uv.getInlineOrVariable();
+        String revealedObject = uv.getInlineOrVariable(buf);
+//        if(uv.isMultiline()){
+//            System.out.println("NotNull!!!");
+//            System.out.println("Buf" + buf);
+//        }
+//
+//        System.out.println("revealedObject: " + revealedObject);
 
         if(revealedObject == null)
             return arg.getValue();
@@ -80,29 +90,6 @@ public class CombineClazz {
         if(string == null)
             return setDeclarationField(field);
         return string;
-    }
-
-    private String getFieldSetter(CtField stField, String fieldName, String fieldValue){
-        if(stField.isPublic()){
-            return fieldName + " = " + fieldValue;
-        } else{
-            String setterName = "set" + fieldName.substring(0,1).toUpperCase() + fieldName.substring(1);
-
-//            System.out.println("setterName: " + setterName);
-            Set<CtMethod> allMethods = staticClazz.getAllMethods();
-            CtMethod stMethod = null;
-            for(CtMethod method: allMethods){
-                if (method.getSimpleName().equals(setterName)) {
-                    stMethod = method;
-                    break;
-                }
-            }
-//            System.out.println("StMethod: " + stMethod);
-            if(stMethod != null && !stMethod.isPrivate())
-                return setterName + "(" + fieldValue + ")";
-//            }
-        }
-        return null;
     }
 
 

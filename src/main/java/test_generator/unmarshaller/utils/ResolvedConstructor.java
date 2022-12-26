@@ -1,17 +1,23 @@
 package test_generator.unmarshaller.utils;
 
 import spoon.reflect.declaration.CtConstructor;
+import spoon.reflect.reference.CtFieldReference;
 import test_generator.unmarshaller.UnmarshalledVariable;
 
+import java.lang.reflect.Field;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
 public class ResolvedConstructor {
     public CtConstructor constructor;
     public List<ResolvedParameter> parameters;
+
+    public HashMap<CtFieldReference, Field> unresolvedFields;
     public ResolvedConstructor(CtConstructor constructor, List<ResolvedParameter> parameters){
         this.constructor = constructor;
         this.parameters = parameters;
+        unresolvedFields = new HashMap<>();
     }
 
     public String paramsToString(){

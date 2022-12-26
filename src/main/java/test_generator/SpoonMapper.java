@@ -20,7 +20,7 @@ public class SpoonMapper {
         ArrayList<CtFieldReference> fields = new ArrayList<CtFieldReference>();
 
         for(Field runtimeField: runtimeFields){
-            CtFieldReference field = root.getDeclaredField(runtimeField.getName());
+            CtFieldReference field = root.getDeclaredOrInheritedField(runtimeField.getName());
             fields.add(field);
         }
 
@@ -31,10 +31,15 @@ public class SpoonMapper {
         HashMap<CtFieldReference, Field> fields = new HashMap<>();
 
         for(Field runtimeField: runtimeFields){
-            CtFieldReference field = root.getDeclaredField(runtimeField.getName());
+            CtFieldReference field = root.getDeclaredOrInheritedField(runtimeField.getName());
             fields.put(field, runtimeField);
+
         }
 
         return fields;
+    }
+
+    public CtFieldReference mapField(Field runtimeField){
+        return root.getDeclaredOrInheritedField(runtimeField.getName());
     }
 }

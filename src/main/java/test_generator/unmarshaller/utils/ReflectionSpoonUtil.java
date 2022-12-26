@@ -1,10 +1,7 @@
 package test_generator.unmarshaller.utils;
 
 import spoon.reflect.code.*;
-import spoon.reflect.declaration.CtClass;
-import spoon.reflect.declaration.CtConstructor;
-import spoon.reflect.declaration.CtParameter;
-import spoon.reflect.declaration.CtType;
+import spoon.reflect.declaration.*;
 import spoon.reflect.reference.CtFieldReference;
 import spoon.reflect.reference.CtTypeReference;
 import spoon.reflect.reference.CtVariableReference;
@@ -55,7 +52,6 @@ public class ReflectionSpoonUtil {
         SpoonMapper mapper = new SpoonMapper(root);
 
         List<Field> notNullFields = reflectionUtil.getNotNullFields(object);
-
         HashMap<CtFieldReference, Field> mapFields = mapper.mapFields(notNullFields);
         Set<CtFieldReference> unresolvedFields = new HashSet<>(mapper.getFields(notNullFields));
 
@@ -64,8 +60,6 @@ public class ReflectionSpoonUtil {
 
         // get constructors with the fields that are modified in there
         for (CtConstructor ctConstructor : ctConstructorSet) {
-            System.out.println(ctConstructor);
-            System.out.println(unresolvedFields);
             ArrayList<CtFieldReference> fieldsOfCons =
                     new ArrayList<>(modifiedFieldsOfConstructor(ctConstructor, unresolvedFields));
 
@@ -93,42 +87,34 @@ public class ReflectionSpoonUtil {
                     if (assignmentExp instanceof CtConstructorCallImpl) {
                         CtConstructorCallImpl consCall = (CtConstructorCallImpl) assignmentExp;
                         Field runField = mapFields.get(field);
-                        Object fieldObject = null;
-                        try {
-                            fieldObject = reflectionUtil.getFieldValue(object, runField);
-                        } catch (IllegalAccessException e) {
-                            throw new RuntimeException(e);
-                        }
+                        Object fieldObject = reflectionUtil.getFieldValue(object, runField);
                         getResolvedParametersByCall(consCall, unresolvedParameters,resolvedParameters, fieldObject);
                     } else if(assignmentExp instanceof CtVariableReadImpl){
                         CtVariableReadImpl variableRead = (CtVariableReadImpl) assignmentExp;
 
-                        Object fieldObject = null;
-                        try {
-                            fieldObject = reflectionUtil.getFieldValue(object, field.getSimpleName());
-                            resolveParameter(variableRead.getVariable(), unresolvedParameters, resolvedParameters, fieldObject);
-                        } catch (IllegalAccessException e) {
-                            throw new RuntimeException(e);
-                        }
+                        Object fieldObject = reflectionUtil.getFieldValue(object, field.getSimpleName());
+                        resolveParameter(variableRead.getVariable(), unresolvedParameters, resolvedParameters, fieldObject);
                     } if(assignmentExp instanceof CtInvocationImpl){
                         CtInvocationImpl invocation = (CtInvocationImpl) assignmentExp;
                         Field runField = mapFields.get(field);
-                        Object fieldObject = null;
-                        try {
-                            fieldObject = reflectionUtil.getFieldValue(object, runField);
-                        } catch (IllegalAccessException e) {
-                            throw new RuntimeException(e);
-                        }
+                        Object fieldObject = reflectionUtil.getFieldValue(object, runField);
                         getResolvedParametersByInvoke(invocation, unresolvedParameters, resolvedParameters, fieldObject);
                     }
 
+                    unresolvedFields.remove(field);
                 }
             }
 
             System.out.println("unresolvedParams after: " + unresolvedParameters);
 
             if(unresolvedParameters.size() == 0){
-                return new ResolvedConstructor(cons, resolvedParameters);
+                ResolvedConstructor resolvedConstructor = new ResolvedConstructor(cons, resolvedParameters);
+                for(CtFieldReference field: unresolvedFields){
+                    resolvedConstructor.unresolvedFields.put(field, mapFields.get(field));
+                }
+                if(resolvedConstructor.unresolvedFields.size() > 0)
+                    System.out.println("unresolved Fields: " + resolvedConstructor.unresolvedFields);
+                return resolvedConstructor;
             }
         }
         return null;
@@ -249,13 +235,9 @@ public class ReflectionSpoonUtil {
             for(CtAssignment cAssingment: calledAssignments){
                 if(cAssingment.getAssigned() instanceof CtFieldWriteImpl){
                     CtFieldReference field = ((CtFieldWriteImpl) cAssingment.getAssigned()).getVariable();
-                    Object fieldObject = null;
-                    try {
-                        fieldObject = reflectionUtil.getFieldValue(object, field.getSimpleName());
-                        resolveParameter(variable.variable, unresolvedParameters, resolvedParameters, fieldObject);
-                    } catch (IllegalAccessException e) {
-                        throw new RuntimeException(e);
-                    }
+                    Object fieldObject = reflectionUtil.getFieldValue(object, field.getSimpleName());
+                    resolveParameter(variable.variable, unresolvedParameters, resolvedParameters, fieldObject);
+
                     System.out.println("object: "+ fieldObject);
                 }
             }
@@ -284,5 +266,30 @@ public class ReflectionSpoonUtil {
                 getResolvedParametersByCall(consCall, unresolvedParameters,resolvedParameters, object);
             }
         }
+    }
+
+    public String getFieldSetter(CtType staticClazz, CtField stField, String fieldName, String fieldValue){
+        if(stField == null)
+            return null;
+        if(stField.isPublic()){
+            return fieldName + " = " + fieldValue;
+        } else{
+            String setterName = "set" + fieldName.substring(0,1).toUpperCase() + fieldName.substring(1);
+
+//            System.out.println("setterName: " + setterName);
+            Set<CtMethod> allMethods = staticClazz.getAllMethods();
+            CtMethod stMethod = null;
+            for(CtMethod method: allMethods){
+                if (method.getSimpleName().equals(setterName)) {
+                    stMethod = method;
+                    break;
+                }
+            }
+//            System.out.println("StMethod: " + stMethod);
+            if(stMethod != null && !stMethod.isPrivate())
+                return setterName + "(" + fieldValue + ")";
+//            }
+        }
+        return null;
     }
 }

@@ -51,11 +51,12 @@ public class VelocityRunner {
 
             context.put("className", v.clazzName);
             context.put("packageName", v.packageName);
-            context.put("methods", v.methods);
+            context.put("methods", v.testableMethods());
             context.put("args", v.args);
             context.put("params", v.mockableFields());
             context.put("combine", combineClazz);
             context.put("initialFields", v.initialFieldState());
+            context.put("assertion", new AssertionGenerator(combineClazz));
 
             try {
                 Writer writer = new FileWriter(new File("./test-output/" + v.clazzName + "Test.java"));
@@ -66,6 +67,9 @@ public class VelocityRunner {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    private void isTestable() {
     }
 
     public HashMap<String, Clazz> getClazzSet() {
