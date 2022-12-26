@@ -2,11 +2,13 @@ package test_generator.unmarshaller;
 
 import parser.Arg;
 import spoon.reflect.declaration.CtType;
+import test_generator.unmarshaller.types.DateUnmarshaller;
 import test_generator.unmarshaller.types.EnumUnmarshaller;
 import test_generator.unmarshaller.types.OptionalUnmarshaller;
 import test_generator.unmarshaller.types.ReflectionUnmarshaller;
 import test_generator.unmarshaller.utils.InitializeMode;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 public class UnmarshalledVariable {
@@ -68,11 +70,14 @@ public class UnmarshalledVariable {
 
     private String unmarshalDeserialize(StringBuilder buf){
 
-        if(source.getClass().equals(Optional.class)){
+        if(source instanceof Optional){
             OptionalUnmarshaller unmarshaller = new OptionalUnmarshaller(buf);
             return unmarshaller.unmarshalString(source, root);
         } if(source.getClass().isEnum()){
             EnumUnmarshaller unmarshaller = new EnumUnmarshaller(buf);
+            return unmarshaller.unmarshalString(source, root);
+        } if(source instanceof LocalDate){
+            DateUnmarshaller unmarshaller = new DateUnmarshaller(buf);
             return unmarshaller.unmarshalString(source, root);
         } else {
             ReflectionUnmarshaller unmarshaller = new ReflectionUnmarshaller(buf);

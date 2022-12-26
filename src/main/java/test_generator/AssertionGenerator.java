@@ -28,6 +28,7 @@ public class AssertionGenerator {
             assertionBuf.append("\n");
         }
         assertionBuf.append("\t\t" + this);
+
         return assertionBuf.toString();
     }
 
