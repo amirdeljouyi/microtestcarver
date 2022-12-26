@@ -1,6 +1,7 @@
-package test_generator.unmarshaller;
+package test_generator.unmarshaller.utils;
 
 import spoon.reflect.declaration.CtConstructor;
+import test_generator.unmarshaller.UnmarshalledVariable;
 
 import java.util.Iterator;
 import java.util.List;

@@ -1,12 +1,14 @@
-package test_generator.unmarshaller;
+package test_generator.unmarshaller.types;
 
 import spoon.reflect.declaration.CtType;
+import test_generator.unmarshaller.utils.ReflectionSpoonUtil;
+import test_generator.unmarshaller.UnmarshalledVariable;
 
 import java.util.Optional;
 
 public class OptionalUnmarshaller extends AbstractUnmarshaller{
 
-    OptionalUnmarshaller(StringBuilder buf) {
+    public OptionalUnmarshaller(StringBuilder buf) {
         super(buf);
     }
 

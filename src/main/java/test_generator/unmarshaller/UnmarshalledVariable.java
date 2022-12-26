@@ -2,6 +2,9 @@ package test_generator.unmarshaller;
 
 import parser.Arg;
 import spoon.reflect.declaration.CtType;
+import test_generator.unmarshaller.types.EnumUnmarshaller;
+import test_generator.unmarshaller.types.OptionalUnmarshaller;
+import test_generator.unmarshaller.types.ReflectionUnmarshaller;
 
 import java.util.Optional;
 
@@ -23,6 +26,7 @@ public class UnmarshalledVariable {
         if(arg.serialized){
             this.source = this.arg.serializedValue;
             this.mode = UnmarshalMode.DESERIALIZE;
+            settingCtType(this.root);
         } else {
             if(arg.value.contains("@")){
                 this.mode = UnmarshalMode.GUESS;
@@ -36,6 +40,13 @@ public class UnmarshalledVariable {
         this.root = root;
         this.source = source;
         this.mode = UnmarshalMode.DESERIALIZE;
+        settingCtType(this.root);
+    }
+
+    private void settingCtType(CtType root){
+        CtType ctType = root.getFactory().Type().get(source.getClass().getName());
+        if(ctType!=null)
+            this.root = ctType;
     }
 
     public String unmarshal() {
@@ -59,6 +70,9 @@ public class UnmarshalledVariable {
         if(source.getClass().equals(Optional.class)){
             OptionalUnmarshaller unmarshaller = new OptionalUnmarshaller(buf);
             return unmarshaller.unmarshalString(source, root);
+        } if(source.getClass().isEnum()){
+            EnumUnmarshaller unmarshaller = new EnumUnmarshaller(buf);
+            return unmarshaller.unmarshalString(source, root);
         } else {
             ReflectionUnmarshaller unmarshaller = new ReflectionUnmarshaller(buf);
             return unmarshaller.unmarshalString(source, root);
@@ -72,6 +86,11 @@ public class UnmarshalledVariable {
     public String getInlineOrVariable(StringBuilder buf){
         if(source == null)
             return null;
+
+        System.out.println("Source: " + source);
+        System.out.println("Source Class: " + source.getClass());
+        System.out.println("isEnum: " + source.getClass().isEnum());
+        System.out.println("Source Static: " + root);
 
         if(source.getClass().equals(String.class)) {
             return ("'" + source + "'");

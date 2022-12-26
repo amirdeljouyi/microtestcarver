@@ -1,4 +1,4 @@
-package test_generator.unmarshaller;
+package test_generator.unmarshaller.types;
 
 import spoon.reflect.declaration.CtType;
 

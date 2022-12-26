@@ -1,4 +1,4 @@
-package test_generator.unmarshaller;
+package test_generator.unmarshaller.utils;
 
 import spoon.reflect.code.*;
 import spoon.reflect.declaration.CtClass;
@@ -15,6 +15,7 @@ import spoon.support.reflect.code.CtFieldWriteImpl;
 import spoon.support.reflect.code.CtInvocationImpl;
 import spoon.support.reflect.code.CtVariableReadImpl;
 import test_generator.SpoonMapper;
+import test_generator.unmarshaller.UnmarshalledVariable;
 
 import java.lang.reflect.Field;
 import java.util.*;
@@ -64,6 +65,7 @@ public class ReflectionSpoonUtil {
         // get constructors with the fields that are modified in there
         for (CtConstructor ctConstructor : ctConstructorSet) {
             System.out.println(ctConstructor);
+            System.out.println(unresolvedFields);
             ArrayList<CtFieldReference> fieldsOfCons =
                     new ArrayList<>(modifiedFieldsOfConstructor(ctConstructor, unresolvedFields));
 
@@ -152,9 +154,15 @@ public class ReflectionSpoonUtil {
         if(constructor == null)
             return null;
 
+        if(fields == null)
+            return null;
+
         ArrayList<CtFieldReference> fieldsOfCons = new ArrayList<>();
 
         for(CtFieldReference field: fields){
+            if(field == null)
+                continue;
+
             List<CtFieldAccess<?>> elm= constructor.getElements(new FieldAccessFilter(field));
             for(CtFieldAccess el: elm) {
                 if(el.getParent() instanceof CtAssignment){

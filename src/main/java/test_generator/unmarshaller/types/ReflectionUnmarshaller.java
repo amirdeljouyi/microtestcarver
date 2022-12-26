@@ -1,10 +1,12 @@
-package test_generator.unmarshaller;
+package test_generator.unmarshaller.types;
 
 import spoon.reflect.declaration.CtType;
+import test_generator.unmarshaller.utils.ReflectionSpoonUtil;
+import test_generator.unmarshaller.utils.ResolvedConstructor;
 
 public class ReflectionUnmarshaller extends AbstractUnmarshaller{
 
-    ReflectionUnmarshaller(StringBuilder buf) {
+    public ReflectionUnmarshaller(StringBuilder buf) {
         super(buf);
     }
 
