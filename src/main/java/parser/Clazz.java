@@ -162,6 +162,21 @@ public class Clazz {
 
     }
 
+    public Set<ClazzMethod> testableMethods(){
+        Set<ClazzMethod> methods = new HashSet<>();
+        for(ClazzMethod method: this.methods){
+            // Check should be a test generate for this method or not?
+            if(method.getReturnField() == null)
+                continue;
+
+            if(method.getReturnField().getType().equals("org.openjdk.btrace.core.types.AnyType$1"))
+                continue;
+
+            methods.add(method);
+        }
+        return methods;
+    }
+
     @Override
     public int hashCode(){
         return Objects.hash(packageName, clazzName);
