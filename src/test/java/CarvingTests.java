@@ -1,8 +1,8 @@
-package instrumentation_testing;
-
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvider;
 import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openjdk.btrace.core.BTraceUtils;
 
 import java.lang.reflect.Field;
@@ -11,7 +11,12 @@ import java.security.AccessController;
 import java.security.PrivilegedAction;
 import java.util.ArrayList;
 
-public class CarvingTest {
+public class CarvingTests {
+    private ATest subject;
+    @BeforeEach
+    public void setUp() throws Exception {
+        subject = new ATest();
+    }
     private static RuntimeException translate(Exception exp) {
         if (exp instanceof RuntimeException) {
             return (RuntimeException) exp;
@@ -36,25 +41,26 @@ public class CarvingTest {
                 });
     }
 
-    public static void main(String[] args) {
-        ATest aTest = new ATest();
-        aTest.a.add(10);
-        aTest.a.add(20);
-        aTest.s = "amir";
-        String s = "sd";
-        aTest.bs.add(new BTest(2, "ads"));
+    @Test
+    public void shouldReturnSerialized() throws Exception {
         XStream xstream = new XStream(new SunUnsafeReflectionProvider(), new JettisonMappedXmlDriver());
-        xstream.getConverterLookup().lookupConverterForType(aTest.getClass());
         xstream.setMode(XStream.NO_REFERENCES);
         xstream.ignoreUnknownElements();
-        String dataJson = xstream.toXML(aTest);
+
+        subject.a.add(10);
+        subject.a.add(20);
+        subject.s = "amir";
+        subject.bs.add(new BTest(2, "ads"));
+
+        String dataJson = xstream.toXML(subject);
         System.out.println(dataJson);
 
-        Field[] fields = getAllFields(aTest.getClass());
+
+        Field[] fields = getAllFields(subject.getClass());
         for (Field f: fields){
 //            System.out.println(f.getGenericType().getTypeName());
             try {
-                FieldDetailed fieldDetailed = new FieldDetailed(f.getName(), f.getGenericType().getTypeName(), f.getType().isPrimitive(), f.get(aTest));
+                FieldDetailed fieldDetailed = new FieldDetailed(f.getName(), f.getGenericType().getTypeName(), f.getType().isPrimitive(), f.get(subject));
 //                System.out.println(fieldDetailed);
                 if(fieldDetailed.object != null)
                     System.out.println(xstream.toXML(fieldDetailed.object));

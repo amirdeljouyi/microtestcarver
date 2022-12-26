@@ -16,12 +16,16 @@ dependencies {
     implementation 'com.thoughtworks.xstream:xstream:1.4.18'
     implementation 'org.codehaus.jettison:jettison:1.4.1'
     implementation files('libs/spring-testing-0.0.1-SNAPSHOT-all.jar')
+    implementation files('libs/spring-petclinic-2.7.3-all.jar')
     implementation files('libs/btrace-client.jar')
     implementation 'org.apache.velocity:velocity-engine-core:2.3'
     annotationProcessor 'info.picocli:picocli-codegen:4.6.3'
-//    implementation group: 'io.btrace', name: 'btrace-client', version: '2.2.2'
+
+    testImplementation('com.github.tomakehurst:wiremock-jre8:2.31.0')
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    //    implementation group: 'io.btrace', name: 'btrace-client', version: '2.2.2'
+
 }
 
 test {

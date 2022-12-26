@@ -1,5 +1,5 @@
-package instrumentation_testing;
-
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import spoon.Launcher;
 import spoon.reflect.CtModel;
 import spoon.reflect.declaration.CtType;
@@ -10,23 +10,32 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-public class GenerationTest {
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 
-    public static void main(String[] args) throws IllegalAccessException {
-        ATest aTest = new ATest("Clouds", "few clouds");
-//        ATest aTest = new ATest("Clouds", "few clouds");
-        Optional optional = Optional.of(aTest);
-        System.out.println(aTest);
+public class GenerationTests {
+
+    private CtType root;
+    @BeforeEach
+    public void setUp() throws Exception {
         final Launcher launcher = new Launcher();
         System.out.println(System.getProperty("user.dir"));
-        launcher.addInputResource(System.getProperty("user.dir") + "/src/main/java/instrumentation_testing");
+        launcher.addInputResource(System.getProperty("user.dir") + "/src/test/java");
         launcher.buildModel();
         launcher.getEnvironment().setComplianceLevel(11);
         Factory spoon = launcher.getFactory();
         CtModel model = spoon.getModel();
-        CtType<?> aClass = spoon.Type().get(ATest.class.getName());
-        UnmarshalledVariable uv = new UnmarshalledVariable(optional, aClass);
-        System.out.println(uv.getInlineOrVariable());
+        root = spoon.Type().get(ATest.class.getName());
+    }
+
+    @Test
+    public void shouldUnmarshallConstructor() throws IllegalAccessException {
+        ATest aTest = new ATest("Clouds", "few clouds");
+//        ATest aTest = new ATest("Clouds", "few clouds");
+        Optional optional = Optional.of(aTest);
+        System.out.println(aTest);
+        UnmarshalledVariable uv = new UnmarshalledVariable(optional, root);
+        assertThat(uv.getInlineOrVariable(), is("Optional.of(new ATest('Clouds', 'few clouds'))"));
     }
 
     public static class ATest {
@@ -35,13 +44,13 @@ public class GenerationTest {
         ATest() {
         }
 
-//        ATest(BTest btest) {
-//            this.bTest = btest;
-//        }
-
         ATest(String a, String b) {
             this.bTest = Collections.singletonList(new BTest(a, b));
         }
+
+//        ATest(BTest btest) {
+//            this.bTest = btest;
+//        }
 
         @Override
         public String toString() {
