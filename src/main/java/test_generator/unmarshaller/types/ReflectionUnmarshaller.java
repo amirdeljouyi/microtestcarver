@@ -47,16 +47,17 @@ public class ReflectionUnmarshaller extends AbstractUnmarshaller{
 
         for(Map.Entry<CtFieldReference, Field> field: constructor.unresolvedFields.entrySet()){
             Field fieldValue = field.getValue();
-            System.out.println("FieldMap: " + field);
+//            System.out.println("FieldMap: " + field);
             Object fieldObject = util.getFieldValue(source, fieldValue);
-            System.out.println("fieldObject: " + fieldObject);
+//            System.out.println("fieldObject: " + fieldObject);
             CtFieldReference fieldReference = field.getKey();
-            System.out.println("fieldReference: " + fieldReference);;
+//            System.out.println("fieldReference: " + fieldReference);;
 
             if(fieldReference == null)
                 continue;
 
-            String setter = spoonUtil.getFieldSetter(staticClazz, fieldReference.getFieldDeclaration(), fieldValue.getName(), fieldObject.toString());
+            StringBuilder sb = new StringBuilder();
+            String setter = spoonUtil.getFieldSetter(staticClazz, fieldReference.getFieldDeclaration(), fieldValue.getName(), fieldObject, sb);
             constructBuffer.append("\n" + this.variableName + "." + setter + ";");
         }
         return constructBuffer.toString();

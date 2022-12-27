@@ -10,6 +10,8 @@ import spoon.reflect.reference.CtFieldReference;
 import test_generator.unmarshaller.UnmarshalledVariable;
 import test_generator.unmarshaller.utils.ReflectionSpoonUtil;
 
+import java.util.Set;
+
 public class CombineClazz {
 
     Clazz dynamicClazz;
@@ -38,7 +40,7 @@ public class CombineClazz {
         this.staticClazz = mainClass;
     }
 
-    public String setDeclarationField(Arg field){
+    public String setDeclarationField(Arg field, StringBuilder buf){
         String fieldName = field.getKey();
 
 //        System.out.println("FieldName :" + fieldName);
@@ -48,10 +50,10 @@ public class CombineClazz {
             return null;
         CtField stField =  stReferenceField.getFieldDeclaration();
 //        System.out.println("FieldDeclaration: " + stField);
-        return spoonUtil.getFieldSetter(this.staticClazz, stField, fieldName, field.getValue());
+        return spoonUtil.getFieldSetter(this.staticClazz, stField, fieldName, field.getActualValue(), buf);
     }
 
-    public String setField(Arg field){
+    public String setField(Arg field, StringBuilder buf){
         String fieldName = field.getKey();
         System.out.println("FieldName: " + fieldName);
         CtField stField = this.staticClazz.getField(fieldName);
@@ -60,7 +62,7 @@ public class CombineClazz {
         if(stField == null)
             return null;
 
-        return spoonUtil.getFieldSetter(this.staticClazz, stField, fieldName, field.getValue());
+        return spoonUtil.getFieldSetter(this.staticClazz, stField, fieldName, field.getActualValue(), buf);
     }
 
     public String revealObject(Arg arg, StringBuilder buf){
@@ -85,11 +87,41 @@ public class CombineClazz {
         return revealedObject;
     }
 
-    public String setFields(Arg field){
-        String string = setField(field);
+    public String setFieldHierarchy(Arg field, StringBuilder buf){
+        String string = setField(field, buf);
         if(string == null)
-            return setDeclarationField(field);
+            return setDeclarationField(field, buf);
         return string;
+    }
+
+    public String setSubjectFields(Set<Arg> fields){
+        StringBuilder subjectBuf = new StringBuilder();
+        int i = 0;
+        for(Arg field: fields){
+            System.out.println("SubBuffer "+ i + ":" + subjectBuf);
+            i++;
+
+            System.out.println("subfield: " + field);
+
+            StringBuilder populationBuf = new StringBuilder();
+            String fieldSetter = setFieldHierarchy(field, populationBuf);
+            System.out.println("fieldSetter: " + fieldSetter);
+            if(fieldSetter == null)
+                continue;
+
+            if(!populationBuf.toString().isEmpty()){
+                System.out.println("populationBuf: " + populationBuf);
+
+                String[] lines = populationBuf.toString().split("\\n");
+                for(String s: lines){
+                    subjectBuf.append("\t\t" + s);
+                    subjectBuf.append("\n");
+                }
+                subjectBuf.append("\n");
+            }
+            subjectBuf.append("\t\t" + "subject." + fieldSetter + ";\n");
+        }
+        return subjectBuf.toString();
     }
 
 

@@ -268,9 +268,17 @@ public class ReflectionSpoonUtil {
         }
     }
 
-    public String getFieldSetter(CtType staticClazz, CtField stField, String fieldName, String fieldValue){
+    public String getFieldSetter(CtType staticClazz, CtField stField, String fieldName, Object object, StringBuilder buf){
         if(stField == null)
             return null;
+
+        System.out.println("ObjectVal: " + object);
+        System.out.println("ObjectType: " + object.getClass());
+        UnmarshalledVariable uv = new UnmarshalledVariable(object, staticClazz);
+
+        String fieldValue = uv.getInlineOrVariable(buf);
+        System.out.println("BufferValue: " + buf);
+
         if(stField.isPublic()){
             return fieldName + " = " + fieldValue;
         } else{
@@ -286,9 +294,9 @@ public class ReflectionSpoonUtil {
                 }
             }
 //            System.out.println("StMethod: " + stMethod);
-            if(stMethod != null && !stMethod.isPrivate())
+            if(stMethod != null && !stMethod.isPrivate()) {
                 return setterName + "(" + fieldValue + ")";
-//            }
+            }
         }
         return null;
     }
