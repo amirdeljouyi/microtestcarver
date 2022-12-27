@@ -2,6 +2,7 @@ package test_generator;
 
 import parser.Arg;
 import parser.Clazz;
+import parser.ClazzMethod;
 import spoon.Launcher;
 import spoon.reflect.declaration.CtField;
 import spoon.reflect.declaration.CtType;
@@ -10,6 +11,7 @@ import spoon.reflect.reference.CtFieldReference;
 import test_generator.unmarshaller.UnmarshalledVariable;
 import test_generator.unmarshaller.utils.ReflectionSpoonUtil;
 
+import java.util.Iterator;
 import java.util.Set;
 
 public class CombineClazz {
@@ -119,5 +121,38 @@ public class CombineClazz {
         return subjectBuf.toString();
     }
 
+    public String callTestMethod(ClazzMethod method){
+//        ${method.getReturnField().getShortType()} ${method.methodName} = subject.${method.methodName}(#foreach($arg in $method.args)${arg.getValue()}#if( $foreach.hasNext ), #end#end);
+        StringBuilder buffer = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
+        sb.append("\t\t" + method.getReturnField().getShortType() + " " + method.methodName + " = subject." + method.methodName + "(");
+        Iterator<Arg> it = method.args.iterator();
+        while (it.hasNext()){
+            Arg arg = it.next();
+
+            StringBuilder populationBuf = new StringBuilder();
+            String argValue = revealObject(arg, populationBuf);
+
+            if(!populationBuf.toString().isEmpty()){
+                String[] lines = populationBuf.toString().split("\\n");
+                for(String s: lines){
+                    buffer.append("\t\t" + s);
+                    buffer.append("\n");
+                }
+                buffer.append("\n");
+            }
+
+            sb.append(argValue);
+
+            if(it.hasNext()){
+                sb.append(", ");
+            }
+        }
+        sb.append(")");
+
+        buffer.append(sb);
+
+        return buffer.toString();
+    }
 
 }
