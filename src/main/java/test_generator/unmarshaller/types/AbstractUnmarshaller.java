@@ -23,7 +23,7 @@ public abstract class AbstractUnmarshaller {
 
     public abstract String instantiate(Object source, CtType staticClazz);
 
-    public abstract String populate(Object source);
+    public abstract String populate(Object source, CtType staticClazz);
 
     public Boolean isMultiline(){
         return this.mode.equals(InitializeMode.MULTILINE);

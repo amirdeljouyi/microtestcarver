@@ -6,6 +6,7 @@ import spoon.reflect.declaration.CtType;
 import spoon.reflect.factory.Factory;
 import test_generator.unmarshaller.UnmarshalledVariable;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -36,6 +37,26 @@ public class GenerationTests {
         System.out.println(aTest);
         UnmarshalledVariable uv = new UnmarshalledVariable(optional, root);
         assertThat(uv.getInlineOrVariable(), is("Optional.of(new ATest('Clouds', 'few clouds'))"));
+    }
+
+    @Test
+    public void shouldUnmarshallEmptyArrayList() throws IllegalAccessException {
+        ArrayList<ATest> aTests = new ArrayList<>();
+        UnmarshalledVariable uv = new UnmarshalledVariable(aTests, root);
+        assertThat(uv.getInlineOrVariable(), is("new ArrayList<>()"));
+    }
+
+    @Test
+    public void shouldUnmarshallArrayList() throws IllegalAccessException {
+        ArrayList<ATest> aTests = new ArrayList<>();
+        ATest aTest = new ATest("Clouds", "few clouds");
+        aTests.add(aTest);
+//        ATest aTest = new ATest("Clouds", "few clouds");
+        System.out.println(aTest);
+        UnmarshalledVariable uv = new UnmarshalledVariable(aTests, root);
+        String unmarshalledString = uv.getInlineOrVariable();
+        System.out.println("unmarshal: " + unmarshalledString);
+        assertThat(unmarshalledString, is("ArrayList<ATest> aTests = new ArrayList<>();\naTests.add(new ATest(\"Clouds\", \"few clouds\"));"));
     }
 
     public static class ATest {

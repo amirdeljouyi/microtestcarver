@@ -7,6 +7,7 @@ import test_generator.unmarshaller.utils.InitializeMode;
 import test_generator.unmarshaller.utils.ReflectionUtil;
 
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.Optional;
 
 public class UnmarshalledVariable {
@@ -73,6 +74,9 @@ public class UnmarshalledVariable {
             return new StringUnmarshaller().unmarshalString((String) source);
         } else if(util.isPrimitiveType(source)) {
             return source.toString();
+        } if (source instanceof Collection<?>){
+            CollectionUnmarshaller unmarshaller = new CollectionUnmarshaller(buf);
+            return unmarshaller.unmarshalString(source, root);
         } else if(source instanceof Optional){
             OptionalUnmarshaller unmarshaller = new OptionalUnmarshaller(buf);
             return unmarshaller.unmarshalString(source, root);

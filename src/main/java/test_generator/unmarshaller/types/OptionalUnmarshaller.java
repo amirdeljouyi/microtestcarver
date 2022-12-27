@@ -25,7 +25,7 @@ public class OptionalUnmarshaller extends AbstractUnmarshaller{
     }
 
     @Override
-    public String populate(Object source) {
+    public String populate(Object source, CtType staticClazz) {
         return null;
     }
 }

@@ -96,21 +96,17 @@ public class CombineClazz {
 
     public String setSubjectFields(Set<Arg> fields){
         StringBuilder subjectBuf = new StringBuilder();
-        int i = 0;
         for(Arg field: fields){
-            System.out.println("SubBuffer "+ i + ":" + subjectBuf);
-            i++;
-
-            System.out.println("subfield: " + field);
+//            System.out.println("subfield: " + field);
 
             StringBuilder populationBuf = new StringBuilder();
             String fieldSetter = setFieldHierarchy(field, populationBuf);
-            System.out.println("fieldSetter: " + fieldSetter);
+//            System.out.println("fieldSetter: " + fieldSetter);
             if(fieldSetter == null)
                 continue;
 
             if(!populationBuf.toString().isEmpty()){
-                System.out.println("populationBuf: " + populationBuf);
+//                System.out.println("populationBuf: " + populationBuf);
 
                 String[] lines = populationBuf.toString().split("\\n");
                 for(String s: lines){
