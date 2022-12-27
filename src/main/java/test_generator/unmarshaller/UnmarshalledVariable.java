@@ -8,6 +8,7 @@ import test_generator.unmarshaller.utils.ReflectionUtil;
 
 import java.time.LocalDate;
 import java.util.Collection;
+import java.util.Locale;
 import java.util.Optional;
 
 public class UnmarshalledVariable {
@@ -85,6 +86,9 @@ public class UnmarshalledVariable {
             return unmarshaller.unmarshalString(source, root);
         } else if(source instanceof LocalDate){
             DateUnmarshaller unmarshaller = new DateUnmarshaller(buf);
+            return unmarshaller.unmarshalString(source, root);
+        } else if(source instanceof Locale){
+            LocaleUnmarshaller unmarshaller = new LocaleUnmarshaller(buf);
             return unmarshaller.unmarshalString(source, root);
         } else {
             ReflectionUnmarshaller unmarshaller = new ReflectionUnmarshaller(buf);
