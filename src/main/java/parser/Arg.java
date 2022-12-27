@@ -110,6 +110,13 @@ public class Arg {
         return Objects.equals(key, arg.key) && Objects.equals(value, arg.value);
     }
 
+    public Object getActualValue(){
+        if(this.serialized)
+            return serializedValue;
+        else
+            return getValue();
+    }
+
     enum ArgType {
         FIELD,
         ARG,

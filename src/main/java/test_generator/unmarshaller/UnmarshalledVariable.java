@@ -69,7 +69,11 @@ public class UnmarshalledVariable {
     private String unmarshalDeserialize(StringBuilder buf){
         ReflectionUtil util = new ReflectionUtil();
 
-        if(source instanceof Optional){
+        if(source instanceof String) {
+            return new StringUnmarshaller().unmarshalString((String) source);
+        } else if(util.isPrimitiveType(source)) {
+            return source.toString();
+        } else if(source instanceof Optional){
             OptionalUnmarshaller unmarshaller = new OptionalUnmarshaller(buf);
             return unmarshaller.unmarshalString(source, root);
         } else if(source.getClass().isEnum()){
@@ -100,13 +104,6 @@ public class UnmarshalledVariable {
         System.out.println("Source: " + source);
         System.out.println("Source Class: " + source.getClass());
         System.out.println("isEnum: " + source.getClass().isEnum());
-
-        if(source.getClass().equals(String.class)) {
-            return ("'" + source + "'");
-        }
-        if(source.getClass().isPrimitive()){
-            return source.toString();
-        }
 
         String unmarshalValue = unmarshal(buf);
 
