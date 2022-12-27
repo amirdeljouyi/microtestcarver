@@ -92,7 +92,9 @@ public class CombineClazz {
     public String setSubjectFields(Set<Arg> fields){
         StringBuilder sb = new StringBuilder();
         for(Arg field: fields){
-            sb.append(setSubjectField(field));
+            String setter = setSubjectField(field);
+            if(setter != null)
+                sb.append(setter);
         }
         return sb.toString();
     }
