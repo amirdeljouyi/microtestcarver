@@ -55,10 +55,10 @@ public class CombineClazz {
 
     public String setField(Arg field, StringBuilder buf){
         String fieldName = field.getKey();
-        System.out.println("FieldName: " + fieldName);
+//        System.out.println("FieldName: " + fieldName);
         CtField stField = this.staticClazz.getField(fieldName);
-        System.out.println("Field: " + stField);
-        System.out.println("FieldValue: " + field.getValue());
+//        System.out.println("Field: " + stField);
+//        System.out.println("FieldValue: " + field.getValue());
         if(stField == null)
             return null;
 
@@ -74,11 +74,6 @@ public class CombineClazz {
 
         UnmarshalledVariable uv = new UnmarshalledVariable(arg, staticClazz);
         String revealedObject = uv.getInlineOrVariable(buf);
-//        if(uv.isMultiline()){
-//            System.out.println("NotNull!!!");
-//            System.out.println("Buf" + buf);
-//        }
-//
 //        System.out.println("revealedObject: " + revealedObject);
 
         if(revealedObject == null)
@@ -95,28 +90,30 @@ public class CombineClazz {
     }
 
     public String setSubjectFields(Set<Arg> fields){
-        StringBuilder subjectBuf = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for(Arg field: fields){
-//            System.out.println("subfield: " + field);
+            sb.append(setSubjectField(field));
+        }
+        return sb.toString();
+    }
 
-            StringBuilder populationBuf = new StringBuilder();
-            String fieldSetter = setFieldHierarchy(field, populationBuf);
-//            System.out.println("fieldSetter: " + fieldSetter);
-            if(fieldSetter == null)
-                continue;
+    public String setSubjectField(Arg field){
+        StringBuilder subjectBuf = new StringBuilder();
+        StringBuilder populationBuf = new StringBuilder();
+        String fieldSetter = setFieldHierarchy(field, populationBuf);
+        if(fieldSetter == null)
+            return null;
 
-            if(!populationBuf.toString().isEmpty()){
-//                System.out.println("populationBuf: " + populationBuf);
+        if(!populationBuf.toString().isEmpty()){
 
-                String[] lines = populationBuf.toString().split("\\n");
-                for(String s: lines){
-                    subjectBuf.append("\t\t" + s);
-                    subjectBuf.append("\n");
-                }
+            String[] lines = populationBuf.toString().split("\\n");
+            for(String s: lines){
+                subjectBuf.append("\t\t" + s);
                 subjectBuf.append("\n");
             }
-            subjectBuf.append("\t\t" + "subject." + fieldSetter + ";\n");
+            subjectBuf.append("\n");
         }
+        subjectBuf.append("\t\t" + "subject." + fieldSetter + ";\n");
         return subjectBuf.toString();
     }
 

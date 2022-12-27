@@ -31,10 +31,7 @@ ${combine.setSubjectFields($initialFields)}
     public void shouldTest${method.methodName}(){
         #foreach($field in $method.getFields() )
         #if(!$initialFields.contains($field))
-        #set($combineField = $combine.setFields($field))
-        #if(${combineField})
-        subject.$combineField;
-        #end
+${combine.setSubjectField($field)}
         #end
         #end
         #set ($map = $method.clazzMethodsBasedOnFields() )
