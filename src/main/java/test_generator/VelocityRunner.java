@@ -4,6 +4,7 @@ import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
+import parser.Arg;
 import parser.Clazz;
 
 import java.io.File;
@@ -12,6 +13,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class VelocityRunner {
 
@@ -39,7 +41,7 @@ public class VelocityRunner {
             Clazz v = entry.getValue();
             VelocityContext context = new VelocityContext();
             CombineClazz combineClazz = new CombineClazz(v, sourceDirectory);
-
+            Set<Arg> initFields = v.initialFieldState();
             System.out.println("=========================");
             System.out.println("Clazz: " + v.fullName());
 //            System.out.println("Methods based on Fields: ");
@@ -55,8 +57,8 @@ public class VelocityRunner {
             context.put("args", v.args);
             context.put("params", v.mockableFields());
             context.put("combine", combineClazz);
-            context.put("initialFields", v.initialFieldState());
-            context.put("assertion", new AssertionGenerator(combineClazz));
+            context.put("initialFields", initFields);
+            context.put("testMethod", new TestMethodGenerator(combineClazz, initFields));
 
             try {
                 Writer writer = new FileWriter(new File("./test-output/" + v.clazzName + "Test.java"));

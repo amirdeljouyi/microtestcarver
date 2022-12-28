@@ -24,7 +24,7 @@ public class ClazzMethod extends BasicMethod {
         this.callee.add(callee);
     }
 
-    public Map<BasicMethod, Arg> clazzMethodsBasedOnFields(){
+    public Map<BasicMethod, Arg> methodsBasedOnFields(){
         Map<BasicMethod, Arg> map = new HashMap<>();
         Collection<BasicMethod> calleeSet = calleeAndChildren().values();
         for (Arg param: this.clazz.fields){

@@ -29,28 +29,7 @@ ${combine.setSubjectFields($initialFields)}
 #foreach( $method in $methods )
     @Test
     public void shouldTest${method.methodName}(){
-##    Set the fields that have different values
-        #foreach($field in $method.getFields() )
-        #if(!$initialFields.contains($field))
-        #set($combineField = $combine.setSubjectField($field))
-        #if(${combineField})
-${combineField}
-        #end
-        #end
-        #end
-        #set ($map = $method.clazzMethodsBasedOnFields() )
-##    Mock
-        #foreach ($mapEntry in $map.entrySet())
-            #set($combineField = ${combine.mockField($mapEntry.key, $mapEntry.value)})
-            #if(${combineField})
-${combineField}
-            #end
-        #end
-##        #if($method.hasReturn())
-        #parse("vtemplates/assertion.vm")
-##        #else
-##        subject.${method.methodName}(#foreach($arg in ${method.getArgs()})${arg.getValue()}#if( $foreach.hasNext ), #end#end);
-##        #end
+${testMethod.testMethod($method)}
     }
 
 #end
