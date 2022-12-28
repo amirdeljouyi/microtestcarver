@@ -1,6 +1,10 @@
 package test_generator.unmarshaller.utils;
 
+import parser.Arg;
+import parser.ClazzMethod;
+
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.Set;
 
 public class NamingUtil {
@@ -13,23 +17,24 @@ public class NamingUtil {
 
     public String collectionName(Collection<?> collection){
         String objectsType = collection.toArray()[0].getClass().getSimpleName();
-        String proposedName = objectsType.substring(0, 1).toLowerCase() +
-                objectsType.substring(1) + "s";
+        String proposedName = capitalize(objectsType) + "s";
         String approvedName = uniqueNameWithNumbers(proposedName);
         variableNames.add(approvedName);
         return approvedName;
     }
 
     public String variableName(Object source){
-        String proposedName = source.getClass().getSimpleName().substring(0,1).toLowerCase() +
-                source.getClass().getSimpleName().substring(1);
+        String proposedName = capitalize(source.getClass().getSimpleName());
         String approvedName = uniqueNameWithNumbers(proposedName);
         variableNames.add(approvedName);
         return approvedName;
     }
 
-    public String testName(){
-        return null;
+    public String testName(ClazzMethod method){
+        String proposedName = "shouldTest" + capitalize(method.methodName);
+        String approvedName = uniqueNameWithSituation(proposedName, method);
+        variableNames.add(approvedName);
+        return approvedName;
     }
 
     private String uniqueNameWithNumbers(String name){
@@ -40,6 +45,56 @@ public class NamingUtil {
             i++;
         }
         return approvedName;
+    }
+
+    private String uniqueNameWithSituation(String name, ClazzMethod method){
+        String approvedName = name;
+        if(checkDuplication(approvedName)){
+            approvedName += "_" + "where";
+            Iterator<Arg> it = method.getArgs().iterator();
+            while(it.hasNext()){
+                Arg arg = it.next();
+                String argName = removeQuotation(arg.getKey());
+                String argValue = removeQuotation(arg.getValue());
+                if(argName!=null && !argName.isEmpty() && !argName.equals("null")) {
+                    approvedName += capitalize(argName);
+                } else if(argValue.length() < 10) {
+                    approvedName += capitalize(argValue);
+                } else {
+                    approvedName += capitalize(arg.getShortType());
+                }
+
+                if(!checkDuplication(approvedName))
+                    break;
+
+                if(it.hasNext())
+                    approvedName += "And";
+            }
+
+            if(checkDuplication(approvedName)) {
+                approvedName += "_" + "return";
+                Arg arg = method.getReturnField();
+                String argValue = removeQuotation(arg.getValue());
+                if (argValue.length() < 10) {
+                    approvedName += capitalize(argValue);
+                } else {
+                    approvedName += capitalize(arg.getShortType());
+                }
+            }
+
+            if(checkDuplication(approvedName))
+                approvedName = uniqueNameWithNumbers(approvedName);
+        }
+        return approvedName;
+    }
+
+    private String capitalize(String name){
+        return name.substring(0, 1).toUpperCase() + name.substring(1);
+    }
+    private String removeQuotation(String name){
+        if(name == null)
+            return null;
+        return name.replace("\"", "");
     }
 
     private Boolean checkDuplication(String name){

@@ -28,7 +28,7 @@ ${combine.setSubjectFields($initialFields, $setupVariableNames)}
 
 #foreach( $method in $methods )
     @Test
-    public void shouldTest${method.methodName}(){
+    public void ${naming.testName($method)}(){
 ${testMethod.testMethod($method)}
     }
 

@@ -6,6 +6,7 @@ import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
 import parser.Arg;
 import parser.Clazz;
+import test_generator.unmarshaller.utils.NamingUtil;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -61,6 +62,7 @@ public class VelocityRunner {
             context.put("initialFields", initFields);
             context.put("setupVariableNames", new HashSet<String>());
             context.put("testMethod", new TestMethodGenerator(combineClazz, initFields));
+            context.put("naming", new NamingUtil(new HashSet<>()));
 
             try {
                 Writer writer = new FileWriter(new File("./test-output/" + v.clazzName + "Test.java"));
