@@ -58,7 +58,7 @@ public class ReflectionUnmarshaller extends AbstractUnmarshaller{
 
             StringBuilder sb = new StringBuilder();
             String setter = spoonUtil.getFieldSetter(staticClazz, fieldReference.getFieldDeclaration(), fieldValue.getName(), fieldObject, sb);
-            constructBuffer.append("\n" + this.variableName + "." + setter + ";");
+            constructBuffer.append("\n" + this.variableName + "." + setter + ";" + "\n");
         }
         return constructBuffer.toString();
     }

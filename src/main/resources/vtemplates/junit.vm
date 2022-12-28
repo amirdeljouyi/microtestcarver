@@ -41,13 +41,16 @@ ${combineField}
         #set ($map = $method.clazzMethodsBasedOnFields() )
 ##    Mock
         #foreach ($mapEntry in $map.entrySet())
-        given(${mapEntry.value.getKey()}.${mapEntry.key.getMethodName()}(#foreach($arg in ${mapEntry.key.getArgs()})${arg.value}#if( $foreach.hasNext ), #end#end)).willReturn($combine.revealObject($mapEntry.key.returnField));
+            #set($combineField = ${combine.mockField($mapEntry.key, $mapEntry.value)})
+            #if(${combineField})
+${combineField}
+            #end
         #end
-        #if($method.hasReturn())
+##        #if($method.hasReturn())
         #parse("vtemplates/assertion.vm")
 ##        #else
 ##        subject.${method.methodName}(#foreach($arg in ${method.getArgs()})${arg.getValue()}#if( $foreach.hasNext ), #end#end);
-        #end
+##        #end
     }
 
 #end

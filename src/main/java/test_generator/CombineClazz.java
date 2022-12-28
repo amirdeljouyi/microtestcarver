@@ -1,6 +1,7 @@
 package test_generator;
 
 import parser.Arg;
+import parser.BasicMethod;
 import parser.Clazz;
 import parser.ClazzMethod;
 import spoon.Launcher;
@@ -11,6 +12,7 @@ import spoon.reflect.reference.CtFieldReference;
 import test_generator.unmarshaller.UnmarshalledVariable;
 import test_generator.unmarshaller.utils.ReflectionSpoonUtil;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -122,11 +124,36 @@ public class CombineClazz {
     }
 
     public String callTestMethod(ClazzMethod method){
-//        ${method.getReturnField().getShortType()} ${method.methodName} = subject.${method.methodName}(#foreach($arg in $method.args)${arg.getValue()}#if( $foreach.hasNext ), #end#end);
         StringBuilder buffer = new StringBuilder();
         StringBuilder sb = new StringBuilder();
         sb.append("\t\t" + method.getReturnField().getShortType() + " " + method.methodName + " = subject." + method.methodName + "(");
-        Iterator<Arg> it = method.args.iterator();
+        invokeMethod(buffer, sb, method.getArgs());
+        sb.append(");");
+        buffer.append(sb);
+
+        return buffer.toString();
+    }
+
+    public String mockField(BasicMethod method, Arg field){
+        StringBuilder buffer = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
+        sb.append("\t\tgiven(" + field.getKey() + "." + method.getMethodName() + "(");
+        invokeMethod(buffer, sb, method.getArgs());
+        sb.append(").willReturn(");
+        HashSet<Arg> returnField = new HashSet<>();
+        returnField.add(method.getReturnField());
+        invokeMethod(buffer, sb, returnField);
+        sb.append("));");
+        buffer.append(sb);
+//    given(${mapEntry.value.getKey()}.${mapEntry.key.getMethodName()}(
+//    #foreach($arg in ${mapEntry.key.getArgs()})
+//    ${arg.value}#if( $foreach.hasNext ), #end#end)).willReturn($combine.revealObject($mapEntry.key.returnField));
+
+        return buffer.toString();
+    }
+
+    private void invokeMethod(StringBuilder buffer, StringBuilder sb, Set<Arg> args) {
+        Iterator<Arg> it = args.iterator();
         while (it.hasNext()){
             Arg arg = it.next();
 
@@ -148,11 +175,6 @@ public class CombineClazz {
                 sb.append(", ");
             }
         }
-        sb.append(")");
-
-        buffer.append(sb);
-
-        return buffer.toString();
     }
 
 }

@@ -46,10 +46,11 @@ public class CallTrace {
             location = @Location(value = Kind.CALL, clazz = "/.*/", method = "/.*/", where = Where.AFTER)
     )
     public static void onMethodAfterCall(@TargetMethodOrField(fqn = true) String method, @Return AnyType callbackData, @Duration long d, AnyType arg) {
-        String regex = Sys.$("packageName").substring(1) + ".*";
-        String methodName = method.split("#")[0].split(" ")[2];
-        Boolean inPackage = methodName.matches(regex);
-        if (!inPackage) printDetailedObject("Callback", callbackData);
+//        String regex = Sys.$("packageName").substring(1) + ".*";
+//        String methodName = method.split("#")[0].split(" ")[2];
+//        Boolean inPackage = methodName.matches(regex);
+        printDetailedObject("Callback", callbackData);
+//        if (!inPackage) printDetailedObject("Callback", callbackData);
     }
 
     @OnMethod(

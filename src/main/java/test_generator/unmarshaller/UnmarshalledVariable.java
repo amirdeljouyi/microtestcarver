@@ -77,7 +77,12 @@ public class UnmarshalledVariable {
             return source.toString();
         } if (source instanceof Collection<?>){
             CollectionUnmarshaller unmarshaller = new CollectionUnmarshaller(buf);
-            return unmarshaller.unmarshalString(source, root);
+            String unmarshalString = unmarshaller.unmarshalString(source, root);
+            if(unmarshaller.isMultiline()){
+                initMode = InitializeMode.MULTILINE;
+                variableName = unmarshaller.getVariableName();
+            }
+            return unmarshalString;
         } else if(source instanceof Optional){
             OptionalUnmarshaller unmarshaller = new OptionalUnmarshaller(buf);
             return unmarshaller.unmarshalString(source, root);

@@ -1,6 +1,7 @@
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvider;
 import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
+import com.thoughtworks.xstream.security.AnyTypePermission;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openjdk.btrace.core.BTraceUtils;
@@ -46,14 +47,19 @@ public class CarvingTests {
         XStream xstream = new XStream(new SunUnsafeReflectionProvider(), new JettisonMappedXmlDriver());
         xstream.setMode(XStream.NO_REFERENCES);
         xstream.ignoreUnknownElements();
+        xstream.addPermission(AnyTypePermission.ANY);
 
         subject.a.add(10);
         subject.a.add(20);
         subject.s = "amir";
-        subject.bs.add(new BTest(2, "ads"));
+        subject.bs.add(new BTest(2, "ASE"));
+        subject.bs.add(new BTest(3, "AST"));
 
         String dataJson = xstream.toXML(subject);
         System.out.println(dataJson);
+
+        Object object = xstream.fromXML(this.getClass().getResourceAsStream("xstream.json"));
+        System.out.println("object: " + object);
 
 
         Field[] fields = getAllFields(subject.getClass());

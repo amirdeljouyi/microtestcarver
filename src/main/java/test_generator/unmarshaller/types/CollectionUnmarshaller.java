@@ -14,10 +14,13 @@ public class CollectionUnmarshaller extends AbstractUnmarshaller {
 
     @Override
     public String instantiate(Object source, CtType staticClazz) {
+
         Collection collection = (Collection) source;
         if (collection.size() == 0) {
             return "new " + collection.getClass().getSimpleName() + "<>()";
         } else {
+            System.out.println("collection: " + source);
+
             this.mode = InitializeMode.MULTILINE;
             String objectsType = collection.toArray()[0].getClass().getSimpleName();
             this.variableName = objectsType.substring(0, 1).toLowerCase() +
@@ -34,7 +37,7 @@ public class CollectionUnmarshaller extends AbstractUnmarshaller {
         StringBuilder sb = new StringBuilder();
         for (Object item: collection){
             UnmarshalledVariable uv = new UnmarshalledVariable(item, staticClazz);
-            sb.append(this.variableName + ".add(" + uv.getInlineOrVariable() + ");");
+            sb.append(this.variableName + ".add(" + uv.getInlineOrVariable(this.buf) + ");\n");
         }
         return sb.toString();
     }
