@@ -7,7 +7,6 @@ public abstract class AbstractUnmarshaller {
 
     StringBuilder buf;
     InitializeMode mode = InitializeMode.INLINE;
-
     String variableName;
 
     AbstractUnmarshaller(StringBuilder buf){

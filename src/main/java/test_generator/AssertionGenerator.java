@@ -2,6 +2,8 @@ package test_generator;
 
 import parser.ClazzMethod;
 
+import java.util.Set;
+
 public class AssertionGenerator {
 
     CombineClazz clazz;
@@ -12,12 +14,12 @@ public class AssertionGenerator {
         this.clazz = clazz;
     }
 
-    public String assertion(ClazzMethod clazzMethod){
+    public String assertion(ClazzMethod clazzMethod, Set<String> variableNames){
         this.actualVariableName = clazzMethod.methodName;
 
         StringBuilder assertionBuf = new StringBuilder();
         StringBuilder populationBuf = new StringBuilder();
-        this.expectedResult = clazz.revealObject(clazzMethod.getReturnField(), populationBuf);
+        this.expectedResult = clazz.revealObject(clazzMethod.getReturnField(), populationBuf, variableNames);
 
         if(!populationBuf.toString().isEmpty()){
             String[] lines = populationBuf.toString().split("\\n");

@@ -3,13 +3,16 @@ package test_generator.unmarshaller.types;
 import spoon.reflect.declaration.CtType;
 import test_generator.unmarshaller.UnmarshalledVariable;
 import test_generator.unmarshaller.utils.InitializeMode;
+import test_generator.unmarshaller.utils.NamingUtil;
 
 import java.util.Collection;
+import java.util.Set;
 
 public class CollectionUnmarshaller extends AbstractUnmarshaller {
-
-    public CollectionUnmarshaller(StringBuilder buf) {
+    Set<String> variableNames;
+    public CollectionUnmarshaller(StringBuilder buf, Set<String> variableNames) {
         super(buf);
+        this.variableNames = variableNames;
     }
 
     @Override
@@ -21,12 +24,11 @@ public class CollectionUnmarshaller extends AbstractUnmarshaller {
         } else {
             System.out.println("collection: " + source);
 
-            this.mode = InitializeMode.MULTILINE;
+            mode = InitializeMode.MULTILINE;
             String objectsType = collection.toArray()[0].getClass().getSimpleName();
-            this.variableName = objectsType.substring(0, 1).toLowerCase() +
-                    objectsType.substring(1) + "s";
+            variableName = new NamingUtil(variableNames).collectionName(collection);
             String instantiate = collection.getClass().getSimpleName() + "<" + objectsType + ">" + " " +
-                    this.variableName + " = " + "new " + collection.getClass().getSimpleName() + "<>();";
+                    variableName + " = " + "new " + collection.getClass().getSimpleName() + "<>();";
             return instantiate + "\n" + populate(collection, staticClazz);
         }
     }
@@ -37,7 +39,7 @@ public class CollectionUnmarshaller extends AbstractUnmarshaller {
         StringBuilder sb = new StringBuilder();
         for (Object item: collection){
             UnmarshalledVariable uv = new UnmarshalledVariable(item, staticClazz);
-            sb.append(this.variableName + ".add(" + uv.getInlineOrVariable(this.buf) + ");\n");
+            sb.append(variableName + ".add(" + uv.getInlineOrVariable(buf, variableNames) + ");\n");
         }
         return sb.toString();
     }

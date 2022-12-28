@@ -268,7 +268,7 @@ public class ReflectionSpoonUtil {
         }
     }
 
-    public String getFieldSetter(CtType staticClazz, CtField stField, String fieldName, Object object, StringBuilder buf){
+    public String getFieldSetter(CtType staticClazz, CtField stField, String fieldName, Object object, StringBuilder buf, Set<String> variableNames){
         if(stField == null)
             return null;
 
@@ -276,7 +276,7 @@ public class ReflectionSpoonUtil {
         System.out.println("ObjectType: " + object.getClass());
         UnmarshalledVariable uv = new UnmarshalledVariable(object, staticClazz);
 
-        String fieldValue = uv.getInlineOrVariable(buf);
+        String fieldValue = uv.getInlineOrVariable(buf, variableNames);
         System.out.println("BufferValue: " + buf);
 
         if(stField.isPublic()){

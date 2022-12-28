@@ -41,7 +41,7 @@ public class CombineClazz {
         this.staticClazz = mainClass;
     }
 
-    public String setDeclarationField(Arg field, StringBuilder buf){
+    public String setDeclarationField(Arg field, StringBuilder buf, Set<String> variableNames){
         String fieldName = field.getKey();
 
 //        System.out.println("FieldName :" + fieldName);
@@ -51,10 +51,10 @@ public class CombineClazz {
             return null;
         CtField stField =  stReferenceField.getFieldDeclaration();
 //        System.out.println("FieldDeclaration: " + stField);
-        return spoonUtil.getFieldSetter(this.staticClazz, stField, fieldName, field.getActualValue(), buf);
+        return spoonUtil.getFieldSetter(this.staticClazz, stField, fieldName, field.getActualValue(), buf, variableNames);
     }
 
-    public String setField(Arg field, StringBuilder buf){
+    public String setField(Arg field, StringBuilder buf, Set<String> variableNames){
         String fieldName = field.getKey();
 //        System.out.println("FieldName: " + fieldName);
         CtField stField = this.staticClazz.getField(fieldName);
@@ -63,10 +63,10 @@ public class CombineClazz {
         if(stField == null)
             return null;
 
-        return spoonUtil.getFieldSetter(this.staticClazz, stField, fieldName, field.getActualValue(), buf);
+        return spoonUtil.getFieldSetter(this.staticClazz, stField, fieldName, field.getActualValue(), buf, variableNames);
     }
 
-    public String revealObject(Arg arg, StringBuilder buf){
+    public String revealObject(Arg arg, StringBuilder buf, Set<String> variableNames){
         if(arg == null || arg.getValue() == null)
             return null;
 
@@ -74,7 +74,7 @@ public class CombineClazz {
             return arg.getValue();
 
         UnmarshalledVariable uv = new UnmarshalledVariable(arg, staticClazz);
-        String revealedObject = uv.getInlineOrVariable(buf);
+        String revealedObject = uv.getInlineOrVariable(buf, variableNames);
 //        System.out.println("revealedObject: " + revealedObject);
 
         if(revealedObject == null)
@@ -83,27 +83,27 @@ public class CombineClazz {
         return revealedObject;
     }
 
-    public String setFieldHierarchy(Arg field, StringBuilder buf){
-        String string = setField(field, buf);
+    public String setFieldHierarchy(Arg field, StringBuilder buf, Set<String> variableNames){
+        String string = setField(field, buf, variableNames);
         if(string == null)
-            return setDeclarationField(field, buf);
+            return setDeclarationField(field, buf, variableNames);
         return string;
     }
 
-    public String setSubjectFields(Set<Arg> fields){
+    public String setSubjectFields(Set<Arg> fields, Set<String> variableNames){
         StringBuilder sb = new StringBuilder();
         for(Arg field: fields){
-            String setter = setSubjectField(field);
+            String setter = setSubjectField(field, variableNames);
             if(setter != null)
                 sb.append(setter);
         }
         return sb.toString();
     }
 
-    public String setSubjectField(Arg field){
+    public String setSubjectField(Arg field, Set<String> variableNames){
         StringBuilder subjectBuf = new StringBuilder();
         StringBuilder populationBuf = new StringBuilder();
-        String fieldSetter = setFieldHierarchy(field, populationBuf);
+        String fieldSetter = setFieldHierarchy(field, populationBuf, variableNames);
         if(fieldSetter == null)
             return null;
 
@@ -120,13 +120,13 @@ public class CombineClazz {
         return subjectBuf.toString();
     }
 
-    public void invokeMethod(StringBuilder buffer, StringBuilder sb, Set<Arg> args) {
+    public void invokeMethod(StringBuilder buffer, StringBuilder sb, Set<Arg> args, Set<String> variableNames) {
         Iterator<Arg> it = args.iterator();
         while (it.hasNext()){
             Arg arg = it.next();
 
             StringBuilder populationBuf = new StringBuilder();
-            String argValue = revealObject(arg, populationBuf);
+            String argValue = revealObject(arg, populationBuf, variableNames);
 
             if(!populationBuf.toString().isEmpty()){
                 String[] lines = populationBuf.toString().split("\\n");

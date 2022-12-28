@@ -7,9 +7,7 @@ import test_generator.unmarshaller.utils.InitializeMode;
 import test_generator.unmarshaller.utils.ReflectionUtil;
 
 import java.time.LocalDate;
-import java.util.Collection;
-import java.util.Locale;
-import java.util.Optional;
+import java.util.*;
 
 public class UnmarshalledVariable {
 
@@ -52,14 +50,9 @@ public class UnmarshalledVariable {
             this.root = ctType;
     }
 
-    public String unmarshal() {
-        StringBuilder buf = new StringBuilder();
-        return unmarshal(buf);
-    }
-
-    public String unmarshal(StringBuilder buf){
+    public String unmarshal(StringBuilder buf, Set<String> variableNames){
         if(mode.equals(UnmarshalMode.DESERIALIZE)){
-            return unmarshalDeserialize(buf);
+            return unmarshalDeserialize(buf, variableNames);
         } else if (mode.equals(UnmarshalMode.TO_STRING)){
             return unmarshalToString(buf);
         } else if (mode.equals(UnmarshalMode.GUESS)){
@@ -68,7 +61,7 @@ public class UnmarshalledVariable {
         return null;
     }
 
-    private String unmarshalDeserialize(StringBuilder buf){
+    private String unmarshalDeserialize(StringBuilder buf, Set<String> variableNames){
         ReflectionUtil util = new ReflectionUtil();
 
         if(source instanceof String) {
@@ -76,7 +69,7 @@ public class UnmarshalledVariable {
         } else if(util.isPrimitiveType(source)) {
             return source.toString();
         } if (source instanceof Collection<?>){
-            CollectionUnmarshaller unmarshaller = new CollectionUnmarshaller(buf);
+            CollectionUnmarshaller unmarshaller = new CollectionUnmarshaller(buf, variableNames);
             String unmarshalString = unmarshaller.unmarshalString(source, root);
             if(unmarshaller.isMultiline()){
                 initMode = InitializeMode.MULTILINE;
@@ -84,7 +77,7 @@ public class UnmarshalledVariable {
             }
             return unmarshalString;
         } else if(source instanceof Optional){
-            OptionalUnmarshaller unmarshaller = new OptionalUnmarshaller(buf);
+            OptionalUnmarshaller unmarshaller = new OptionalUnmarshaller(buf, variableNames);
             return unmarshaller.unmarshalString(source, root);
         } else if(source.getClass().isEnum()){
             EnumUnmarshaller unmarshaller = new EnumUnmarshaller(buf);
@@ -96,7 +89,7 @@ public class UnmarshalledVariable {
             LocaleUnmarshaller unmarshaller = new LocaleUnmarshaller(buf);
             return unmarshaller.unmarshalString(source, root);
         } else {
-            ReflectionUnmarshaller unmarshaller = new ReflectionUnmarshaller(buf);
+            ReflectionUnmarshaller unmarshaller = new ReflectionUnmarshaller(buf, variableNames);
             String unmarshalString = unmarshaller.unmarshalString(source, root);
             if(unmarshaller.isMultiline()){
                 initMode = InitializeMode.MULTILINE;
@@ -108,9 +101,11 @@ public class UnmarshalledVariable {
 
     public String getInlineOrVariable(){
         StringBuilder buf = new StringBuilder();
-        return getInlineOrVariable(buf);
+        HashSet<String> variableNames = new HashSet<>();
+        return getInlineOrVariable(buf, variableNames);
     }
-    public String getInlineOrVariable(StringBuilder buf){
+
+    public String getInlineOrVariable(StringBuilder buf, Set<String> variableNames){
         if(source == null)
             return null;
 
@@ -118,7 +113,7 @@ public class UnmarshalledVariable {
         System.out.println("Source Class: " + source.getClass());
         System.out.println("isEnum: " + source.getClass().isEnum());
 
-        String unmarshalValue = unmarshal(buf);
+        String unmarshalValue = unmarshal(buf, variableNames);
 
         if(initMode.equals(InitializeMode.INLINE)){
             return unmarshalValue;

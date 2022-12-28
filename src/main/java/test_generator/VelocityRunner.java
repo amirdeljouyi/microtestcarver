@@ -12,6 +12,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -58,6 +59,7 @@ public class VelocityRunner {
             context.put("params", v.mockableFields());
             context.put("combine", combineClazz);
             context.put("initialFields", initFields);
+            context.put("setupVariableNames", new HashSet<String>());
             context.put("testMethod", new TestMethodGenerator(combineClazz, initFields));
 
             try {

@@ -2,18 +2,17 @@ package test_generator.unmarshaller.types;
 
 import spoon.reflect.declaration.CtType;
 import spoon.reflect.reference.CtFieldReference;
-import test_generator.unmarshaller.utils.InitializeMode;
-import test_generator.unmarshaller.utils.ReflectionSpoonUtil;
-import test_generator.unmarshaller.utils.ReflectionUtil;
-import test_generator.unmarshaller.utils.ResolvedConstructor;
+import test_generator.unmarshaller.utils.*;
 
 import java.lang.reflect.Field;
 import java.util.Map;
+import java.util.Set;
 
 public class ReflectionUnmarshaller extends AbstractUnmarshaller{
-
-    public ReflectionUnmarshaller(StringBuilder buf) {
+    Set<String> variableNames;
+    public ReflectionUnmarshaller(StringBuilder buf, Set<String> variableNames) {
         super(buf);
+        this.variableNames = variableNames;
     }
 
     @Override
@@ -38,9 +37,8 @@ public class ReflectionUnmarshaller extends AbstractUnmarshaller{
         ReflectionUtil util = new ReflectionUtil();
         StringBuilder constructBuffer = new StringBuilder();
 
-        this.mode = InitializeMode.MULTILINE;
-        this.variableName = source.getClass().getSimpleName().substring(0,1).toLowerCase() +
-                source.getClass().getSimpleName().substring(1);
+        mode = InitializeMode.MULTILINE;
+        variableName = new NamingUtil(variableNames).variableName(source);
         constructBuffer.append(source.getClass().getSimpleName() + " " + variableName);
         constructBuffer.append(" = ");
         constructBuffer.append(constructor.toUnmarshal() + ";" + "\n");
@@ -57,8 +55,8 @@ public class ReflectionUnmarshaller extends AbstractUnmarshaller{
                 continue;
 
             StringBuilder sb = new StringBuilder();
-            String setter = spoonUtil.getFieldSetter(staticClazz, fieldReference.getFieldDeclaration(), fieldValue.getName(), fieldObject, sb);
-            constructBuffer.append(this.variableName + "." + setter + ";" + "\n");
+            String setter = spoonUtil.getFieldSetter(staticClazz, fieldReference.getFieldDeclaration(), fieldValue.getName(), fieldObject, sb, variableNames);
+            constructBuffer.append(variableName + "." + setter + ";" + "\n");
         }
         return constructBuffer.toString();
     }
