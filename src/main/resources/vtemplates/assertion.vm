@@ -1,3 +1,0 @@
-${combine.callTestMethod($method)}
-
-${assertion.assertion($method)}

@@ -1,0 +1,4515 @@
+### BTrace Log: 22/12/2022, 21:34
+
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: b55f78d,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [class [Ljava.lang.Object; elementData=[Ljava.lang.Object;@41b0d14b, int size=0, int modCount=0, ],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: 
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: b55f78d,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [class [Ljava.lang.Object; elementData=[Ljava.lang.Object;@41b0d14b, int size=0, int modCount=0, ],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: 
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 5a3a15fa,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [class [Ljava.lang.Object; elementData=[Ljava.lang.Object;@41b0d14b, int size=0, int modCount=0, ],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: 
+
+}:
+org.springframework.samples.petclinic.model.Person.setLastName:{
+Args: [{
+    hash: 6624741e,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "",
+    fields: [],
+}, ]
+
+Fields: [{
+    hash: 0,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 5a3a15fa,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [class [Ljava.lang.Object; elementData=[Ljava.lang.Object;@41b0d14b, int size=0, int modCount=0, ],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 5a3a15fa,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [class [Ljava.lang.Object; elementData=[Ljava.lang.Object;@41b0d14b, int size=0, int modCount=0, ],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 6624741e,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "",
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 6624741e,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 5a3a15fa,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [class [Ljava.lang.Object; elementData=[Ljava.lang.Object;@41b0d14b, int size=0, int modCount=0, ],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 6624741e,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "",
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 6624741e,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.PetType.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.PetType.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.PetType.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.PetType.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.PetType.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    hash: 68b186e3,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "110 W. Liberty St.",
+    fields: [],
+}, {
+    hash: 23c667f7,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Madison",
+    fields: [],
+}, {
+    hash: 199042d1,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085551023",
+    fields: [],
+}, {
+    hash: 697b7b00,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Leo],
+    fields: [interface java.util.List bag=[Leo], interface java.util.Collection providedCollection=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Owner@4a190c61, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Owner.pets, interface java.io.Serializable key=1, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot=[Leo], class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 2fb2757,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}, {
+    hash: 6a0e65bb,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}, {
+    hash: 5f091c20,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 2fb2757,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    hash: 68b186e3,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "110 W. Liberty St.",
+    fields: [],
+}, {
+    hash: 23c667f7,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Madison",
+    fields: [],
+}, {
+    hash: 199042d1,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085551023",
+    fields: [],
+}, {
+    hash: 697b7b00,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Leo],
+    fields: [interface java.util.List bag=[Leo], interface java.util.Collection providedCollection=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Owner@4a190c61, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Owner.pets, interface java.io.Serializable key=1, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot=[Leo], class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 2fb2757,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}, {
+    hash: 6a0e65bb,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}, {
+    hash: 5f091c20,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 6a0e65bb,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.toString:{
+Args: []
+
+Fields: [{
+    hash: 468f38c2,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-09-07,
+    fields: [int year=2010, short month=9, short day=7, ],
+}, {
+    hash: 6c8a74dd,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: cat,
+    fields: [class java.lang.String name=cat, class java.lang.Integer id=1, ],
+}, {
+    hash: 739d8ac8,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@393936f, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=1, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: fe3df80,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}, {
+    hash: 5f091c20,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+virtual java.lang.String org.springframework.samples.petclinic.model.NamedEntity#getName[Leo]
+Args: []
+
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    hash: 468f38c2,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-09-07,
+    fields: [int year=2010, short month=9, short day=7, ],
+}, {
+    hash: 6c8a74dd,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: cat,
+    fields: [class java.lang.String name=cat, class java.lang.Integer id=1, ],
+}, {
+    hash: 739d8ac8,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@393936f, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=1, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: fe3df80,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}, {
+    hash: 5f091c20,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    hash: fe3df80,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}
+
+}:
+Return: {
+    hash: fe3df80,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    hash: 2fdf6608,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "638 Cardinal Ave.",
+    fields: [],
+}, {
+    hash: d4aa19,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Sun Prairie",
+    fields: [],
+}, {
+    hash: 40e885c0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085551749",
+    fields: [],
+}, {
+    hash: 6af7a776,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Basil],
+    fields: [interface java.util.List bag=[Basil], interface java.util.Collection providedCollection=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Owner@31849a15, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Owner.pets, interface java.io.Serializable key=2, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot=[Basil], class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 21c3c4b,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Betty",
+    fields: [],
+}, {
+    hash: 65e7f4d,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Davis",
+    fields: [],
+}, {
+    hash: 273dced7,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 21c3c4b,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Betty",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    hash: 2fdf6608,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "638 Cardinal Ave.",
+    fields: [],
+}, {
+    hash: d4aa19,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Sun Prairie",
+    fields: [],
+}, {
+    hash: 40e885c0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085551749",
+    fields: [],
+}, {
+    hash: 6af7a776,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Basil],
+    fields: [interface java.util.List bag=[Basil], interface java.util.Collection providedCollection=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Owner@31849a15, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Owner.pets, interface java.io.Serializable key=2, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot=[Basil], class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 21c3c4b,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Betty",
+    fields: [],
+}, {
+    hash: 65e7f4d,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Davis",
+    fields: [],
+}, {
+    hash: 273dced7,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 65e7f4d,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Davis",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.toString:{
+Args: []
+
+Fields: [{
+    hash: cd54145,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2012-08-06,
+    fields: [int year=2012, short month=8, short day=6, ],
+}, {
+    hash: 6b956fd2,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: hamster,
+    fields: [class java.lang.String name=hamster, class java.lang.Integer id=6, ],
+}, {
+    hash: 607d7d9a,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@21055cd6, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=2, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 3ab72b57,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Basil",
+    fields: [],
+}, {
+    hash: 273dced7,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2,
+    fields: [],
+}, ]
+
+virtual java.lang.String org.springframework.samples.petclinic.model.NamedEntity#getName[Basil]
+Args: []
+
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    hash: cd54145,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2012-08-06,
+    fields: [int year=2012, short month=8, short day=6, ],
+}, {
+    hash: 6b956fd2,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: hamster,
+    fields: [class java.lang.String name=hamster, class java.lang.Integer id=6, ],
+}, {
+    hash: 607d7d9a,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@21055cd6, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=2, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 3ab72b57,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Basil",
+    fields: [],
+}, {
+    hash: 273dced7,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 3ab72b57,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Basil",
+    fields: [],
+}
+
+}:
+Return: {
+    hash: 3ab72b57,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Basil",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    hash: 524f059d,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "2693 Commerce St.",
+    fields: [],
+}, {
+    hash: 688ba7f,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "McFarland",
+    fields: [],
+}, {
+    hash: 51b25c0c,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085558763",
+    fields: [],
+}, {
+    hash: 1b10dff0,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Jewel, Rosy],
+    fields: [interface java.util.List bag=[Jewel, Rosy], interface java.util.Collection providedCollection=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Owner@1847b753, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Owner.pets, interface java.io.Serializable key=3, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot=[Jewel, Rosy], class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 629367ca,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Eduardo",
+    fields: [],
+}, {
+    hash: 210205a8,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rodriquez",
+    fields: [],
+}, {
+    hash: 210b6ad6,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 3,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 629367ca,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Eduardo",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    hash: 524f059d,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "2693 Commerce St.",
+    fields: [],
+}, {
+    hash: 688ba7f,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "McFarland",
+    fields: [],
+}, {
+    hash: 51b25c0c,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085558763",
+    fields: [],
+}, {
+    hash: 1b10dff0,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Jewel, Rosy],
+    fields: [interface java.util.List bag=[Jewel, Rosy], interface java.util.Collection providedCollection=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Owner@1847b753, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Owner.pets, interface java.io.Serializable key=3, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot=[Jewel, Rosy], class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 629367ca,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Eduardo",
+    fields: [],
+}, {
+    hash: 210205a8,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rodriquez",
+    fields: [],
+}, {
+    hash: 210b6ad6,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 3,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 210205a8,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rodriquez",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.toString:{
+Args: []
+
+Fields: [{
+    hash: 47d5f861,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-03-07,
+    fields: [int year=2010, short month=3, short day=7, ],
+}, {
+    hash: 50641442,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: dog,
+    fields: [class java.lang.String name=dog, class java.lang.Integer id=2, ],
+}, {
+    hash: 51407801,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@49064c15, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=4, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: bce44be,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Jewel",
+    fields: [],
+}, {
+    hash: 7c1c21a9,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 4,
+    fields: [],
+}, ]
+
+virtual java.lang.String org.springframework.samples.petclinic.model.NamedEntity#getName[Jewel]
+Args: []
+
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    hash: 47d5f861,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-03-07,
+    fields: [int year=2010, short month=3, short day=7, ],
+}, {
+    hash: 50641442,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: dog,
+    fields: [class java.lang.String name=dog, class java.lang.Integer id=2, ],
+}, {
+    hash: 51407801,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@49064c15, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=4, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: bce44be,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Jewel",
+    fields: [],
+}, {
+    hash: 7c1c21a9,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 4,
+    fields: [],
+}, ]
+
+Return: {
+    hash: bce44be,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Jewel",
+    fields: [],
+}
+
+}:
+Return: {
+    hash: bce44be,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Jewel",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.toString:{
+Args: []
+
+Fields: [{
+    hash: 702470ed,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2011-04-17,
+    fields: [int year=2011, short month=4, short day=17, ],
+}, {
+    hash: 50641442,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: dog,
+    fields: [class java.lang.String name=dog, class java.lang.Integer id=2, ],
+}, {
+    hash: 363b9ae2,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@2176ae69, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=3, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 7fd4acfa,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rosy",
+    fields: [],
+}, {
+    hash: 210b6ad6,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 3,
+    fields: [],
+}, ]
+
+virtual java.lang.String org.springframework.samples.petclinic.model.NamedEntity#getName[Rosy]
+Args: []
+
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    hash: 702470ed,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2011-04-17,
+    fields: [int year=2011, short month=4, short day=17, ],
+}, {
+    hash: 50641442,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: dog,
+    fields: [class java.lang.String name=dog, class java.lang.Integer id=2, ],
+}, {
+    hash: 363b9ae2,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@2176ae69, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=3, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 7fd4acfa,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rosy",
+    fields: [],
+}, {
+    hash: 210b6ad6,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 3,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 7fd4acfa,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rosy",
+    fields: [],
+}
+
+}:
+Return: {
+    hash: 7fd4acfa,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Rosy",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    hash: 2859bf20,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "563 Friendly St.",
+    fields: [],
+}, {
+    hash: be0633,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Windsor",
+    fields: [],
+}, {
+    hash: 1af7dedf,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085553198",
+    fields: [],
+}, {
+    hash: 50f7f164,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Iggy],
+    fields: [interface java.util.List bag=[Iggy], interface java.util.Collection providedCollection=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Owner@2ac5bcff, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Owner.pets, interface java.io.Serializable key=4, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot=[Iggy], class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: e84e6e8,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Harold",
+    fields: [],
+}, {
+    hash: 65e7f4d,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Davis",
+    fields: [],
+}, {
+    hash: 7c1c21a9,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 4,
+    fields: [],
+}, ]
+
+Return: {
+    hash: e84e6e8,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Harold",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    hash: 2859bf20,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "563 Friendly St.",
+    fields: [],
+}, {
+    hash: be0633,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Windsor",
+    fields: [],
+}, {
+    hash: 1af7dedf,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085553198",
+    fields: [],
+}, {
+    hash: 50f7f164,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Iggy],
+    fields: [interface java.util.List bag=[Iggy], interface java.util.Collection providedCollection=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Owner@2ac5bcff, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Owner.pets, interface java.io.Serializable key=4, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot=[Iggy], class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: e84e6e8,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Harold",
+    fields: [],
+}, {
+    hash: 65e7f4d,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Davis",
+    fields: [],
+}, {
+    hash: 7c1c21a9,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 4,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 65e7f4d,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Davis",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.toString:{
+Args: []
+
+Fields: [{
+    hash: 5adeceb3,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-11-30,
+    fields: [int year=2010, short month=11, short day=30, ],
+}, {
+    hash: 18315f35,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: lizard,
+    fields: [class java.lang.String name=lizard, class java.lang.Integer id=3, ],
+}, {
+    hash: 20ddd9ec,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@59dc311e, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=5, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 635ffaad,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Iggy",
+    fields: [],
+}, {
+    hash: 79d3b9b3,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 5,
+    fields: [],
+}, ]
+
+virtual java.lang.String org.springframework.samples.petclinic.model.NamedEntity#getName[Iggy]
+Args: []
+
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    hash: 5adeceb3,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-11-30,
+    fields: [int year=2010, short month=11, short day=30, ],
+}, {
+    hash: 18315f35,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: lizard,
+    fields: [class java.lang.String name=lizard, class java.lang.Integer id=3, ],
+}, {
+    hash: 20ddd9ec,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@59dc311e, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=5, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 635ffaad,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Iggy",
+    fields: [],
+}, {
+    hash: 79d3b9b3,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 5,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 635ffaad,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Iggy",
+    fields: [],
+}
+
+}:
+Return: {
+    hash: 635ffaad,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Iggy",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    hash: 8fe7d31,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "2387 S. Fair Way",
+    fields: [],
+}, {
+    hash: 23c667f7,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Madison",
+    fields: [],
+}, {
+    hash: abf39f2,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085552765",
+    fields: [],
+}, {
+    hash: 272cbcc1,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [George],
+    fields: [interface java.util.List bag=[George], interface java.util.Collection providedCollection=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Owner@5e079d9f, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Owner.pets, interface java.io.Serializable key=5, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot=[George], class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 3f7ce29b,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Peter",
+    fields: [],
+}, {
+    hash: 441007b0,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "McTavish",
+    fields: [],
+}, {
+    hash: 79d3b9b3,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 5,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 3f7ce29b,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Peter",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    hash: 8fe7d31,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "2387 S. Fair Way",
+    fields: [],
+}, {
+    hash: 23c667f7,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Madison",
+    fields: [],
+}, {
+    hash: abf39f2,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085552765",
+    fields: [],
+}, {
+    hash: 272cbcc1,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [George],
+    fields: [interface java.util.List bag=[George], interface java.util.Collection providedCollection=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Owner@5e079d9f, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Owner.pets, interface java.io.Serializable key=5, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot=[George], class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 3f7ce29b,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Peter",
+    fields: [],
+}, {
+    hash: 441007b0,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "McTavish",
+    fields: [],
+}, {
+    hash: 79d3b9b3,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 5,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 441007b0,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "McTavish",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.toString:{
+Args: []
+
+Fields: [{
+    hash: 255d0877,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-01-20,
+    fields: [int year=2010, short month=1, short day=20, ],
+}, {
+    hash: 1995b029,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: snake,
+    fields: [class java.lang.String name=snake, class java.lang.Integer id=4, ],
+}, {
+    hash: 5a80ff97,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@3be15123, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=6, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 2fb2757,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}, {
+    hash: 649296ca,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 6,
+    fields: [],
+}, ]
+
+virtual java.lang.String org.springframework.samples.petclinic.model.NamedEntity#getName[George]
+Args: []
+
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    hash: 255d0877,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-01-20,
+    fields: [int year=2010, short month=1, short day=20, ],
+}, {
+    hash: 1995b029,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: snake,
+    fields: [class java.lang.String name=snake, class java.lang.Integer id=4, ],
+}, {
+    hash: 5a80ff97,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@2da8fdcc, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@3be15123, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=6, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 2fb2757,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}, {
+    hash: 649296ca,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 6,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 2fb2757,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}
+
+}:
+Return: {
+    hash: 2fb2757,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.PetType.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 659a2aca,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@659a2aca,
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    hash: 68b186e3,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "110 W. Liberty St.",
+    fields: [],
+}, {
+    hash: 23c667f7,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Madison",
+    fields: [],
+}, {
+    hash: 199042d1,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085551023",
+    fields: [],
+}, {
+    hash: 69f1deae,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Leo],
+    fields: [interface java.util.List bag=[Leo], interface java.util.Collection providedCollection=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@519bb824, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Owner@734e6c00, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Owner.pets, interface java.io.Serializable key=1, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot=[Leo], class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 2fb2757,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}, {
+    hash: 6a0e65bb,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}, {
+    hash: 5f091c20,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 2fb2757,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.Person.getLastName:{
+Args: []
+
+Fields: [{
+    hash: 68b186e3,
+    name: address,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "110 W. Liberty St.",
+    fields: [],
+}, {
+    hash: 23c667f7,
+    name: city,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Madison",
+    fields: [],
+}, {
+    hash: 199042d1,
+    name: telephone,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "6085551023",
+    fields: [],
+}, {
+    hash: 69f1deae,
+    name: pets,
+    type: java.util.List<org.springframework.samples.petclinic.owner.Pet>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Leo],
+    fields: [interface java.util.List bag=[Leo], interface java.util.Collection providedCollection=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@519bb824, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Owner@734e6c00, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Owner.pets, interface java.io.Serializable key=1, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot=[Leo], class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: 2fb2757,
+    name: firstName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "George",
+    fields: [],
+}, {
+    hash: 6a0e65bb,
+    name: lastName,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}, {
+    hash: 5f091c20,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 6a0e65bb,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Franklin",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    hash: 128b5b70,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-09-07,
+    fields: [int year=2010, short month=9, short day=7, ],
+}, {
+    hash: 16025e8d,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: cat,
+    fields: [class java.lang.String name=cat, class java.lang.Integer id=1, ],
+}, {
+    hash: 6bf535d,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@519bb824, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@cb16a42, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=1, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: fe3df80,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}, {
+    hash: 5f091c20,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    hash: fe3df80,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.getBirthDate:{
+Args: []
+
+Fields: [{
+    hash: 128b5b70,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-09-07,
+    fields: [int year=2010, short month=9, short day=7, ],
+}, {
+    hash: 16025e8d,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: cat,
+    fields: [class java.lang.String name=cat, class java.lang.Integer id=1, ],
+}, {
+    hash: 6bf535d,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@519bb824, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@cb16a42, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=1, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: fe3df80,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}, {
+    hash: 5f091c20,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 128b5b70,
+    name: null,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-09-07,
+    fields: [int year=2010, short month=9, short day=7, ],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.getType:{
+Args: []
+
+Fields: [{
+    hash: 128b5b70,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-09-07,
+    fields: [int year=2010, short month=9, short day=7, ],
+}, {
+    hash: 16025e8d,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: cat,
+    fields: [class java.lang.String name=cat, class java.lang.Integer id=1, ],
+}, {
+    hash: 6bf535d,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@519bb824, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@cb16a42, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=1, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: fe3df80,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}, {
+    hash: 5f091c20,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 16025e8d,
+    name: null,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: cat,
+    fields: [class java.lang.String name=cat, class java.lang.Integer id=1, ],
+}
+
+}:
+org.springframework.samples.petclinic.model.NamedEntity.toString:{
+Args: []
+
+Fields: [{
+    hash: 601bcda,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "cat",
+    fields: [],
+}, {
+    hash: 5f091c20,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+virtual java.lang.String org.springframework.samples.petclinic.model.NamedEntity#getName[cat]
+Args: []
+
+org.springframework.samples.petclinic.model.NamedEntity.getName:{
+Args: []
+
+Fields: [{
+    hash: 601bcda,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "cat",
+    fields: [],
+}, {
+    hash: 5f091c20,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 601bcda,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "cat",
+    fields: [],
+}
+
+}:
+Return: {
+    hash: 601bcda,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "cat",
+    fields: [],
+}
+
+}:
+org.springframework.samples.petclinic.owner.Pet.getVisits:{
+Args: []
+
+Fields: [{
+    hash: 128b5b70,
+    name: birthDate,
+    type: java.time.LocalDate,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: 2010-09-07,
+    fields: [int year=2010, short month=9, short day=7, ],
+}, {
+    hash: 16025e8d,
+    name: type,
+    type: org.springframework.samples.petclinic.owner.PetType,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: cat,
+    fields: [class java.lang.String name=cat, class java.lang.Integer id=1, ],
+}, {
+    hash: 6bf535d,
+    name: visits,
+    type: java.util.Set<org.springframework.samples.petclinic.owner.Visit>,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@519bb824, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@cb16a42, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=1, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}, {
+    hash: fe3df80,
+    name: name,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leo",
+    fields: [],
+}, {
+    hash: 5f091c20,
+    name: id,
+    type: java.lang.Integer,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: 1,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 6bf535d,
+    name: null,
+    type: org.hibernate.collection.internal.PersistentSet,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: [],
+    fields: [interface java.util.Set set=[], interface java.util.List tempList=null, interface org.hibernate.engine.spi.SharedSessionContractImplementor session=org.hibernate.internal.SessionImpl@519bb824, boolean isTempSession=false, boolean initialized=true, interface java.util.List operationQueue=null, boolean directlyAccessible=false, boolean initializing=false, class java.lang.Object owner=org.springframework.samples.petclinic.owner.Pet@cb16a42, int cachedSize=-1, class java.lang.String role=org.springframework.samples.petclinic.owner.Pet.visits, interface java.io.Serializable key=1, boolean dirty=false, boolean elementRemoved=false, interface java.io.Serializable storedSnapshot={}, class java.lang.String sessionFactoryUuid=null, boolean allowLoadOutsideTransaction=false, ],
+}
+
+}:
