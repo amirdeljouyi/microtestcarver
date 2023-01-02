@@ -8,6 +8,7 @@ import static org.openjdk.btrace.core.BTraceUtils.*;
 @BTrace(trusted = true)
 public class CallTrace {
 
+    final static String SERIALIZE_TYPE = "xml";
     @OnMethod(
             clazz = "${packageName}\\..*/",
             method = "${methodName}/",
@@ -15,9 +16,9 @@ public class CallTrace {
     )
     public static void onMethodEntry(@Self Object o, @ProbeClassName String pcn, @ProbeMethodName String pmn, AnyType[] args) throws IllegalAccessException {
         print(Strings.strcat(Strings.strcat(pcn, "."), pmn) + ":{");
-        printDetailedArray("Args", args);
+        printDetailedArray("Args", SERIALIZE_TYPE, args);
         if (o != null) {
-            printDetailedFields(o);
+            printDetailedFields(o, SERIALIZE_TYPE);
         }
 //        Serialization
 //        if (o != null) {
@@ -36,7 +37,7 @@ public class CallTrace {
     public static void onMethodCall(@Self Object self, @TargetInstance Object instance, @TargetMethodOrField(fqn = true) String method, AnyType[] args) {
         if (instance != null) {
             print(method + "[" + instance.toString() + "]");
-            printDetailedArray("Args", args);
+            printDetailedArray("Args", SERIALIZE_TYPE, args);
         }
     }
 
@@ -49,7 +50,7 @@ public class CallTrace {
 //        String regex = Sys.$("packageName").substring(1) + ".*";
 //        String methodName = method.split("#")[0].split(" ")[2];
 //        Boolean inPackage = methodName.matches(regex);
-        printDetailedObject("Callback", callbackData);
+        printDetailedObject("Callback", SERIALIZE_TYPE, callbackData);
 //        if (!inPackage) printDetailedObject("Callback", callbackData);
     }
 
@@ -68,6 +69,6 @@ public class CallTrace {
             location = @Location(Kind.RETURN)
     )
     public static void onMethodReturnWithCallback(@Return AnyType callbackData) {
-        printDetailedObject("Return", callbackData);
+        printDetailedObject("Return", SERIALIZE_TYPE, callbackData);
     }
 }

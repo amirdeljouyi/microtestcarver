@@ -16,6 +16,7 @@ public class Parser {
     public String poolDir;
     public InputStream inputStream;
 
+    private final String DESERIALIZE_TYPE = "xml";
 
     private XStream xstream;
     public String time;
@@ -35,8 +36,12 @@ public class Parser {
         this.clazzSet = new HashMap<>();
         util = new ParserUtils();
 
-        xstream = new XStream(new SunUnsafeReflectionProvider(), new JettisonMappedXmlDriver());
-        xstream.setMode(XStream.NO_REFERENCES);
+        if(DESERIALIZE_TYPE.equalsIgnoreCase("json")) {
+            xstream = new XStream(new SunUnsafeReflectionProvider(), new JettisonMappedXmlDriver());
+            xstream.setMode(XStream.NO_REFERENCES);
+        } else {
+            xstream = new XStream(new SunUnsafeReflectionProvider());
+        }
         xstream.ignoreUnknownElements();
         xstream.addPermission(AnyTypePermission.ANY);
     }
@@ -148,8 +153,9 @@ public class Parser {
         line = line.substring(16, line.length() - 1);
         lastArg.serialized = Boolean.parseBoolean(line);
         if(lastArg.serialized){
-            String fileName = poolDir + "/" + lastArg.hash + ".json";
+            String fileName = poolDir + "/" + lastArg.hash + "." + DESERIALIZE_TYPE;
             InputStream inputStream = this.getClass().getResourceAsStream(fileName);
+            System.out.println(fileName);
             lastArg.serializedValue = xstream.fromXML(inputStream);
             System.out.println("Serialized Object: " + lastArg.serializedValue);
         }
