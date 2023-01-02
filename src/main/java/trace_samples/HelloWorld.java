@@ -1,4 +1,4 @@
-package samples;
+package trace_samples;
 
 public abstract class HelloWorld extends HelloWorldBase {
     protected int field = 0;

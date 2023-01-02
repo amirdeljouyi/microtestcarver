@@ -1,4 +1,4 @@
-/*
+package trace_samples;/*
  * Copyright (c) 2008, 2015, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
@@ -25,20 +25,17 @@
 
 
 import org.openjdk.btrace.core.annotations.BTrace;
-import org.openjdk.btrace.core.annotations.Event;
 import org.openjdk.btrace.core.annotations.Kind;
 import org.openjdk.btrace.core.annotations.Location;
 import org.openjdk.btrace.core.annotations.OnMethod;
 import org.openjdk.btrace.core.annotations.Self;
 import org.openjdk.btrace.core.annotations.TLS;
-import org.openjdk.btrace.core.jfr.JfrEvent;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 import static org.openjdk.btrace.core.BTraceUtils.*;
-import static org.openjdk.btrace.core.BTraceUtils.Jfr.*;
 
 /**
  * This sample prints all files opened for read/write
@@ -47,19 +44,7 @@ import static org.openjdk.btrace.core.BTraceUtils.Jfr.*;
  * that is not tracked by this script.
  */
 @BTrace
-public class FileTrackerJfr {
-    @Event(
-            name = "fileEvent",
-            label = "BTrace File Event",
-            description = "Sample BTrace file tracker",
-            category = {"btrace", "samples"},
-            fields = {
-                    @Event.Field(type = Event.FieldType.STRING, name = "fileName"),
-                    @Event.Field(type = Event.FieldType.STRING, name = "operation")
-            }
-    )
-    private static JfrEvent.Factory eventFactory;
-
+public class FileTracker {
     @TLS
     private static String name;
 
@@ -79,10 +64,7 @@ public class FileTrackerJfr {
     )
     public static void onNewFileInputStreamReturn() {
         if (name != null) {
-            JfrEvent event = prepareEvent(eventFactory);
-            setEventField(event, "fileName", name);
-            setEventField(event, "operation", "read");
-            commit(event);
+            println("opened for read " + name);
             name = null;
         }
     }
@@ -103,10 +85,7 @@ public class FileTrackerJfr {
     )
     public static void OnNewFileOutputStreamReturn() {
         if (name != null) {
-            JfrEvent event = prepareEvent(eventFactory);
-            setEventField(event, "fileName", name);
-            setEventField(event, "operation", "write");
-            commit(event);
+            println("opened for write " + name);
             name = null;
         }
     }

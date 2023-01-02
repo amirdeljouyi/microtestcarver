@@ -1,7 +1,6 @@
-package samples;
+package trace_samples;
 
 import org.openjdk.btrace.core.annotations.*;
-import java.lang.reflect.Field;
 
 import static org.openjdk.btrace.core.BTraceUtils.*;
 import static org.openjdk.btrace.core.BTraceUtils.Strings.str;
