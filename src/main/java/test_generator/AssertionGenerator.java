@@ -36,6 +36,6 @@ public class AssertionGenerator {
 
     @Override
     public String toString() {
-        return "assertThat(" + actualVariableName + ", is(" + expectedResult + ");";
+        return "assertThat(" + actualVariableName + ", is(" + expectedResult + "));";
     }
 }

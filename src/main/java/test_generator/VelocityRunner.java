@@ -53,7 +53,7 @@ public class VelocityRunner {
 //
 //            System.out.println(combineClazz);
 
-            context.put("className", v.clazzName);
+            context.put("className", v.shortName());
             context.put("packageName", v.packageName);
             context.put("methods", v.testableMethods());
             context.put("args", v.args);
@@ -65,7 +65,7 @@ public class VelocityRunner {
             context.put("naming", new NamingUtil(new HashSet<>()));
 
             try {
-                Writer writer = new FileWriter(new File("./test-output/" + v.clazzName + "Test.java"));
+                Writer writer = new FileWriter(new File("./test-output/" + v.shortName() + "Test.java"));
                 template.merge(context, writer);
                 writer.flush();
                 writer.close();

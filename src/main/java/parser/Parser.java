@@ -17,6 +17,7 @@ public class Parser {
     public InputStream inputStream;
 
     private final String DESERIALIZE_TYPE = "xml";
+//    private final String DESERIALIZE_TYPE = "json";
 
     private XStream xstream;
     public String time;

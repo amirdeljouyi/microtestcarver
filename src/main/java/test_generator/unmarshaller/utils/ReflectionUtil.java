@@ -1,6 +1,7 @@
 package test_generator.unmarshaller.utils;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InaccessibleObjectException;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.*;
@@ -96,16 +97,15 @@ public class ReflectionUtil {
      * @throws IllegalAccessException if field cannot be accessed.
      */
     public Object getFieldValue(final Object resultObject, final Field field) {
-        field.setAccessible(true);
-        Object fieldVal;
         try {
-            fieldVal = field.get(resultObject);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
+            field.setAccessible(true);
+            Object fieldVal = field.get(resultObject);
+            field.setAccessible(false);
+            return fieldVal;
+        } catch (IllegalAccessException | InaccessibleObjectException e) {
+            return null;
+//            throw new RuntimeException(e);
         }
-        field.setAccessible(false);
-
-        return fieldVal;
     }
 
     public Object getFieldValue(final Object resultObject, final String fieldName) {

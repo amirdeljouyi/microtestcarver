@@ -10,7 +10,7 @@ public class DateUnmarshaller extends AbstractUnmarshaller{
 
     @Override
     public String instantiate(Object source, CtType staticClazz) {
-        return "LocalDate.parse('"+ source + "')";
+        return "LocalDate.parse(\""+ source + "\")";
     }
 
     @Override

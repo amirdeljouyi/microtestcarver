@@ -27,6 +27,20 @@ public class Clazz {
         return packageName + "." + clazzName;
     }
 
+    public String fileFullName(){
+        String name = clazzName.split("\\$")[0];
+
+        return packageName + "." + name;
+    }
+
+    public String shortName(){
+        String name = clazzName;
+        String[] names = clazzName.split("\\$");
+        if(names.length > 1)
+            return names[names.length - 1];
+        return name;
+    }
+
     public void addMethod(ClazzMethod method){
         this.methods.add(method);
     }

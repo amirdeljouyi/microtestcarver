@@ -51,11 +51,11 @@ public class TestMethodGenerator {
         StringBuilder sb = new StringBuilder();
         sb.append("\t\tgiven(" + field.getKey() + "." + method.getMethodName() + "(");
         clazz.invokeMethod(buffer, sb, method.getArgs(), variableNames);
-        sb.append(").willReturn(");
+        sb.append(")).willReturn(");
         HashSet<Arg> returnField = new HashSet<>();
         returnField.add(method.getReturnField());
         clazz.invokeMethod(buffer, sb, returnField, variableNames);
-        sb.append("));");
+        sb.append(");");
         buffer.append(sb);
 
         return buffer.toString();

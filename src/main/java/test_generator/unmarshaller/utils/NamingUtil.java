@@ -17,14 +17,14 @@ public class NamingUtil {
 
     public String collectionName(Collection<?> collection){
         String objectsType = collection.toArray()[0].getClass().getSimpleName();
-        String proposedName = capitalize(objectsType) + "s";
+        String proposedName = toLowerFirst(objectsType) + "s";
         String approvedName = uniqueNameWithNumbers(proposedName);
         variableNames.add(approvedName);
         return approvedName;
     }
 
     public String variableName(Object source){
-        String proposedName = capitalize(source.getClass().getSimpleName());
+        String proposedName = toLowerFirst(source.getClass().getSimpleName());
         String approvedName = uniqueNameWithNumbers(proposedName);
         variableNames.add(approvedName);
         return approvedName;
@@ -90,6 +90,9 @@ public class NamingUtil {
 
     private String capitalize(String name){
         return name.substring(0, 1).toUpperCase() + name.substring(1);
+    }
+    private String toLowerFirst(String name){
+        return name.substring(0, 1).toLowerCase() + name.substring(1);
     }
     private String removeQuotation(String name){
         if(name == null)
