@@ -52,7 +52,7 @@ public class FileTrackerJfr {
             name = "fileEvent",
             label = "BTrace File Event",
             description = "Sample BTrace file tracker",
-            category = {"btrace", "trace_samples"},
+            category = {"btrace", "samples"},
             fields = {
                     @Event.Field(type = Event.FieldType.STRING, name = "fileName"),
                     @Event.Field(type = Event.FieldType.STRING, name = "operation")

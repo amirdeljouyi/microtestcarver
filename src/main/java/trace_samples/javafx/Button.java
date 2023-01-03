@@ -23,7 +23,7 @@
  * questions.
  */
 
-package trace_samples.javafx;
+package samples.javafx;
 
 import org.openjdk.btrace.core.types.AnyType;
 import org.openjdk.btrace.core.annotations.BTrace;

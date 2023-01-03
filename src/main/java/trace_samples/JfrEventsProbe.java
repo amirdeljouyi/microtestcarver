@@ -1,4 +1,4 @@
-package trace_samples;
+package samples;
 
 import org.openjdk.btrace.core.annotations.BTrace;
 import org.openjdk.btrace.core.annotations.Event;
