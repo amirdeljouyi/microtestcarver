@@ -5,9 +5,7 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import test_generator.VelocityRunner;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.lang.reflect.Field;
 
 @Command(name = "parser")
@@ -52,6 +50,36 @@ public class ParserCommand {
             }
             System.out.println(obj);
         } catch (IOException | ClassNotFoundException | IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Command
+    void fix(){
+        String fileDirectory = "/trace-output/" + file;
+        String fileCleanDirectory = "./trace-fixed-output/" + file;
+
+        try {
+            File file = new File(fileCleanDirectory);
+//            file.getParentFile().mkdirs();
+            file.createNewFile();
+            InputStream inputStream = this.getClass().getResourceAsStream(fileDirectory);
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(inputStream));
+            FileWriter fw = new FileWriter(file, true);
+            PrintWriter pw = new PrintWriter(fw);
+            String line;
+
+            while ((line = in.readLine()) != null) {
+                if(line.contains("! ERROR") || line.contains("java.lang.reflect.InaccessibleObjectException: ") || line.contains("\tat ")){
+                    // Think about it
+                } else {
+                    pw.println(line);
+                }
+            }
+            pw.close();
+
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
