@@ -41,10 +41,10 @@ public class NamingUtil {
     }
 
     public String testName(ClazzMethod method){
-        String proposedName = "shouldTest" + capitalize(method.methodName);
+        String proposedName = toLowerFirst(method.methodName);
         String approvedName = uniqueNameWithSituation(proposedName, method);
         variableNames.add(approvedName);
-        return approvedName;
+        return approvedName + "Test";
     }
 
     private String uniqueNameWithNumbers(String name){
@@ -60,7 +60,7 @@ public class NamingUtil {
     private String uniqueNameWithSituation(String name, ClazzMethod method){
         String approvedName = name;
         if(checkDuplication(approvedName)){
-            approvedName += "_" + "where";
+            approvedName += "Where";
             Iterator<Arg> it = method.getArgs().iterator();
             while(it.hasNext()){
                 Arg arg = it.next();
@@ -82,7 +82,7 @@ public class NamingUtil {
             }
 
             if(checkDuplication(approvedName)) {
-                approvedName += "_" + "return";
+                approvedName += "Return";
                 Arg arg = method.getReturnField();
                 String argValue = removeQuotation(arg.getValue());
                 if (argValue.length() < 10) {
