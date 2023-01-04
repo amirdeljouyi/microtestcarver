@@ -76,6 +76,14 @@ public class UnmarshalledVariable {
                 variableName = unmarshaller.getVariableName();
             }
             return unmarshalString;
+        } if (source instanceof Map<?,?>){
+            MapUnmarshaller unmarshaller = new MapUnmarshaller(buf, variableNames);
+            String unmarshalString = unmarshaller.unmarshalString(source, root);
+            if(unmarshaller.isMultiline()){
+                initMode = InitializeMode.MULTILINE;
+                variableName = unmarshaller.getVariableName();
+            }
+            return unmarshalString;
         } else if(source instanceof Optional){
             OptionalUnmarshaller unmarshaller = new OptionalUnmarshaller(buf, variableNames);
             return unmarshaller.unmarshalString(source, root);

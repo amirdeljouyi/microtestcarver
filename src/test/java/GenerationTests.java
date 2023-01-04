@@ -6,10 +6,7 @@ import spoon.reflect.declaration.CtType;
 import spoon.reflect.factory.Factory;
 import test_generator.unmarshaller.UnmarshalledVariable;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -58,6 +55,29 @@ public class GenerationTests {
         System.out.println("unmarshal: " + unmarshalledString);
         assertThat(unmarshalledString, is("ArrayList<ATest> aTests = new ArrayList<>();\naTests.add(new ATest(\"Clouds\", \"few clouds\"));"));
     }
+
+    @Test
+    public void shouldUnmarshallMap() throws IllegalAccessException {
+        HashMap<ATest, BTest> map = new HashMap<>();
+        ATest aTest = new ATest("Clouds", "few clouds");
+        BTest bTest = new BTest("Rainy", "heavy rain");
+        map.put(aTest, bTest);
+        System.out.println(map);
+        StringBuilder buffer = new StringBuilder();
+        HashSet variables = new HashSet<>();
+        UnmarshalledVariable uv = new UnmarshalledVariable(map, root);
+        String unmarshalledString = uv.getInlineOrVariable(buffer, variables);
+        System.out.println("unmarshal: " + unmarshalledString);
+        System.out.println("buffer: " + buffer);
+
+        StringBuilder expectedBuffer = new StringBuilder();
+        expectedBuffer.append("HashMap<ATest, BTest> aTestMappedBTest = new HashMap<>();\n");
+        expectedBuffer.append("aTestMappedBTest.put(new ATest(\"Clouds\", \"few clouds\"), new BTest(\"Rainy\", \"heavy rain\"));\n");
+
+        assertThat(unmarshalledString, is("aTestMappedBTest"));
+        assertThat(buffer.toString(), is(expectedBuffer.toString()));
+    }
+
 
     public static class ATest {
         private List<BTest> bTest;
