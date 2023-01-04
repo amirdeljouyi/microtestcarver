@@ -21,14 +21,13 @@ public class ${className}Test {
     @BeforeEach
     public void setUp() throws Exception {
         MockitoAnnotations.openMocks(this);
-        subject = new ${className}(#foreach($arg in $args)$arg.value#if( $foreach.hasNext ), #end#end);
-
+${combine.initSubject($args, $className, $setupVariableNames)}
 ${combine.setSubjectFields($initialFields, $setupVariableNames)}
     }
 
 #foreach( $method in $methods )
     @Test
-    public void ${naming.testName($method)}(){
+    public void ${naming.testName($method)}() throws Exception{
 ${testMethod.testMethod($method)}
     }
 

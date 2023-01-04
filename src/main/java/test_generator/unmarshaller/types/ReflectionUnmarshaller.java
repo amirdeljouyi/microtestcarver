@@ -20,6 +20,9 @@ public class ReflectionUnmarshaller extends AbstractUnmarshaller{
         ReflectionSpoonUtil spoonUtil = new ReflectionSpoonUtil();
         ResolvedConstructor constructor = spoonUtil.resolveConstructor(staticClazz, source);
 
+        if(constructor == null)
+            return source.toString();
+
         if(constructor.unresolvedFields.size() > 0 && !source.getClass().getSimpleName().isEmpty()){
             return populate(source, staticClazz, constructor);
         } else {

@@ -120,6 +120,17 @@ public class CombineClazz {
         return subjectBuf.toString();
     }
 
+    public String initSubject(Set<Arg> args, String className, Set<String> variableNames){
+        StringBuilder buffer = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
+        sb.append("\t\tsubject = new " + className + "(");
+        invokeMethod(buffer, sb, args, variableNames);
+        sb.append(");");
+        buffer.append(sb);
+
+        return buffer.toString();
+    }
+
     public void invokeMethod(StringBuilder buffer, StringBuilder sb, Set<Arg> args, Set<String> variableNames) {
         Iterator<Arg> it = args.iterator();
         while (it.hasNext()){
