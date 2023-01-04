@@ -19,13 +19,16 @@ public class ParserCommand {
     @Option(names = {"-p", "--pool"}, description = "Pool Folder Directory")
     String poolDir;
 
+    @Option(names = {"-t", "--type"}, description = "Deserialize Type")
+    String destype;
+
 
     @Command
     void parse() {
         String fileDirectory = "/trace-output/" + file;
         poolDir = "/trace-output/" + poolDir;
         InputStream inputStream = this.getClass().getResourceAsStream(fileDirectory);
-        Parser parser = new Parser(inputStream, poolDir);
+        Parser parser = new Parser(inputStream, poolDir, destype);
         parser.readLines();
 
         VelocityRunner vRunner = new VelocityRunner(input);

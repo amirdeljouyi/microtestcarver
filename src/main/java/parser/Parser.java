@@ -16,9 +16,7 @@ public class Parser {
     public String poolDir;
     public InputStream inputStream;
 
-    private final String DESERIALIZE_TYPE = "xml";
-//    private final String DESERIALIZE_TYPE = "json";
-
+    private String deserializeType;
     private XStream xstream;
     public String time;
     private ParserUtils util;
@@ -29,15 +27,16 @@ public class Parser {
     private Arg lastArg;
     private HashMap<String, Clazz> clazzSet;
 
-    public Parser(InputStream inputStream, String poolDir) {
+    public Parser(InputStream inputStream, String poolDir, String desType) {
         this.inputStream = inputStream;
         this.poolDir = poolDir;
         this.clazzMethods = new ArrayList<>();
         this.stackClazz = new Stack<>();
         this.clazzSet = new HashMap<>();
         util = new ParserUtils();
+        this.deserializeType = desType;
 
-        if(DESERIALIZE_TYPE.equalsIgnoreCase("json")) {
+        if(deserializeType.equalsIgnoreCase("json")) {
             xstream = new XStream(new SunUnsafeReflectionProvider(), new JettisonMappedXmlDriver());
             xstream.setMode(XStream.NO_REFERENCES);
         } else {
@@ -154,7 +153,7 @@ public class Parser {
         line = line.substring(16, line.length() - 1);
         lastArg.serialized = Boolean.parseBoolean(line);
         if(lastArg.serialized){
-            String fileName = poolDir + "/" + lastArg.hash + "." + DESERIALIZE_TYPE;
+            String fileName = poolDir + "/" + lastArg.hash + "." + deserializeType;
             InputStream inputStream = this.getClass().getResourceAsStream(fileName);
             System.out.println(fileName);
             lastArg.serializedValue = xstream.fromXML(inputStream);
