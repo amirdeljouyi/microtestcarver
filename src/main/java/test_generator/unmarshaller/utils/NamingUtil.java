@@ -5,6 +5,7 @@ import parser.ClazzMethod;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 public class NamingUtil {
@@ -18,6 +19,15 @@ public class NamingUtil {
     public String collectionName(Collection<?> collection){
         String objectsType = collection.toArray()[0].getClass().getSimpleName();
         String proposedName = toLowerFirst(objectsType) + "s";
+        String approvedName = uniqueNameWithNumbers(proposedName);
+        variableNames.add(approvedName);
+        return approvedName;
+    }
+
+    public String mapName(Map<?,?> map){
+        String keyType = map.keySet().toArray()[0].getClass().getSimpleName();
+        String valueType = map.values().toArray()[0].getClass().getSimpleName();
+        String proposedName = toLowerFirst(keyType) + "Mapped" + valueType;
         String approvedName = uniqueNameWithNumbers(proposedName);
         variableNames.add(approvedName);
         return approvedName;
