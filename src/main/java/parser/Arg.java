@@ -77,8 +77,15 @@ public class Arg {
         return type;
     }
 
-    public String getShortType() {
+    public String getShortTypeWithParent() {
         String[] names = type.split("\\.");
+        String name = names[names.length - 1];
+        return name.replace("\\$", "\\.");
+    }
+
+    public String getShortType() {
+        String name = getShortTypeWithParent();
+        String[] names = name.split("\\.");
         return names[names.length - 1];
     }
 

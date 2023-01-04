@@ -64,7 +64,7 @@ public class TestMethodGenerator {
     public String invokeMUT(ClazzMethod method, Set<String> variableNames){
         StringBuilder buffer = new StringBuilder();
         StringBuilder sb = new StringBuilder();
-        sb.append("\t\t" + method.getReturnField().getShortType() + " " + method.methodName + " = subject." + method.methodName + "(");
+        sb.append("\t\t" + method.getReturnField().getShortTypeWithParent() + " " + method.methodName + " = subject." + method.methodName + "(");
         clazz.invokeMethod(buffer, sb, method.getArgs(), variableNames);
         sb.append(");");
         buffer.append(sb);
