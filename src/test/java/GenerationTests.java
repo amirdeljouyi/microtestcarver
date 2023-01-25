@@ -33,7 +33,7 @@ public class GenerationTests {
         Optional optional = Optional.of(aTest);
         System.out.println(aTest);
         UnmarshalledVariable uv = new UnmarshalledVariable(optional, root);
-        assertThat(uv.getInlineOrVariable(), is("Optional.of(new ATest('Clouds', 'few clouds'))"));
+        assertThat(uv.getInlineOrVariable(), is("Optional.of(new ATest(\"Clouds\", \"few clouds\"))"));
     }
 
     @Test
