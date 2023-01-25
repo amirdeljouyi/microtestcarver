@@ -8,11 +8,11 @@ public class Clazz {
 
     public String type;
 
-    public Set<ClazzMethod> methods;
+    public Set<NodeMethod> methods;
     public Set<Arg> args;
     public Set<Arg> fields;
 
-    public ClazzMethod initMethod;
+    public NodeMethod initMethod;
 
     public Clazz(String packageName, String clazzName){
         this.packageName = packageName;
@@ -41,7 +41,7 @@ public class Clazz {
         return name;
     }
 
-    public void addMethod(ClazzMethod method){
+    public void addMethod(NodeMethod method){
         this.methods.add(method);
     }
 
@@ -106,10 +106,10 @@ public class Clazz {
     public Set<Arg> mockableFields(){
         Set<Arg> params = complexUniqueParams();
         Set<Arg> mockableFields = new HashSet<>();
-        for(ClazzMethod method: methods){
-            Collection<BasicMethod> calleeSet = method.calleeAndChildren().values();
+        for(NodeMethod method: methods){
+            Collection<LeafMethod> calleeSet = method.calleeAndChildren().values();
             for (Arg param: params){
-                for(BasicMethod ce : calleeSet){
+                for(LeafMethod ce : calleeSet){
                     if(param.value.isEmpty())
                         continue;
                     if(param.value.equals(ce.instanceObject)){
@@ -144,7 +144,7 @@ public class Clazz {
             priorityMap.put(field.getKey(), maxHeap);
         }
 
-        for(ClazzMethod method: methods){
+        for(NodeMethod method: methods){
             for(Arg field: method.getFields()){
                 addOrIncreaseMapItem(priorityMap, field);
             }
@@ -176,9 +176,9 @@ public class Clazz {
 
     }
 
-    public Set<ClazzMethod> testableMethods(){
-        Set<ClazzMethod> methods = new HashSet<>();
-        for(ClazzMethod method: this.methods){
+    public Set<NodeMethod> testableMethods(){
+        Set<NodeMethod> methods = new HashSet<>();
+        for(NodeMethod method: this.methods){
             // Check should be a test generate for this method or not?
             if(method.getReturnField() == null)
                 continue;

@@ -1,7 +1,7 @@
 package test_generator.unmarshaller.utils;
 
 import parser.Arg;
-import parser.ClazzMethod;
+import parser.NodeMethod;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -40,7 +40,7 @@ public class NamingUtil {
         return approvedName;
     }
 
-    public String testName(ClazzMethod method){
+    public String testName(NodeMethod method){
         String proposedName = toLowerFirst(method.methodName);
         String approvedName = uniqueNameWithSituation(proposedName, method);
         variableNames.add(approvedName);
@@ -57,7 +57,7 @@ public class NamingUtil {
         return approvedName;
     }
 
-    private String uniqueNameWithSituation(String name, ClazzMethod method){
+    private String uniqueNameWithSituation(String name, NodeMethod method){
         String approvedName = name;
         if(checkDuplication(approvedName)){
             approvedName += "Where";

@@ -1,8 +1,8 @@
 package test_generator;
 
 import parser.Arg;
-import parser.BasicMethod;
-import parser.ClazzMethod;
+import parser.LeafMethod;
+import parser.NodeMethod;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -19,7 +19,7 @@ public class TestMethodGenerator {
         this.initialFields = initialFields;
     }
 
-    private String setDifferentFields(ClazzMethod method, Set<Arg> initialFields, Set<String> variableNames){
+    private String setDifferentFields(NodeMethod method, Set<Arg> initialFields, Set<String> variableNames){
         StringBuilder sb = new StringBuilder();
 
         for(Arg field: method.getFields()){
@@ -33,11 +33,11 @@ public class TestMethodGenerator {
         return sb.toString();
     }
 
-    private String mockFields(ClazzMethod method, Set<String> variableNames){
+    private String mockFields(NodeMethod method, Set<String> variableNames){
         StringBuilder sb = new StringBuilder();
-        Map<BasicMethod, Arg> mockableFieldsAndMethods = method.methodsBasedOnFields();
+        Map<LeafMethod, Arg> mockableFieldsAndMethods = method.methodsBasedOnFields();
 
-        for (Map.Entry<BasicMethod, Arg> entry: mockableFieldsAndMethods.entrySet()){
+        for (Map.Entry<LeafMethod, Arg> entry: mockableFieldsAndMethods.entrySet()){
             String mockedField = mockField(entry.getKey(), entry.getValue(), variableNames);
             if(mockedField != null)
                 sb.append(mockedField);
@@ -46,7 +46,7 @@ public class TestMethodGenerator {
         return sb.toString();
     }
 
-    public String mockField(BasicMethod method, Arg field, Set<String> variableNames){
+    public String mockField(LeafMethod method, Arg field, Set<String> variableNames){
         StringBuilder buffer = new StringBuilder();
         StringBuilder sb = new StringBuilder();
         sb.append("\t\tgiven(" + field.getKey() + "." + method.getMethodName() + "(");
@@ -61,7 +61,7 @@ public class TestMethodGenerator {
         return buffer.toString();
     }
 
-    public String invokeMUT(ClazzMethod method, Set<String> variableNames){
+    public String invokeMUT(NodeMethod method, Set<String> variableNames){
         StringBuilder buffer = new StringBuilder();
         StringBuilder sb = new StringBuilder();
         sb.append("\t\t" + method.getReturnField().getShortTypeWithParent() + " " + method.methodName + " = subject." + method.methodName + "(");
@@ -72,7 +72,7 @@ public class TestMethodGenerator {
         return buffer.toString();
     }
 
-    public String testMethod(ClazzMethod method) {
+    public String testMethod(NodeMethod method) {
         Set<String> variableNames = new HashSet<>();
 
         AssertionGenerator assertionGenerator = new AssertionGenerator(clazz);

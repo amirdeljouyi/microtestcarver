@@ -1,6 +1,6 @@
 package test_generator;
 
-import parser.ClazzMethod;
+import parser.NodeMethod;
 
 import java.util.Set;
 
@@ -14,12 +14,12 @@ public class AssertionGenerator {
         this.clazz = clazz;
     }
 
-    public String assertion(ClazzMethod clazzMethod, Set<String> variableNames){
-        this.actualVariableName = clazzMethod.methodName;
+    public String assertion(NodeMethod nodeMethod, Set<String> variableNames){
+        this.actualVariableName = nodeMethod.methodName;
 
         StringBuilder assertionBuf = new StringBuilder();
         StringBuilder populationBuf = new StringBuilder();
-        this.expectedResult = clazz.revealObject(clazzMethod.getReturnField(), populationBuf, variableNames);
+        this.expectedResult = clazz.revealObject(nodeMethod.getReturnField(), populationBuf, variableNames);
 
         if(!populationBuf.toString().isEmpty()){
             String[] lines = populationBuf.toString().split("\\n");

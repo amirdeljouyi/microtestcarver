@@ -2,7 +2,7 @@ package parser;
 
 import java.util.*;
 
-public class BasicMethod {
+public class LeafMethod {
 
     public String methodName;
 
@@ -16,7 +16,7 @@ public class BasicMethod {
     public String returnType;
     public String instanceObject;
 
-    public BasicMethod(Clazz clazz, String methodName) {
+    public LeafMethod(Clazz clazz, String methodName) {
         this.clazz = clazz;
         this.methodName = methodName;
 
@@ -25,7 +25,7 @@ public class BasicMethod {
         this.fields = new HashSet<>();
     }
 
-    public BasicMethod(Clazz clazz, String methodName, String returnType, String[] argTypes, String instanceObject) {
+    public LeafMethod(Clazz clazz, String methodName, String returnType, String[] argTypes, String instanceObject) {
         this.clazz = clazz;
         this.methodName = methodName;
 
@@ -105,7 +105,7 @@ public class BasicMethod {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        BasicMethod bm = ((BasicMethod) obj);
+        LeafMethod bm = ((LeafMethod) obj);
         return Objects.equals(methodName, bm.methodName) &&
                 Objects.equals(clazz, bm.clazz) &&
                 Objects.equals(instanceObject, bm.instanceObject) &&

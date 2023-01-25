@@ -4,6 +4,7 @@ import parser.Arg;
 import spoon.reflect.declaration.CtType;
 import test_generator.unmarshaller.types.*;
 import test_generator.unmarshaller.utils.InitializeMode;
+import test_generator.unmarshaller.utils.NamingUtil;
 import test_generator.unmarshaller.utils.ReflectionUtil;
 
 import java.time.LocalDate;
@@ -56,7 +57,7 @@ public class UnmarshalledVariable {
         } else if (mode.equals(UnmarshalMode.TO_STRING)){
             return unmarshalToString(buf);
         } else if (mode.equals(UnmarshalMode.GUESS)){
-            return unmarshalGuess(buf);
+            return unmarshalGuess(buf, variableNames);
         }
         return null;
     }
@@ -132,11 +133,20 @@ public class UnmarshalledVariable {
     }
 
     private String unmarshalToString(StringBuilder buf){
-        return null;
+        return new StringUnmarshaller().unmarshalString(this.arg.getValue());
     }
 
-    private String unmarshalGuess(StringBuilder buf){
-        return null;
+    private String unmarshalGuess(StringBuilder buf, Set<String> variableNames){
+        initMode = InitializeMode.MULTILINE;
+        variableName = new NamingUtil(variableNames).variableName(source);
+        buf.append(source.getClass().getSimpleName() + " " + variableName);
+        buf.append(" = ");
+        buf.append("new " + arg.getShortType() + "();\n");
+
+        for(Arg field: this.arg.fields){
+            buf.append(variableName + "." + field.getKey() + " = " + field.getValue());
+        }
+        return variableName;
     }
 
     public Boolean isMultiline(){

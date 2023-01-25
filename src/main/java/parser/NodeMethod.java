@@ -2,33 +2,33 @@ package parser;
 
 import java.util.*;
 
-public class ClazzMethod extends BasicMethod {
+public class NodeMethod extends LeafMethod {
 
-    public BasicMethod reference;
-    public ArrayList<ClazzMethod> childrenClazz;
-    public ArrayList<BasicMethod> callee;
+    public LeafMethod reference;
+    public ArrayList<NodeMethod> childrenClazz;
+    public ArrayList<LeafMethod> callee;
 
     public Boolean isInitMethod = false;
 
-    public ClazzMethod(Clazz clazz, String methodName) {
+    public NodeMethod(Clazz clazz, String methodName) {
         super(clazz, methodName);
         childrenClazz = new ArrayList<>();
         callee = new ArrayList<>();
     }
 
-    public void addChildren(ClazzMethod clazz){
+    public void addChildren(NodeMethod clazz){
         this.childrenClazz.add(clazz);
     }
 
-    public void addMethodCallee(BasicMethod callee){
+    public void addMethodCallee(LeafMethod callee){
         this.callee.add(callee);
     }
 
-    public Map<BasicMethod, Arg> methodsBasedOnFields(){
-        Map<BasicMethod, Arg> map = new HashMap<>();
-        Collection<BasicMethod> calleeSet = calleeAndChildren().values();
+    public Map<LeafMethod, Arg> methodsBasedOnFields(){
+        Map<LeafMethod, Arg> map = new HashMap<>();
+        Collection<LeafMethod> calleeSet = calleeAndChildren().values();
         for (Arg param: this.clazz.fields){
-            for(BasicMethod ce : calleeSet){
+            for(LeafMethod ce : calleeSet){
                 if(param.value.isEmpty())
                     continue;
                 if(param.value.equals(ce.instanceObject)){
@@ -39,14 +39,14 @@ public class ClazzMethod extends BasicMethod {
         return map;
     }
 
-    public Map<String, BasicMethod> calleeAndChildren(){
-        HashMap<String, BasicMethod> calleeSet = new HashMap<>();
-        for(ClazzMethod cm: childrenClazz){
+    public Map<String, LeafMethod> calleeAndChildren(){
+        HashMap<String, LeafMethod> calleeSet = new HashMap<>();
+        for(NodeMethod cm: childrenClazz){
             calleeSet.put(cm.fullName(), cm);
         }
 
-        for(BasicMethod bm: callee){
-            BasicMethod item = calleeSet.get(bm.fullName());
+        for(LeafMethod bm: callee){
+            LeafMethod item = calleeSet.get(bm.fullName());
             if (item == null){
                 calleeSet.put(bm.fullName(), bm);
             } else {
@@ -62,19 +62,19 @@ public class ClazzMethod extends BasicMethod {
 
         return calleeSet;
     }
-    public ArrayList<ClazzMethod> getChildrenClazz() {
+    public ArrayList<NodeMethod> getChildrenClazz() {
         return childrenClazz;
     }
 
-    public ArrayList<BasicMethod> getCallee() {
+    public ArrayList<LeafMethod> getCallee() {
         return callee;
     }
 
-    public BasicMethod getReference() {
+    public LeafMethod getReference() {
         return reference;
     }
 
-    public void setReference(BasicMethod reference) {
+    public void setReference(LeafMethod reference) {
         this.reference = reference;
     }
 }

@@ -18,9 +18,9 @@ dependencies {
 
 //    Projects:
 //    implementation files('libs/broadleaf-framework-6.2.5-SNAPSHOT-jar-with-dependencies')
-//    implementation files('libs/spring-testing-0.0.1-SNAPSHOT-all.jar')
+    implementation files('libs/spring-testing-0.0.1-SNAPSHOT-all.jar')
     implementation files('libs/alfio-2.0-M5-SNAPSHOT-all.jar')
-//    implementation files('libs/spring-petclinic-2.7.3-all.jar')
+    implementation files('libs/spring-petclinic-2.7.3-all.jar')
 
     implementation files('libs/btrace-client.jar')
     implementation 'org.apache.velocity:velocity-engine-core:2.3'

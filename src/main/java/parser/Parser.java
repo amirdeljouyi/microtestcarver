@@ -21,16 +21,16 @@ public class Parser {
     public String time;
     private ParserUtils util;
 
-    private ArrayList<ClazzMethod> clazzMethods;
-    private BasicMethod lastMethodClazz;
-    private Stack<ClazzMethod> stackClazz;
+    private ArrayList<NodeMethod> nodeMethods;
+    private LeafMethod lastMethodClazz;
+    private Stack<NodeMethod> stackClazz;
     private Arg lastArg;
     private HashMap<String, Clazz> clazzSet;
 
     public Parser(InputStream inputStream, String poolDir, String desType) {
         this.inputStream = inputStream;
         this.poolDir = poolDir;
-        this.clazzMethods = new ArrayList<>();
+        this.nodeMethods = new ArrayList<>();
         this.stackClazz = new Stack<>();
         this.clazzSet = new HashMap<>();
         util = new ParserUtils();
@@ -180,7 +180,7 @@ public class Parser {
     private void tokenEndArg(String line) {
         addArgsFieldsParams();
 
-        if (!(lastMethodClazz instanceof ClazzMethod)) {
+        if (!(lastMethodClazz instanceof NodeMethod)) {
             stackClazz.peek().addMethodCallee(lastMethodClazz);
         }
 
@@ -191,7 +191,7 @@ public class Parser {
     }
 
     private void addArgsFieldsParams(){
-        if (lastArg.isField() && (lastMethodClazz instanceof ClazzMethod)) {
+        if (lastArg.isField() && (lastMethodClazz instanceof NodeMethod)) {
             // Add a Param to Clazz
             lastMethodClazz.clazz.addParam(lastArg);
             clazzSet.put(lastMethodClazz.clazz.fullName(), lastMethodClazz.clazz);
@@ -199,16 +199,16 @@ public class Parser {
             lastMethodClazz.addField(lastArg);
         } else if (lastArg.isArg()) {
             lastMethodClazz.addArg(lastArg);
-            if(lastMethodClazz instanceof ClazzMethod)
-                if(((ClazzMethod) lastMethodClazz).isInitMethod)
+            if(lastMethodClazz instanceof NodeMethod)
+                if(((NodeMethod) lastMethodClazz).isInitMethod)
                     lastMethodClazz.clazz.addArg(lastArg);
         }
     }
 
     private void tokenEndRet(String line) {
-        ClazzMethod clazzMethod = stackClazz.peek();
+        NodeMethod nodeMethod = stackClazz.peek();
         if (lastArg.isReturn()) {
-            clazzMethod.returnField = lastArg;
+            nodeMethod.returnField = lastArg;
         } else if (lastArg.isCallback()) {
             lastMethodClazz.returnField = lastArg;
         }
@@ -224,7 +224,7 @@ public class Parser {
     private void tokenClazzMethod(String line) {
         line = line.split(":")[0];
 
-        ClazzMethod cm = methodParser(line);
+        NodeMethod cm = methodParser(line);
         if(cm.equals(lastMethodClazz)) {
             cm.setReference(lastMethodClazz);
         }
@@ -234,7 +234,7 @@ public class Parser {
     }
 
     private void tokenMethod(String line) {
-        BasicMethod cm = methodCallParser(line);
+        LeafMethod cm = methodCallParser(line);
         lastMethodClazz = cm;
 //        System.out.println("method parsed: " + cm);
     }
@@ -244,10 +244,10 @@ public class Parser {
 //    }
 
     private void tokenEndClazzMethod(String line) {
-        ClazzMethod clazz = stackClazz.pop();
+        NodeMethod clazz = stackClazz.pop();
         if (!stackClazz.isEmpty())
             stackClazz.peek().addChildren(clazz);
-        clazzMethods.add(clazz);
+        nodeMethods.add(clazz);
     }
 
     private void tokenField(String line) {
@@ -261,7 +261,7 @@ public class Parser {
     }
 
     private void tokenArgNull(String line) {
-        if (!(lastMethodClazz instanceof ClazzMethod)) {
+        if (!(lastMethodClazz instanceof NodeMethod)) {
             stackClazz.peek().addMethodCallee(lastMethodClazz);
         }
     }
@@ -281,7 +281,7 @@ public class Parser {
         return line.split("([a-zA-Z])+ ([a-zA-Z]|\\.|\\@|\\$|\\d)+ ([a-zA-Z])+=(\\[([a-zA-Z]|\\.|\\@|\\$|\\d|\\s|,)*\\]|([a-zA-Z]|\\.|\\@|\\$|\\d)*), ");
     }
 
-    private BasicMethod methodCallParser(String line) {
+    private LeafMethod methodCallParser(String line) {
         // Example: virtual java.lang.Object java.util.Optional#orElse(java.lang.Object)[Optional[Clear: clear sky]]
         String[] parts = line.split(" ");
         String clazzType = parts[0];
@@ -321,11 +321,11 @@ public class Parser {
         Clazz item = findOrCreateClazz(packageName, clazzName);
         item.setType(clazzType);
 
-        BasicMethod method = new BasicMethod(item, methodName, methodReturnType, argTypes, instanceObject);
+        LeafMethod method = new LeafMethod(item, methodName, methodReturnType, argTypes, instanceObject);
         return method;
     }
 
-    private ClazzMethod methodParser(String line) {
+    private NodeMethod methodParser(String line) {
         String[] names = line.split("\\.");
 //        System.out.println(line);
         String methodName = names[names.length - 1];
@@ -335,7 +335,7 @@ public class Parser {
 
         Clazz item = findOrCreateClazz(packageName, clazzName);
 
-        ClazzMethod method = new ClazzMethod(item, methodName);
+        NodeMethod method = new NodeMethod(item, methodName);
         if(methodName.equals("<init>")) {
             method.isInitMethod = true;
             item.initMethod = method;

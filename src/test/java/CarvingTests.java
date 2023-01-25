@@ -11,6 +11,7 @@ import java.lang.reflect.Modifier;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class CarvingTests {
     private ATest subject;
@@ -55,7 +56,7 @@ public class CarvingTests {
         subject.bs.add(new BTest(2, "ASE"));
         subject.bs.add(new BTest(3, "AST"));
 
-        String dataJson = xstream.toXML(subject);
+        String dataJson = xstream.toXML(Optional.of(subject));
         System.out.println(dataJson);
 
         Object object = xstream.fromXML(this.getClass().getResourceAsStream("xstream.json"));

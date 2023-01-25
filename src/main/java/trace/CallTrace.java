@@ -8,7 +8,7 @@ import static org.openjdk.btrace.core.BTraceUtils.*;
 @BTrace(trusted = true)
 public class CallTrace {
 
-    final static String SERIALIZE_TYPE = "xml";
+    final static String SERIALIZE_TYPE = "json";
     @OnMethod(
             clazz = "${packageName}\\..*/",
             method = "${methodName}/",
