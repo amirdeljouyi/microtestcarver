@@ -47,4 +47,17 @@ public class ExampleControllerTest {
 		assertThat(hello, is("Who is this 'Amir' you're talking about?");
     }
 
+    @Test
+    public void helloWhereAkbariTest() throws Exception{
+		Person person = new Person();
+		person.null;
+		person.null;
+
+		given(personRepository.findByLastName("Akbari")).willReturn(Optional.of(person));
+
+		String hello = subject.hello("Akbari");
+
+		assertThat(hello, is("Hello Saeed Akbari!"));
+    }
+
 }

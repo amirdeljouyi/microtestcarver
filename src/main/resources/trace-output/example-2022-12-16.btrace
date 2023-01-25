@@ -169,6 +169,7 @@ Return: {
 }
 
 }:
+
 example.ExampleController.hello:{
 Args: [{
     hash: 74aa20f9,
@@ -214,6 +215,7 @@ Args: [{
 }, ]
 
 Callback: {
+    hash: 0,
     name: null,
     type: java.util.Optional,
     serialized: false,
@@ -277,6 +279,120 @@ Return: {
     isPrimitive: false,
     isInterface: true,
     object: "Who is this 'Amir' you're talking about?",
+    fields: [],
+}
+
+}:
+
+example.ExampleController.hello:{
+Args: [{
+    hash: 6826c1c1,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Akbari",
+    fields: [],
+}, ]
+
+Fields: [{
+    hash: 63db14a7,
+    name: personRepository,
+    type: example.person.PersonRepository,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.springframework.data.jpa.repository.support.SimpleJpaRepository@4d8d17b1,
+    fields: [interface java.lang.reflect.InvocationHandler h=org.springframework.aop.framework.JdkDynamicAopProxy@7cf84ad3, ],
+}, {
+    hash: fee7ca,
+    name: weatherClient,
+    type: example.weather.WeatherClient,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: example.weather.WeatherClient@fee7ca,
+    fields: [class org.springframework.web.client.RestTemplate restTemplate=org.springframework.web.client.RestTemplate@1e23ee0e, class java.lang.String weatherServiceUrl=https://api.openweathermap.org, class java.lang.String weatherServiceApiKey=1254aa0ef471380373193a60dd589e35, ],
+}, ]
+
+interface java.util.Optional example.person.PersonRepository#findByLastName(java.lang.String)[org.springframework.data.jpa.repository.support.SimpleJpaRepository@4d8d17b1]
+Args: [{
+    hash: 6826c1c1,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Akbari",
+    fields: [],
+}, ]
+
+Callback: {
+    hash: 5b36a944,
+    name: null,
+    type: java.util.Optional,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: Optional.Person@5b36a944,
+    fields: [class java.lang.Object value=null, ],
+}
+
+virtual java.util.Optional java.util.Optional#map(java.util.function.Function)[Optional.Person]
+Args: [{
+    hash: 7c837fca,
+    name: null,
+    type: example.ExampleController$$Lambda$1117/0x00000008008bd840,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: example.ExampleController$$Lambda$1117/0x00000008008bd840@7c837fca,
+    fields: [],
+}, ]
+
+Callback: {
+    hash: 5b36a944,
+    name: null,
+    type: java.util.Optional,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: Optional.Person@5b36a944,
+    fields: [class java.lang.Object value=null, ],
+}
+
+virtual java.lang.Object java.util.Optional#orElse(java.lang.Object)[Optional.empty]
+Args: [{
+    hash: 3fe7998a,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Who is this 'Amir' you're talking about?",
+    fields: [],
+}, ]
+
+Callback: {
+    hash: 426fc4e,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Hello Saeed Akbari!",
+    fields: [],
+}
+
+Return: {
+    hash: 426fc4e,
+    name: null,
+    type: java.lang.String,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Hello Saeed Akbari!",
     fields: [],
 }
 
