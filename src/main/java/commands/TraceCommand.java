@@ -6,9 +6,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.file.Paths;
-import java.util.Arrays;
 
-import static picocli.CommandLine.*;
+import static picocli.CommandLine.Command;
+import static picocli.CommandLine.Option;
 
 @Command(name = "trace")
 public class TraceCommand implements Runnable {
@@ -25,7 +25,7 @@ public class TraceCommand implements Runnable {
     boolean log = false;
 
     @Option(names = {"-m", "--method"}, description = "Method Name, Default: *")
-    String method = ".*";
+    String method = "^(?!lambda\\$*)(.*)";
 
 
     @Override
