@@ -1,0 +1,1537 @@
+### BTrace Log: 25/04/2023, 16:17
+
+example.ExampleController.weather:{
+Args: []
+
+Fields: [{
+    hash: 606a62e1,
+    name: personRepository,
+    type: example.person.PersonRepository,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.springframework.data.jpa.repository.support.SimpleJpaRepository@6e0862d2,
+    fields: [interface java.lang.reflect.InvocationHandler h=org.springframework.aop.framework.JdkDynamicAopProxy@420014e0, ],
+}, {
+    hash: 27746c5e,
+    name: weatherClient,
+    type: example.weather.WeatherClient,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: example.weather.WeatherClient@27746c5e,
+    fields: [class org.springframework.web.client.RestTemplate restTemplate=org.springframework.web.client.RestTemplate@3395c2a7, class java.lang.String weatherServiceUrl=https://api.openweathermap.org, class java.lang.String weatherServiceApiKey=1254aa0ef471380373193a60dd589e35, ],
+}, ]
+
+virtual java.util.Optional example.weather.WeatherClient#fetchWeather[example.weather.WeatherClient@27746c5e]
+example.weather.WeatherClient.fetchWeather:{
+Args: []
+
+Fields: [{
+    hash: 1802b1b2,
+    name: CITY,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Hamburg,de",
+    fields: [],
+}, {
+    hash: 3395c2a7,
+    name: restTemplate,
+    type: org.springframework.web.client.RestTemplate,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.springframework.web.client.RestTemplate@3395c2a7,
+    fields: [interface java.util.List messageConverters=[org.springframework.http.converter.ByteArrayHttpMessageConverter@4170b20d, org.springframework.http.converter.StringHttpMessageConverter@506732f2, org.springframework.http.converter.ResourceHttpMessageConverter@4a5b95e3, org.springframework.http.converter.xml.SourceHttpMessageConverter@1ce70d0a, org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter@1b31d2e2, org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter@fe2509, org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@3ca39ddf], interface org.springframework.web.client.ResponseErrorHandler errorHandler=org.springframework.web.client.DefaultResponseErrorHandler@31a124d8, interface org.springframework.web.util.UriTemplateHandler uriTemplateHandler=org.springframework.web.util.DefaultUriBuilderFactory@249246cc, interface org.springframework.web.client.ResponseExtractor headersExtractor=org.springframework.web.client.RestTemplate$HeadersExtractor@5535e93a, interface java.util.List interceptors=[], interface org.springframework.http.client.ClientHttpRequestFactory interceptingRequestFactory=null, interface org.apache.commons.logging.Log logger=org.springframework.core.log.CompositeLog@92914d7, interface org.springframework.http.client.ClientHttpRequestFactory requestFactory=org.springframework.http.client.SimpleClientHttpRequestFactory@7c4a3111, interface java.util.List clientHttpRequestInitializers=[], ],
+}, {
+    hash: 7bf53de7,
+    name: weatherServiceUrl,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "https://api.openweathermap.org",
+    fields: [],
+}, {
+    hash: 1f3779a,
+    name: weatherServiceApiKey,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "1254aa0ef471380373193a60dd589e35",
+    fields: [],
+}, ]
+
+virtual java.lang.Object org.springframework.web.client.RestTemplate#getForObject(java.lang.String, java.lang.Class, java.lang.Object[])[org.springframework.web.client.RestTemplate@3395c2a7]
+Args: [{
+    hash: 32419d69,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "https://api.openweathermap.org/data/2.5/weather?q=Hamburg,de&appid=1254aa0ef471380373193a60dd589e35",
+    fields: [],
+}, {
+    hash: 6997e9c7,
+    name: null,
+    type: java.lang.Class,
+    index: 1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: class example.weather.WeatherResponse,
+    fields: [class java.lang.reflect.Constructor cachedConstructor=null, class java.lang.Class newInstanceCallerCache=null, class java.lang.String name=example.weather.WeatherResponse, class java.lang.Module module=unnamed module @31f20c9f, class java.lang.String packageName=example.weather, class java.lang.Class componentType=null, class java.lang.ref.SoftReference reflectionData=java.lang.ref.SoftReference@42e3e73e, int classRedefinedCount=1, class sun.reflect.generics.repository.ClassRepository genericInfo=sun.reflect.generics.repository.ClassRepository@102be080, class [Ljava.lang.Object; enumConstants=null, interface java.util.Map enumConstantDirectory=null, class java.lang.Class$AnnotationData annotationData=java.lang.Class$AnnotationData@afe0ab8, class sun.reflect.annotation.AnnotationType annotationType=null, class java.lang.ClassValue$ClassValueMap classValueMap=null, ],
+}, {
+    hash: 69edafef,
+    name: null,
+    type: java.lang.Object[],
+    index: 2,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Ljava.lang.Object;@69edafef,
+    fields: [],
+}, ]
+
+example.weather.WeatherResponse.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: weather,
+    type: java.util.List<example.weather.WeatherResponse$Weather>,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 5d2295e5,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@5d2295e5,
+    fields: [],
+}
+
+}:
+example.weather.WeatherResponse$Weather.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: main,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: description,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 5d2295e5,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@5d2295e5,
+    fields: [],
+}
+
+}:
+Return: {
+    hash: 5c99d46d,
+    name: null,
+    type: java.util.Optional,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: Optional[WeatherResponse{weather=[Weather{main='Clouds', description='broken clouds'}]}],
+    fields: [class java.lang.Object value=example.weather.WeatherResponse@15ddffa6, ],
+}
+
+}:
+example.weather.WeatherResponse.getSummary:{
+Args: []
+
+Fields: [{
+    hash: 4b52eecb,
+    name: weather,
+    type: java.util.List<example.weather.WeatherResponse$Weather>,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Weather{main='Clouds', description='broken clouds'}],
+    fields: [class [Ljava.lang.Object; elementData=[Ljava.lang.Object;@6cfd6801, int size=1, int modCount=1, ],
+}, ]
+
+example.weather.WeatherResponse.lambda$getSummary$0:{
+Args: [{
+    hash: 597a7170,
+    name: null,
+    type: example.weather.WeatherResponse$Weather,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: Weather{main='Clouds', description='broken clouds'},
+    fields: [class java.lang.String main=Clouds, class java.lang.String description=broken clouds, ],
+}, ]
+
+Return: {
+    hash: 30bd90c8,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Clouds: broken clouds",
+    fields: [],
+}
+
+}:
+Return: {
+    hash: 30bd90c8,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Clouds: broken clouds",
+    fields: [],
+}
+
+}:
+Return: {
+    hash: 30bd90c8,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Clouds: broken clouds",
+    fields: [],
+}
+
+}:
+example.ExampleController.hello:{
+Args: []
+
+Fields: [{
+    hash: 606a62e1,
+    name: personRepository,
+    type: example.person.PersonRepository,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.springframework.data.jpa.repository.support.SimpleJpaRepository@6e0862d2,
+    fields: [interface java.lang.reflect.InvocationHandler h=org.springframework.aop.framework.JdkDynamicAopProxy@420014e0, ],
+}, {
+    hash: 27746c5e,
+    name: weatherClient,
+    type: example.weather.WeatherClient,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: example.weather.WeatherClient@27746c5e,
+    fields: [class org.springframework.web.client.RestTemplate restTemplate=org.springframework.web.client.RestTemplate@3395c2a7, class java.lang.String weatherServiceUrl=https://api.openweathermap.org, class java.lang.String weatherServiceApiKey=1254aa0ef471380373193a60dd589e35, ],
+}, ]
+
+Return: {
+    hash: 5d5a230f,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Hello World!",
+    fields: [],
+}
+
+}:
+example.ExampleController.helloAll:{
+Args: []
+
+Fields: [{
+    hash: 606a62e1,
+    name: personRepository,
+    type: example.person.PersonRepository,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.springframework.data.jpa.repository.support.SimpleJpaRepository@6e0862d2,
+    fields: [interface java.lang.reflect.InvocationHandler h=org.springframework.aop.framework.JdkDynamicAopProxy@420014e0, ],
+}, {
+    hash: 27746c5e,
+    name: weatherClient,
+    type: example.weather.WeatherClient,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: example.weather.WeatherClient@27746c5e,
+    fields: [class org.springframework.web.client.RestTemplate restTemplate=org.springframework.web.client.RestTemplate@3395c2a7, class java.lang.String weatherServiceUrl=https://api.openweathermap.org, class java.lang.String weatherServiceApiKey=1254aa0ef471380373193a60dd589e35, ],
+}, ]
+
+interface org.springframework.data.domain.Page example.person.PersonRepository#findAll(org.springframework.data.domain.Pageable)[org.springframework.data.jpa.repository.support.SimpleJpaRepository@6e0862d2]
+Args: [{
+    hash: 3db21693,
+    name: null,
+    type: org.springframework.data.domain.PageRequest,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: Page request [number: 0, size 5, sort: UNSORTED],
+    fields: [class org.springframework.data.domain.Sort sort=org.springframework.data.domain.Sort@2c9c201, int page=0, int size=5, ],
+}, ]
+
+example.person.Person.<init>:{
+Args: []
+
+Fields: [{
+    hash: 2af664da,
+    name: serialVersionUID,
+    type: long,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [long value=1, ],
+}, {
+    hash: 7954ff03,
+    name: id,
+    type: int,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 0,
+    fields: [int value=0, ],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 5d2295e5,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@5d2295e5,
+    fields: [],
+}
+
+}:
+example.person.Person.<init>:{
+Args: []
+
+Fields: [{
+    hash: 2af664da,
+    name: serialVersionUID,
+    type: long,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [long value=1, ],
+}, {
+    hash: 7954ff03,
+    name: id,
+    type: int,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 0,
+    fields: [int value=0, ],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 5d2295e5,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@5d2295e5,
+    fields: [],
+}
+
+}:
+virtual java.lang.String example.person.Person#getFirstName[Person{id='1', firstName='James', lastName='Carter'}]
+example.person.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    hash: 2af664da,
+    name: serialVersionUID,
+    type: long,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [long value=1, ],
+}, {
+    hash: 57444c27,
+    name: id,
+    type: int,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [int value=1, ],
+}, {
+    hash: 35b23564,
+    name: firstName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "James",
+    fields: [],
+}, {
+    hash: 637f8485,
+    name: lastName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Carter",
+    fields: [],
+}, ]
+
+Return: {
+    hash: 35b23564,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "James",
+    fields: [],
+}
+
+}:
+virtual java.lang.String example.person.Person#getLastName[Person{id='1', firstName='James', lastName='Carter'}]
+example.person.Person.getLastName:{
+Args: []
+
+Fields: [{
+    hash: 2af664da,
+    name: serialVersionUID,
+    type: long,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [long value=1, ],
+}, {
+    hash: 57444c27,
+    name: id,
+    type: int,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [int value=1, ],
+}, {
+    hash: 35b23564,
+    name: firstName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "James",
+    fields: [],
+}, {
+    hash: 637f8485,
+    name: lastName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Carter",
+    fields: [],
+}, ]
+
+Return: {
+    hash: 637f8485,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Carter",
+    fields: [],
+}
+
+}:
+virtual java.lang.String example.person.Person#getFirstName[Person{id='2', firstName='Helen', lastName='Leary'}]
+example.person.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    hash: 2af664da,
+    name: serialVersionUID,
+    type: long,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [long value=1, ],
+}, {
+    hash: 15f505d2,
+    name: id,
+    type: int,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 2,
+    fields: [int value=2, ],
+}, {
+    hash: 34ea25e4,
+    name: firstName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Helen",
+    fields: [],
+}, {
+    hash: 3143045f,
+    name: lastName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leary",
+    fields: [],
+}, ]
+
+Return: {
+    hash: 34ea25e4,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Helen",
+    fields: [],
+}
+
+}:
+virtual java.lang.String example.person.Person#getLastName[Person{id='2', firstName='Helen', lastName='Leary'}]
+example.person.Person.getLastName:{
+Args: []
+
+Fields: [{
+    hash: 2af664da,
+    name: serialVersionUID,
+    type: long,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [long value=1, ],
+}, {
+    hash: 15f505d2,
+    name: id,
+    type: int,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 2,
+    fields: [int value=2, ],
+}, {
+    hash: 34ea25e4,
+    name: firstName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Helen",
+    fields: [],
+}, {
+    hash: 3143045f,
+    name: lastName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leary",
+    fields: [],
+}, ]
+
+Return: {
+    hash: 3143045f,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leary",
+    fields: [],
+}
+
+}:
+Return: {
+    hash: 6bde010a,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Hello James Carter! 
+
+Hello Helen Leary! 
+
+",
+    fields: [],
+}
+
+}:
+example.ExampleController.hello:{
+Args: [{
+    hash: 5671171a,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "peter",
+    fields: [],
+}, ]
+
+Fields: [{
+    hash: 606a62e1,
+    name: personRepository,
+    type: example.person.PersonRepository,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.springframework.data.jpa.repository.support.SimpleJpaRepository@6e0862d2,
+    fields: [interface java.lang.reflect.InvocationHandler h=org.springframework.aop.framework.JdkDynamicAopProxy@420014e0, ],
+}, {
+    hash: 27746c5e,
+    name: weatherClient,
+    type: example.weather.WeatherClient,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: example.weather.WeatherClient@27746c5e,
+    fields: [class org.springframework.web.client.RestTemplate restTemplate=org.springframework.web.client.RestTemplate@3395c2a7, class java.lang.String weatherServiceUrl=https://api.openweathermap.org, class java.lang.String weatherServiceApiKey=1254aa0ef471380373193a60dd589e35, ],
+}, ]
+
+interface java.util.Optional example.person.PersonRepository#findByLastName(java.lang.String)[org.springframework.data.jpa.repository.support.SimpleJpaRepository@6e0862d2]
+Args: [{
+    hash: 5671171a,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "peter",
+    fields: [],
+}, ]
+
+Return: {
+    hash: 10cd2407,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Who is this 'peter' you're talking about?",
+    fields: [],
+}
+
+}:
+example.ExampleController.hello:{
+Args: [{
+    hash: a8cbc7,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "carter",
+    fields: [],
+}, ]
+
+Fields: [{
+    hash: 606a62e1,
+    name: personRepository,
+    type: example.person.PersonRepository,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.springframework.data.jpa.repository.support.SimpleJpaRepository@6e0862d2,
+    fields: [interface java.lang.reflect.InvocationHandler h=org.springframework.aop.framework.JdkDynamicAopProxy@420014e0, ],
+}, {
+    hash: 27746c5e,
+    name: weatherClient,
+    type: example.weather.WeatherClient,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: example.weather.WeatherClient@27746c5e,
+    fields: [class org.springframework.web.client.RestTemplate restTemplate=org.springframework.web.client.RestTemplate@3395c2a7, class java.lang.String weatherServiceUrl=https://api.openweathermap.org, class java.lang.String weatherServiceApiKey=1254aa0ef471380373193a60dd589e35, ],
+}, ]
+
+interface java.util.Optional example.person.PersonRepository#findByLastName(java.lang.String)[org.springframework.data.jpa.repository.support.SimpleJpaRepository@6e0862d2]
+Args: [{
+    hash: a8cbc7,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "carter",
+    fields: [],
+}, ]
+
+Return: {
+    hash: 25b301d8,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Who is this 'carter' you're talking about?",
+    fields: [],
+}
+
+}:
+example.ExampleController.helloAll:{
+Args: []
+
+Fields: [{
+    hash: 606a62e1,
+    name: personRepository,
+    type: example.person.PersonRepository,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.springframework.data.jpa.repository.support.SimpleJpaRepository@6e0862d2,
+    fields: [interface java.lang.reflect.InvocationHandler h=org.springframework.aop.framework.JdkDynamicAopProxy@420014e0, ],
+}, {
+    hash: 27746c5e,
+    name: weatherClient,
+    type: example.weather.WeatherClient,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: example.weather.WeatherClient@27746c5e,
+    fields: [class org.springframework.web.client.RestTemplate restTemplate=org.springframework.web.client.RestTemplate@3395c2a7, class java.lang.String weatherServiceUrl=https://api.openweathermap.org, class java.lang.String weatherServiceApiKey=1254aa0ef471380373193a60dd589e35, ],
+}, ]
+
+interface org.springframework.data.domain.Page example.person.PersonRepository#findAll(org.springframework.data.domain.Pageable)[org.springframework.data.jpa.repository.support.SimpleJpaRepository@6e0862d2]
+Args: [{
+    hash: 332b8f7d,
+    name: null,
+    type: org.springframework.data.domain.PageRequest,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: Page request [number: 0, size 5, sort: UNSORTED],
+    fields: [class org.springframework.data.domain.Sort sort=org.springframework.data.domain.Sort@2c9c201, int page=0, int size=5, ],
+}, ]
+
+example.person.Person.<init>:{
+Args: []
+
+Fields: [{
+    hash: 2af664da,
+    name: serialVersionUID,
+    type: long,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [long value=1, ],
+}, {
+    hash: 7954ff03,
+    name: id,
+    type: int,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 0,
+    fields: [int value=0, ],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 5d2295e5,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@5d2295e5,
+    fields: [],
+}
+
+}:
+example.person.Person.<init>:{
+Args: []
+
+Fields: [{
+    hash: 2af664da,
+    name: serialVersionUID,
+    type: long,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [long value=1, ],
+}, {
+    hash: 7954ff03,
+    name: id,
+    type: int,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 0,
+    fields: [int value=0, ],
+}, {
+    hash: 0,
+    name: firstName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: lastName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 5d2295e5,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@5d2295e5,
+    fields: [],
+}
+
+}:
+virtual java.lang.String example.person.Person#getFirstName[Person{id='1', firstName='James', lastName='Carter'}]
+example.person.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    hash: 2af664da,
+    name: serialVersionUID,
+    type: long,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [long value=1, ],
+}, {
+    hash: 57444c27,
+    name: id,
+    type: int,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [int value=1, ],
+}, {
+    hash: 235f1f8a,
+    name: firstName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "James",
+    fields: [],
+}, {
+    hash: 66d789bc,
+    name: lastName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Carter",
+    fields: [],
+}, ]
+
+Return: {
+    hash: 235f1f8a,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "James",
+    fields: [],
+}
+
+}:
+virtual java.lang.String example.person.Person#getLastName[Person{id='1', firstName='James', lastName='Carter'}]
+example.person.Person.getLastName:{
+Args: []
+
+Fields: [{
+    hash: 2af664da,
+    name: serialVersionUID,
+    type: long,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [long value=1, ],
+}, {
+    hash: 57444c27,
+    name: id,
+    type: int,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [int value=1, ],
+}, {
+    hash: 235f1f8a,
+    name: firstName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "James",
+    fields: [],
+}, {
+    hash: 66d789bc,
+    name: lastName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Carter",
+    fields: [],
+}, ]
+
+Return: {
+    hash: 66d789bc,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Carter",
+    fields: [],
+}
+
+}:
+virtual java.lang.String example.person.Person#getFirstName[Person{id='2', firstName='Helen', lastName='Leary'}]
+example.person.Person.getFirstName:{
+Args: []
+
+Fields: [{
+    hash: 2af664da,
+    name: serialVersionUID,
+    type: long,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [long value=1, ],
+}, {
+    hash: 15f505d2,
+    name: id,
+    type: int,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 2,
+    fields: [int value=2, ],
+}, {
+    hash: 5593203d,
+    name: firstName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Helen",
+    fields: [],
+}, {
+    hash: 7578ebb6,
+    name: lastName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leary",
+    fields: [],
+}, ]
+
+Return: {
+    hash: 5593203d,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Helen",
+    fields: [],
+}
+
+}:
+virtual java.lang.String example.person.Person#getLastName[Person{id='2', firstName='Helen', lastName='Leary'}]
+example.person.Person.getLastName:{
+Args: []
+
+Fields: [{
+    hash: 2af664da,
+    name: serialVersionUID,
+    type: long,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 1,
+    fields: [long value=1, ],
+}, {
+    hash: 15f505d2,
+    name: id,
+    type: int,
+    index: 0,
+    serialized: true,
+    isPrimitive: true,
+    isInterface: false,
+    object: 2,
+    fields: [int value=2, ],
+}, {
+    hash: 5593203d,
+    name: firstName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Helen",
+    fields: [],
+}, {
+    hash: 7578ebb6,
+    name: lastName,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leary",
+    fields: [],
+}, ]
+
+Return: {
+    hash: 7578ebb6,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Leary",
+    fields: [],
+}
+
+}:
+Return: {
+    hash: 64ae8c81,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Hello James Carter! 
+
+Hello Helen Leary! 
+
+",
+    fields: [],
+}
+
+}:
+example.ExampleController.hello:{
+Args: [{
+    hash: 7a52e3bc,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "pan",
+    fields: [],
+}, ]
+
+Fields: [{
+    hash: 606a62e1,
+    name: personRepository,
+    type: example.person.PersonRepository,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.springframework.data.jpa.repository.support.SimpleJpaRepository@6e0862d2,
+    fields: [interface java.lang.reflect.InvocationHandler h=org.springframework.aop.framework.JdkDynamicAopProxy@420014e0, ],
+}, {
+    hash: 27746c5e,
+    name: weatherClient,
+    type: example.weather.WeatherClient,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: example.weather.WeatherClient@27746c5e,
+    fields: [class org.springframework.web.client.RestTemplate restTemplate=org.springframework.web.client.RestTemplate@3395c2a7, class java.lang.String weatherServiceUrl=https://api.openweathermap.org, class java.lang.String weatherServiceApiKey=1254aa0ef471380373193a60dd589e35, ],
+}, ]
+
+interface java.util.Optional example.person.PersonRepository#findByLastName(java.lang.String)[org.springframework.data.jpa.repository.support.SimpleJpaRepository@6e0862d2]
+Args: [{
+    hash: 7a52e3bc,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "pan",
+    fields: [],
+}, ]
+
+Return: {
+    hash: 19787851,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Who is this 'pan' you're talking about?",
+    fields: [],
+}
+
+}:
+example.ExampleController.weather:{
+Args: []
+
+Fields: [{
+    hash: 606a62e1,
+    name: personRepository,
+    type: example.person.PersonRepository,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.springframework.data.jpa.repository.support.SimpleJpaRepository@6e0862d2,
+    fields: [interface java.lang.reflect.InvocationHandler h=org.springframework.aop.framework.JdkDynamicAopProxy@420014e0, ],
+}, {
+    hash: 27746c5e,
+    name: weatherClient,
+    type: example.weather.WeatherClient,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: example.weather.WeatherClient@27746c5e,
+    fields: [class org.springframework.web.client.RestTemplate restTemplate=org.springframework.web.client.RestTemplate@3395c2a7, class java.lang.String weatherServiceUrl=https://api.openweathermap.org, class java.lang.String weatherServiceApiKey=1254aa0ef471380373193a60dd589e35, ],
+}, ]
+
+virtual java.util.Optional example.weather.WeatherClient#fetchWeather[example.weather.WeatherClient@27746c5e]
+example.weather.WeatherClient.fetchWeather:{
+Args: []
+
+Fields: [{
+    hash: 1802b1b2,
+    name: CITY,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Hamburg,de",
+    fields: [],
+}, {
+    hash: 3395c2a7,
+    name: restTemplate,
+    type: org.springframework.web.client.RestTemplate,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.springframework.web.client.RestTemplate@3395c2a7,
+    fields: [interface java.util.List messageConverters=[org.springframework.http.converter.ByteArrayHttpMessageConverter@4170b20d, org.springframework.http.converter.StringHttpMessageConverter@506732f2, org.springframework.http.converter.ResourceHttpMessageConverter@4a5b95e3, org.springframework.http.converter.xml.SourceHttpMessageConverter@1ce70d0a, org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter@1b31d2e2, org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter@fe2509, org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@3ca39ddf], interface org.springframework.web.client.ResponseErrorHandler errorHandler=org.springframework.web.client.DefaultResponseErrorHandler@31a124d8, interface org.springframework.web.util.UriTemplateHandler uriTemplateHandler=org.springframework.web.util.DefaultUriBuilderFactory@249246cc, interface org.springframework.web.client.ResponseExtractor headersExtractor=org.springframework.web.client.RestTemplate$HeadersExtractor@5535e93a, interface java.util.List interceptors=[], interface org.springframework.http.client.ClientHttpRequestFactory interceptingRequestFactory=null, interface org.apache.commons.logging.Log logger=org.springframework.core.log.CompositeLog@92914d7, interface org.springframework.http.client.ClientHttpRequestFactory requestFactory=org.springframework.http.client.SimpleClientHttpRequestFactory@7c4a3111, interface java.util.List clientHttpRequestInitializers=[], ],
+}, {
+    hash: 7bf53de7,
+    name: weatherServiceUrl,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "https://api.openweathermap.org",
+    fields: [],
+}, {
+    hash: 1f3779a,
+    name: weatherServiceApiKey,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "1254aa0ef471380373193a60dd589e35",
+    fields: [],
+}, ]
+
+virtual java.lang.Object org.springframework.web.client.RestTemplate#getForObject(java.lang.String, java.lang.Class, java.lang.Object[])[org.springframework.web.client.RestTemplate@3395c2a7]
+Args: [{
+    hash: 1dba57e5,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "https://api.openweathermap.org/data/2.5/weather?q=Hamburg,de&appid=1254aa0ef471380373193a60dd589e35",
+    fields: [],
+}, {
+    hash: 6997e9c7,
+    name: null,
+    type: java.lang.Class,
+    index: 1,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: class example.weather.WeatherResponse,
+    fields: [class java.lang.reflect.Constructor cachedConstructor=null, class java.lang.Class newInstanceCallerCache=null, class java.lang.String name=example.weather.WeatherResponse, class java.lang.Module module=unnamed module @31f20c9f, class java.lang.String packageName=example.weather, class java.lang.Class componentType=null, class java.lang.ref.SoftReference reflectionData=java.lang.ref.SoftReference@580645d0, int classRedefinedCount=1, class sun.reflect.generics.repository.ClassRepository genericInfo=sun.reflect.generics.repository.ClassRepository@102be080, class [Ljava.lang.Object; enumConstants=null, interface java.util.Map enumConstantDirectory=null, class java.lang.Class$AnnotationData annotationData=java.lang.Class$AnnotationData@3ba7140a, class sun.reflect.annotation.AnnotationType annotationType=null, class java.lang.ClassValue$ClassValueMap classValueMap=null, ],
+}, {
+    hash: 3d906b35,
+    name: null,
+    type: java.lang.Object[],
+    index: 2,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Ljava.lang.Object;@3d906b35,
+    fields: [],
+}, ]
+
+example.weather.WeatherResponse.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: weather,
+    type: java.util.List<example.weather.WeatherResponse$Weather>,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 5d2295e5,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@5d2295e5,
+    fields: [],
+}
+
+}:
+example.weather.WeatherResponse$Weather.<init>:{
+Args: []
+
+Fields: [{
+    hash: 0,
+    name: main,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, {
+    hash: 0,
+    name: description,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: null,
+    fields: [],
+}, ]
+
+Return: {
+    hash: 5d2295e5,
+    name: null,
+    type: org.openjdk.btrace.core.types.AnyType$1,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: org.openjdk.btrace.core.types.AnyType$1@5d2295e5,
+    fields: [],
+}
+
+}:
+Return: {
+    hash: bbb0acc,
+    name: null,
+    type: java.util.Optional,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: Optional[WeatherResponse{weather=[Weather{main='Clouds', description='broken clouds'}]}],
+    fields: [class java.lang.Object value=example.weather.WeatherResponse@694ef465, ],
+}
+
+}:
+example.weather.WeatherResponse.getSummary:{
+Args: []
+
+Fields: [{
+    hash: 6f9e5930,
+    name: weather,
+    type: java.util.List<example.weather.WeatherResponse$Weather>,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: [Weather{main='Clouds', description='broken clouds'}],
+    fields: [class [Ljava.lang.Object; elementData=[Ljava.lang.Object;@2e76c404, int size=1, int modCount=1, ],
+}, ]
+
+example.weather.WeatherResponse.lambda$getSummary$0:{
+Args: [{
+    hash: 3c20c365,
+    name: null,
+    type: example.weather.WeatherResponse$Weather,
+    index: 0,
+    serialized: true,
+    isPrimitive: false,
+    isInterface: true,
+    object: Weather{main='Clouds', description='broken clouds'},
+    fields: [class java.lang.String main=Clouds, class java.lang.String description=broken clouds, ],
+}, ]
+
+Return: {
+    hash: 78ba0e07,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Clouds: broken clouds",
+    fields: [],
+}
+
+}:
+Return: {
+    hash: 78ba0e07,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Clouds: broken clouds",
+    fields: [],
+}
+
+}:
+Return: {
+    hash: 78ba0e07,
+    name: null,
+    type: java.lang.String,
+    index: 0,
+    serialized: false,
+    isPrimitive: false,
+    isInterface: true,
+    object: "Clouds: broken clouds",
+    fields: [],
+}
+
+}:
