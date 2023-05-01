@@ -49,11 +49,13 @@ public class GenerationTests {
         ATest aTest = new ATest("Clouds", "few clouds");
         aTests.add(aTest);
 //        ATest aTest = new ATest("Clouds", "few clouds");
+        StringBuilder buffer = new StringBuilder();
+        HashSet variables = new HashSet<>();
         System.out.println(aTest);
         UnmarshalledVariable uv = new UnmarshalledVariable(aTests, root);
-        String unmarshalledString = uv.getInlineOrVariable();
+        String unmarshalledString = uv.getInlineOrVariable(buffer, variables);
         System.out.println("unmarshal: " + unmarshalledString);
-        assertThat(unmarshalledString, is("ArrayList<ATest> aTests = new ArrayList<>();\naTests.add(new ATest(\"Clouds\", \"few clouds\"));"));
+        assertThat(buffer.toString(), is("ArrayList<ATest> aTests = new ArrayList<>();\naTests.add(new ATest(\"Clouds\", \"few clouds\"));\n"));
     }
 
     @Test

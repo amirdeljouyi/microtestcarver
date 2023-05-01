@@ -112,7 +112,7 @@ public class Clazz {
                 for(LeafMethod ce : calleeSet){
                     if(param.value.isEmpty())
                         continue;
-                    if(param.value.equals(ce.instanceObject)){
+                    if(param.hash.equals(ce.hashObject)){
                         mockableFields.add(param);
                     }
                 }
@@ -210,6 +210,25 @@ public class Clazz {
 
     @Override
     public String toString(){
-        return "Package<" + this.packageName + "> Class<" + this.clazzName + ">";
+        String string = "Package<" + this.packageName + "> Class<" + this.clazzName + ">";
+        string = string.concat("\nMethods: ");
+        for(NodeMethod method: methods){
+            string = string.concat(method.toString());
+        }
+        return string;
+    }
+
+    public String visualise(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("    ");
+
+        sb.append("[\"" + this.fullName() + "\"]\n") ;
+
+        for(NodeMethod nm: this.testableMethods()){
+            sb.append("      ");
+            sb.append("(\"" + nm.getFullNameWithTypes() + "\")\n") ;
+        }
+
+        return sb.toString();
     }
 }

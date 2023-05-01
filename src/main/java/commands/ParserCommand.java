@@ -22,14 +22,23 @@ public class ParserCommand {
     @Option(names = {"-t", "--type"}, description = "Deserialize Type")
     String destype;
 
+    @Option(names = {"-v", "--visualization"}, description = "make a call graph from the parser")
+    boolean visualization;
+
+    @Option(names = {"-d", "--duplicated"}, description = "Generate tests with duplicated fully qualified names")
+    boolean duplication = false;
 
     @Command
     void parse() {
         String fileDirectory = "/trace-output/" + file;
         poolDir = "/trace-output/" + poolDir;
         InputStream inputStream = this.getClass().getResourceAsStream(fileDirectory);
-        Parser parser = new Parser(inputStream, poolDir, destype);
+        Parser parser = new Parser(inputStream, poolDir, destype, duplication);
         parser.readLines();
+
+        if(visualization){
+            parser.visualization();
+        }
 
         VelocityRunner vRunner = new VelocityRunner(input);
         vRunner.setClazzSet(parser.getClazzSet());

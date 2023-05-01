@@ -28,7 +28,7 @@ public class VelocityRunner {
         clazzSet = new HashMap<>();
         this.sourceDirectory = sourceDirectory;
 
-       velocityEngine = new VelocityEngine();
+        velocityEngine = new VelocityEngine();
 
         velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADER, "class,file");
         velocityEngine.setProperty("class.resource.loader.class", "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");

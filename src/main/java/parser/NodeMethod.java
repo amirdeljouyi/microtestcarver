@@ -10,8 +10,8 @@ public class NodeMethod extends LeafMethod {
 
     public Boolean isInitMethod = false;
 
-    public NodeMethod(Clazz clazz, String methodName) {
-        super(clazz, methodName);
+    public NodeMethod(Clazz clazz, String methodName, boolean duplication) {
+        super(clazz, methodName, duplication);
         childrenClazz = new ArrayList<>();
         callee = new ArrayList<>();
     }
@@ -31,7 +31,7 @@ public class NodeMethod extends LeafMethod {
             for(LeafMethod ce : calleeSet){
                 if(param.value.isEmpty())
                     continue;
-                if(param.value.equals(ce.instanceObject)){
+                if(param.hash.equals(ce.hashObject)){
                     map.put(ce, param);
                 }
             }
@@ -41,21 +41,23 @@ public class NodeMethod extends LeafMethod {
 
     public Map<String, LeafMethod> calleeAndChildren(){
         HashMap<String, LeafMethod> calleeSet = new HashMap<>();
-        for(NodeMethod cm: childrenClazz){
-            calleeSet.put(cm.fullName(), cm);
+        for(NodeMethod nm: childrenClazz){
+            calleeSet.put(nm.fullName(), nm);
         }
 
-        for(LeafMethod bm: callee){
-            LeafMethod item = calleeSet.get(bm.fullName());
+        for(LeafMethod lm: callee){
+            LeafMethod item = calleeSet.get(lm.fullName());
             if (item == null){
-                calleeSet.put(bm.fullName(), bm);
+                calleeSet.put(lm.fullName(), lm);
             } else {
                 if (item.argTypes == null)
-                    item.argTypes = bm.argTypes;
-                if (item.instanceObject == null)
-                    item.instanceObject = bm.instanceObject;
-                if (item.returnType == null)
-                    item.returnType = bm.returnType;
+                    item.argTypes = lm.argTypes;
+                if (item.hashObject == null)
+                    item.hashObject = lm.hashObject;
+                if (item.returnField == null) {
+                    item.returnType = lm.returnType;
+                    item.returnField = lm.returnField;
+                }
                 calleeSet.put(item.fullName(), item);
             }
         }
@@ -76,5 +78,32 @@ public class NodeMethod extends LeafMethod {
 
     public void setReference(LeafMethod reference) {
         this.reference = reference;
+    }
+
+    @Override
+    public String visualise(int indentation){
+        StringBuilder sb = new StringBuilder();
+        for(int i=0;i<indentation;i++)
+            sb.append("  ");
+
+        sb.append("[\"" + this.getFullNameWithTypes());
+        if(this.hasReturn()){
+            sb.append("</br>{"+ this.getReturnField().getValue().replace("\"", "") +"}\"]\n");
+        } else {
+            sb.append("\"]\n");
+        }
+
+        indentation++;
+
+        for(NodeMethod nm: this.getChildrenClazz()){
+            sb.append(nm.visualise(indentation));
+        }
+
+        for(LeafMethod lm: this.getCallee()){
+            if(!lm.isInArrayList(this.getChildrenClazz())){
+                sb.append(lm.visualise(indentation));
+            }
+        }
+        return sb.toString();
     }
 }

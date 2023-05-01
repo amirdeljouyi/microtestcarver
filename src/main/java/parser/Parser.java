@@ -5,10 +5,7 @@ import com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvide
 import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
 import com.thoughtworks.xstream.security.AnyTypePermission;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.*;
 
 public class Parser {
@@ -22,19 +19,26 @@ public class Parser {
     private ParserUtils util;
 
     private ArrayList<NodeMethod> nodeMethods;
+    private ArrayList<NodeMethod> rootNodeMethods;
     private LeafMethod lastMethodClazz;
-    private Stack<NodeMethod> stackClazz;
+    private Stack<NodeMethod> stackNodeMethods;
+    private Stack<LeafMethod> stackLeafMethods;
     private Arg lastArg;
     private HashMap<String, Clazz> clazzSet;
 
-    public Parser(InputStream inputStream, String poolDir, String desType) {
+    private boolean allowDuplication = false;
+
+    public Parser(InputStream inputStream, String poolDir, String desType, boolean duplication) {
         this.inputStream = inputStream;
         this.poolDir = poolDir;
         this.nodeMethods = new ArrayList<>();
-        this.stackClazz = new Stack<>();
+        this.rootNodeMethods = new ArrayList<>();
+        this.stackNodeMethods = new Stack<>();
+        this.stackLeafMethods = new Stack<>();
         this.clazzSet = new HashMap<>();
         util = new ParserUtils();
         this.deserializeType = desType;
+        this.allowDuplication = duplication;
 
         if(deserializeType.equalsIgnoreCase("json")) {
             xstream = new XStream(new SunUnsafeReflectionProvider(), new JettisonMappedXmlDriver());
@@ -73,9 +77,15 @@ public class Parser {
                 } else if (line.contains("}, {")) {
                     tokenEndNewArg(line);
                 } else if (line.contains("}:")) {
-                    tokenEndClazzMethod(line);
-                } else if (line.contains("hash: ")) {
+                    tokenEndNodeMethod(line);
+                }
+//                else if (line.contains("}#")) {
+//                    tokenEndLeafMethod(line);
+//                }
+                else if (line.contains("hash: ")) {
                     tokenHash(line);
+                } else if (line.contains("index: ")) {
+                    tokenIndex(line);
                 } else if (line.contains("name: ")) {
                     tokenName(line);
                 } else if (line.contains("type: ")) {
@@ -97,7 +107,50 @@ public class Parser {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-//        System.out.println(clazzMethods);
+    }
+
+    public void visualization() {
+        visualizationCalls();
+        visualizationClasses();
+    }
+
+    public void visualizationCalls() {
+        //        System.out.println("rootNodeMethods: " + rootNodeMethods);
+        try {
+            Writer writer = new FileWriter(new File("./test-output/parse-visualization.md"));
+            writer.write("```mermaid\n");
+            writer.write("mindmap\n" +
+                    "  root((" + rootNodeMethods.get(0).clazz.getPackageName() + "))\n");
+
+            for(NodeMethod root: rootNodeMethods){
+                writer.write(root.visualise(2));
+            }
+            writer.write("```");
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void visualizationClasses(){
+        try {
+            Writer writer = new FileWriter(new File("./test-output/class-visualization.md"));
+            writer.write("```mermaid\n");
+            writer.write("mindmap\n" +
+                    "  root((" + rootNodeMethods.get(0).clazz.getPackageName() + "))\n");
+
+            System.out.println("Clazzs:");
+            for(Clazz clazz: clazzSet.values()){
+                System.out.println(clazz);
+                writer.write(clazz.visualise());
+            }
+            writer.write("```");
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void tokenFields(String line) {
@@ -137,6 +190,11 @@ public class Parser {
     private void tokenHash(String line) {
         line = line.substring(10, line.length() - 1);
         lastArg.hash = line;
+    }
+
+    private void tokenIndex(String line) {
+        line = line.substring(11, line.length() - 1);
+        lastArg.index = Integer.getInteger(line);
     }
 
     private void tokenName(String line) {
@@ -181,7 +239,7 @@ public class Parser {
         addArgsFieldsParams();
 
         if (!(lastMethodClazz instanceof NodeMethod)) {
-            stackClazz.peek().addMethodCallee(lastMethodClazz);
+            stackNodeMethods.peek().addMethodCallee(lastMethodClazz);
         }
 
 //        System.out.println(lastArg);
@@ -206,11 +264,12 @@ public class Parser {
     }
 
     private void tokenEndRet(String line) {
-        NodeMethod nodeMethod = stackClazz.peek();
         if (lastArg.isReturn()) {
+            NodeMethod nodeMethod = stackNodeMethods.peek();
             nodeMethod.returnField = lastArg;
         } else if (lastArg.isCallback()) {
-            lastMethodClazz.returnField = lastArg;
+            LeafMethod leafMethod = stackLeafMethods.pop();
+            leafMethod.returnField = lastArg;
         }
 
 //        System.out.println(lastArg);
@@ -229,13 +288,14 @@ public class Parser {
             cm.setReference(lastMethodClazz);
         }
         lastMethodClazz = cm;
-        stackClazz.push(cm);
+        stackNodeMethods.push(cm);
 //        System.out.println("class parsed: " + cm);
     }
 
     private void tokenMethod(String line) {
-        LeafMethod cm = methodCallParser(line);
-        lastMethodClazz = cm;
+        LeafMethod lm = methodCallParser(line);
+        lastMethodClazz = lm;
+        stackLeafMethods.push(lm);
 //        System.out.println("method parsed: " + cm);
     }
 
@@ -243,12 +303,22 @@ public class Parser {
 //
 //    }
 
-    private void tokenEndClazzMethod(String line) {
-        NodeMethod clazz = stackClazz.pop();
-        if (!stackClazz.isEmpty())
-            stackClazz.peek().addChildren(clazz);
-        nodeMethods.add(clazz);
+    private void tokenEndNodeMethod(String line) {
+        NodeMethod nodeMethod = stackNodeMethods.pop();
+        if (!stackNodeMethods.isEmpty())
+            stackNodeMethods.peek().addChildren(nodeMethod);
+        else
+            rootNodeMethods.add(nodeMethod);
+//        for(Arg arg: clazz.args){
+//            clazz.argTypes.add(arg.type);
+//        }
+
+        nodeMethods.add(nodeMethod);
     }
+
+//    private void tokenEndLeafMethod(String line) {
+//        LeafMethod clazz = stackLeafMethods.pop();
+//    }
 
     private void tokenField(String line) {
         Arg arg = new Arg(Arg.ArgType.FIELD);
@@ -262,7 +332,7 @@ public class Parser {
 
     private void tokenArgNull(String line) {
         if (!(lastMethodClazz instanceof NodeMethod)) {
-            stackClazz.peek().addMethodCallee(lastMethodClazz);
+            stackNodeMethods.peek().addMethodCallee(lastMethodClazz);
         }
     }
 
@@ -321,21 +391,36 @@ public class Parser {
         Clazz item = findOrCreateClazz(packageName, clazzName);
         item.setType(clazzType);
 
-        LeafMethod method = new LeafMethod(item, methodName, methodReturnType, argTypes, instanceObject);
+        LeafMethod method = new LeafMethod(item, methodName, methodReturnType, argTypes, instanceObject, allowDuplication);
         return method;
     }
 
     private NodeMethod methodParser(String line) {
-        String[] names = line.split("\\.");
-//        System.out.println(line);
-        String methodName = names[names.length - 1];
-        String clazzName = names[names.length - 2];
-        String packageName = String.join(".", Arrays.copyOfRange(names, 0, names.length - 2));
+        String[] parts = line.split(" ");
+        String methodView = parts[0];
+        String methodReturnType = parts[1];
+
+        String[] names = parts[2].split("#");
+        String[] classNames = names[0].split("\\.");
+
+        // Split methodName and Args
+        String[] methodCalls = names[1].split("\\(");
+        String methodName = methodCalls[0];
+        String[] argTypes = null;
+        if(methodCalls.length > 1)
+            argTypes = methodCalls[1].split(", ");
+
+        String clazzName = classNames[classNames.length - 1];
+        String packageName = String.join(".", Arrays.copyOfRange(classNames, 0, classNames.length - 1));
         String clazzKey = packageName + "." + clazzName;
 
         Clazz item = findOrCreateClazz(packageName, clazzName);
 
-        NodeMethod method = new NodeMethod(item, methodName);
+        NodeMethod method = new NodeMethod(item, methodName, allowDuplication);
+        method.returnType = methodReturnType;
+        if(argTypes != null)
+            method.argTypes.addAll(Arrays.asList(argTypes));
+
         if(methodName.equals("<init>")) {
             method.isInitMethod = true;
             item.initMethod = method;
