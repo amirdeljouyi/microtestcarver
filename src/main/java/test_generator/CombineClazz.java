@@ -51,7 +51,7 @@ public class CombineClazz {
             return null;
         CtField stField =  stReferenceField.getFieldDeclaration();
 //        System.out.println("FieldDeclaration: " + stField);
-        return spoonUtil.getFieldSetter(this.staticClazz, stField, fieldName, field.getActualValue(), buf, variableNames);
+        return spoonUtil.getFieldSetter(this.staticClazz, stField, fieldName, field.getActualValue(), buf, variableNames, "subject");
     }
 
     public String setField(Arg field, StringBuilder buf, Set<String> variableNames){
@@ -63,7 +63,7 @@ public class CombineClazz {
         if(stField == null)
             return null;
 
-        return spoonUtil.getFieldSetter(this.staticClazz, stField, fieldName, field.getActualValue(), buf, variableNames);
+        return spoonUtil.getFieldSetter(this.staticClazz, stField, fieldName, field.getActualValue(), buf, variableNames, "subject");
     }
 
     public String revealObject(Arg arg, StringBuilder buf, Set<String> variableNames){
@@ -116,7 +116,7 @@ public class CombineClazz {
             }
             subjectBuf.append("\n");
         }
-        subjectBuf.append("\t\t" + "subject." + fieldSetter + ";\n");
+        subjectBuf.append("\t\t" +  fieldSetter);
         return subjectBuf.toString();
     }
 

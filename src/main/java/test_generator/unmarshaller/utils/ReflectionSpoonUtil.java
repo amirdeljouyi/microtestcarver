@@ -268,36 +268,62 @@ public class ReflectionSpoonUtil {
         }
     }
 
-    public String getFieldSetter(CtType staticClazz, CtField stField, String fieldName, Object object, StringBuilder buf, Set<String> variableNames){
+    public String getFieldSetter(CtType staticClazz, CtField stField, String fieldName, Object object, StringBuilder buf, Set<String> variableNames, String variable){
         if(stField == null)
             return null;
 
         System.out.println("ObjectVal: " + object);
         System.out.println("ObjectType: " + object.getClass());
-        UnmarshalledVariable uv = new UnmarshalledVariable(object, staticClazz);
 
-        String fieldValue = uv.getInlineOrVariable(buf, variableNames);
         System.out.println("BufferValue: " + buf);
 
+
         if(stField.isPublic()){
-            return fieldName + " = " + fieldValue;
+            UnmarshalledVariable uv = new UnmarshalledVariable(object, staticClazz);
+            String fieldValue = uv.getInlineOrVariable(buf, variableNames);
+
+            return new FieldSetter(fieldName, FieldSetter.FieldSetterType.PUBLIC, fieldValue, variable).toString();
         } else{
             String setterName = "set" + fieldName.substring(0,1).toUpperCase() + fieldName.substring(1);
 
 //            System.out.println("setterName: " + setterName);
-            Set<CtMethod> allMethods = staticClazz.getAllMethods();
-            CtMethod stMethod = null;
-            for(CtMethod method: allMethods){
-                if (method.getSimpleName().equals(setterName)) {
-                    stMethod = method;
-                    break;
+            CtMethod stMethod = getCtMethod(staticClazz, setterName);
+            if(stMethod != null){
+                UnmarshalledVariable uv = new UnmarshalledVariable(object, staticClazz);
+                String fieldValue = uv.getInlineOrVariable(buf, variableNames);
+                return new FieldSetter(setterName, FieldSetter.FieldSetterType.SET, fieldValue, variable).toString();
+            } else {
+                setterName = "add" + fieldName.substring(0,1).toUpperCase() + fieldName.substring(1, fieldName.length()-1);
+                stMethod = getCtMethod(staticClazz, setterName);
+                if(stMethod != null){
+                    Collection collection = (Collection) object;
+                    StringBuilder sb = new StringBuilder();
+                    for (Object item: collection){
+                        UnmarshalledVariable uv = new UnmarshalledVariable(item, staticClazz);
+                        FieldSetter fieldSetter = new FieldSetter(setterName, FieldSetter.FieldSetterType.ADD, uv.getInlineOrVariable(buf, variableNames), variable);
+                        sb.append(fieldSetter);
+                    }
+                    return sb.toString();
                 }
             }
+
 //            System.out.println("StMethod: " + stMethod);
-            if(stMethod != null && !stMethod.isPrivate()) {
-                return setterName + "(" + fieldValue + ")";
-            }
+//            if(stMethod != null && !stMethod.isPrivate()) {
+//
+//            }
         }
         return null;
+    }
+
+    private CtMethod getCtMethod(CtType staticClazz, String name) {
+        Set<CtMethod> allMethods = staticClazz.getAllMethods();
+        CtMethod stMethod = null;
+        for(CtMethod method: allMethods){
+            if (method.getSimpleName().equals(name)) {
+                stMethod = method;
+                break;
+            }
+        }
+        return stMethod;
     }
 }
