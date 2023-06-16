@@ -42,16 +42,16 @@ public class VelocityRunner {
             String k = entry.getKey();
             Clazz v = entry.getValue();
             VelocityContext context = new VelocityContext();
-            CombineClazz combineClazz = new CombineClazz(v, sourceDirectory);
-            Set<Arg> initFields = v.initialFieldState();
             System.out.println("=========================");
             System.out.println("Clazz: " + v.fullName());
+            CombineClazz combineClazz = new CombineClazz(v, sourceDirectory);
+            Set<Arg> initFields = v.initialFieldState();
 //            System.out.println("Methods based on Fields: ");
-//            for (ClazzMethod item: v.methods){
-//                System.out.println(item.clazzMethodsBasedOnFields());
+//            for (NodeMethod item: v.methods){
+//                System.out.println(item.toString());
 //            }
-//
-//            System.out.println(combineClazz);
+
+            System.out.println(combineClazz.dynamicClazz);
 
             context.put("className", v.shortName());
             context.put("packageName", v.packageName);

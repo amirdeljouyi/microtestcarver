@@ -19,7 +19,7 @@ public class AssertionGenerator {
 
         StringBuilder assertionBuf = new StringBuilder();
         StringBuilder populationBuf = new StringBuilder();
-        this.expectedResult = clazz.revealObject(nodeMethod.getReturnField(), populationBuf, variableNames);
+        this.expectedResult = clazz.revealObject(nodeMethod.getReturnField(), populationBuf, 0, variableNames);
 
         if(!populationBuf.toString().isEmpty()){
             String[] lines = populationBuf.toString().split("\\n");
