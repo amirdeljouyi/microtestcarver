@@ -1,5 +1,6 @@
 package test_generator.unmarshaller;
 
+import org.hibernate.Hibernate;
 import parser.Arg;
 import spoon.reflect.declaration.CtType;
 import test_generator.unmarshaller.types.*;
@@ -7,6 +8,7 @@ import test_generator.unmarshaller.utils.InitializeMode;
 import test_generator.unmarshaller.utils.NamingUtil;
 import test_generator.unmarshaller.utils.ReflectionUtil;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -19,7 +21,6 @@ public class UnmarshalledVariable {
     InitializeMode initMode = InitializeMode.INLINE;
 
     String variableName;
-
 
     public UnmarshalledVariable(Arg arg, CtType root){
         this.root = root;
@@ -51,9 +52,9 @@ public class UnmarshalledVariable {
             this.root = ctType;
     }
 
-    public String unmarshal(StringBuilder buf, Set<String> variableNames){
+    public String unmarshal(StringBuilder buf, int depth, Set<String> variableNames){
         if(mode.equals(UnmarshalMode.DESERIALIZE)){
-            return unmarshalDeserialize(buf, variableNames);
+            return unmarshalDeserialize(buf, depth, variableNames);
         } else if (mode.equals(UnmarshalMode.TO_STRING)){
             return unmarshalToString(buf);
         } else if (mode.equals(UnmarshalMode.GUESS)){
@@ -62,15 +63,17 @@ public class UnmarshalledVariable {
         return null;
     }
 
-    private String unmarshalDeserialize(StringBuilder buf, Set<String> variableNames){
+    private String unmarshalDeserialize(StringBuilder buf, int depth, Set<String> variableNames){
         ReflectionUtil util = new ReflectionUtil();
 
         if(source instanceof String) {
             return new StringUnmarshaller().unmarshalString((String) source);
         } else if(util.isPrimitiveType(source)) {
             return source.toString();
+        } if (source instanceof org.hibernate.collection.internal.PersistentBag){
+            Hibernate.initialize(source);
         } if (source instanceof Collection<?>){
-            CollectionUnmarshaller unmarshaller = new CollectionUnmarshaller(buf, variableNames);
+            CollectionUnmarshaller unmarshaller = new CollectionUnmarshaller(buf, depth, variableNames);
             String unmarshalString = unmarshaller.unmarshalString(source, root);
             if(unmarshaller.isMultiline()){
                 initMode = InitializeMode.MULTILINE;
@@ -78,7 +81,7 @@ public class UnmarshalledVariable {
             }
             return unmarshalString;
         } if (source instanceof Map<?,?>){
-            MapUnmarshaller unmarshaller = new MapUnmarshaller(buf, variableNames);
+            MapUnmarshaller unmarshaller = new MapUnmarshaller(buf, depth, variableNames);
             String unmarshalString = unmarshaller.unmarshalString(source, root);
             if(unmarshaller.isMultiline()){
                 initMode = InitializeMode.MULTILINE;
@@ -86,7 +89,7 @@ public class UnmarshalledVariable {
             }
             return unmarshalString;
         } else if(source instanceof Optional){
-            OptionalUnmarshaller unmarshaller = new OptionalUnmarshaller(buf, variableNames);
+            OptionalUnmarshaller unmarshaller = new OptionalUnmarshaller(buf, depth, variableNames);
             return unmarshaller.unmarshalString(source, root);
         } else if(source.getClass().isEnum()){
             EnumUnmarshaller unmarshaller = new EnumUnmarshaller(buf);
@@ -97,8 +100,11 @@ public class UnmarshalledVariable {
         } else if(source instanceof Locale){
             LocaleUnmarshaller unmarshaller = new LocaleUnmarshaller(buf);
             return unmarshaller.unmarshalString(source, root);
+        } else if(source instanceof BigDecimal){
+            BigDecimalUnmarshaller unmarshaller = new BigDecimalUnmarshaller(buf);
+            return unmarshaller.unmarshalString(source, root);
         } else {
-            ReflectionUnmarshaller unmarshaller = new ReflectionUnmarshaller(buf, variableNames);
+            ReflectionUnmarshaller unmarshaller = new ReflectionUnmarshaller(buf, depth, variableNames);
             String unmarshalString = unmarshaller.unmarshalString(source, root);
             if(unmarshaller.isMultiline()){
                 initMode = InitializeMode.MULTILINE;
@@ -111,18 +117,19 @@ public class UnmarshalledVariable {
     public String getInlineOrVariable(){
         StringBuilder buf = new StringBuilder();
         HashSet<String> variableNames = new HashSet<>();
-        return getInlineOrVariable(buf, variableNames);
+        return getInlineOrVariable(buf, 1, variableNames);
     }
 
-    public String getInlineOrVariable(StringBuilder buf, Set<String> variableNames){
+    public String getInlineOrVariable(StringBuilder buf, int depth, Set<String> variableNames){
         if(source == null)
             return null;
 
-        System.out.println("Source: " + source);
+//        System.out.println("Source: " + source);
         System.out.println("Source Class: " + source.getClass());
-        System.out.println("isEnum: " + source.getClass().isEnum());
+        System.out.println("Depth: " + depth);
+//        System.out.println("isEnum: " + source.getClass().isEnum());
 
-        String unmarshalValue = unmarshal(buf, variableNames);
+        String unmarshalValue = unmarshal(buf, depth, variableNames);
 
         if(initMode.equals(InitializeMode.INLINE)){
             return unmarshalValue;
