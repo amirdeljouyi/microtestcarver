@@ -71,19 +71,19 @@ public class ReflectionSpoonUtil {
         for (Object entry : sortedMap.entrySet()) {
             CtConstructor cons = (CtConstructor) ((Map.Entry<?, ?>) entry).getKey();
             ArrayList<CtFieldReference> fields = (ArrayList<CtFieldReference>) ((Map.Entry<?, ?>) entry).getValue();
-            System.out.println("cons: " + cons);
-            System.out.println("fields: " + fields);
+//            System.out.println("cons: " + cons);
+//            System.out.println("fields: " + fields);
 
             Set<CtParameter> unresolvedParameters = new HashSet<>(cons.getParameters());
             List<ResolvedParameter> resolvedParameters = new ArrayList<>();
-            System.out.println("unresolvedParams before: " + unresolvedParameters);
+//            System.out.println("unresolvedParams before: " + unresolvedParameters);
 
             for (CtFieldReference field : fields) {
                 List<CtAssignment> assignments = getFieldAssignments(cons, field);
                 for (CtAssignment assignment : assignments) {
                     // get the line of assignment
                     CtExpression assignmentExp = assignment.getAssignment();
-                    System.out.println("Exp Class: " + assignmentExp.getClass());
+//                    System.out.println("Exp Class: " + assignmentExp.getClass());
                     if (assignmentExp instanceof CtConstructorCallImpl) {
                         CtConstructorCallImpl consCall = (CtConstructorCallImpl) assignmentExp;
                         Field runField = mapFields.get(field);
@@ -105,15 +105,15 @@ public class ReflectionSpoonUtil {
                 }
             }
 
-            System.out.println("unresolvedParams after: " + unresolvedParameters);
+//            System.out.println("unresolvedParams after: " + unresolvedParameters);
 
             if(unresolvedParameters.size() == 0){
                 ResolvedConstructor resolvedConstructor = new ResolvedConstructor(cons, resolvedParameters);
                 for(CtFieldReference field: unresolvedFields){
                     resolvedConstructor.unresolvedFields.put(field, mapFields.get(field));
                 }
-                if(resolvedConstructor.unresolvedFields.size() > 0)
-                    System.out.println("unresolved Fields: " + resolvedConstructor.unresolvedFields);
+//                if(resolvedConstructor.unresolvedFields.size() > 0)
+//                    System.out.println("unresolved Fields: " + resolvedConstructor.unresolvedFields);
                 return resolvedConstructor;
             }
         }
@@ -268,19 +268,19 @@ public class ReflectionSpoonUtil {
         }
     }
 
-    public String getFieldSetter(CtType staticClazz, CtField stField, String fieldName, Object object, StringBuilder buf, Set<String> variableNames, String variable){
+    public String getFieldSetter(CtType staticClazz, CtField stField, String fieldName, Object object, StringBuilder buf, int depth, Set<String> variableNames, String variable){
         if(stField == null)
             return null;
 
-        System.out.println("ObjectVal: " + object);
-        System.out.println("ObjectType: " + object.getClass());
-
-        System.out.println("BufferValue: " + buf);
+//        System.out.println("ObjectVal: " + object);
+//        System.out.println("ObjectType: " + object.getClass());
+//
+//        System.out.println("BufferValue: " + buf);
 
 
         if(stField.isPublic()){
             UnmarshalledVariable uv = new UnmarshalledVariable(object, staticClazz);
-            String fieldValue = uv.getInlineOrVariable(buf, variableNames);
+            String fieldValue = uv.getInlineOrVariable(buf, depth, variableNames);
 
             return new FieldSetter(fieldName, FieldSetter.FieldSetterType.PUBLIC, fieldValue, variable).toString();
         } else{
@@ -290,7 +290,7 @@ public class ReflectionSpoonUtil {
             CtMethod stMethod = getCtMethod(staticClazz, setterName);
             if(stMethod != null){
                 UnmarshalledVariable uv = new UnmarshalledVariable(object, staticClazz);
-                String fieldValue = uv.getInlineOrVariable(buf, variableNames);
+                String fieldValue = uv.getInlineOrVariable(buf, depth, variableNames);
                 return new FieldSetter(setterName, FieldSetter.FieldSetterType.SET, fieldValue, variable).toString();
             } else {
                 setterName = "add" + fieldName.substring(0,1).toUpperCase() + fieldName.substring(1, fieldName.length()-1);
@@ -300,7 +300,7 @@ public class ReflectionSpoonUtil {
                     StringBuilder sb = new StringBuilder();
                     for (Object item: collection){
                         UnmarshalledVariable uv = new UnmarshalledVariable(item, staticClazz);
-                        FieldSetter fieldSetter = new FieldSetter(setterName, FieldSetter.FieldSetterType.ADD, uv.getInlineOrVariable(buf, variableNames), variable);
+                        FieldSetter fieldSetter = new FieldSetter(setterName, FieldSetter.FieldSetterType.ADD, uv.getInlineOrVariable(buf, depth, variableNames), variable);
                         sb.append(fieldSetter);
                     }
                     return sb.toString();
