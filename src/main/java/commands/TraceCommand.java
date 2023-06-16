@@ -1,11 +1,9 @@
 package commands;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.util.Iterator;
 
 import static picocli.CommandLine.Command;
 import static picocli.CommandLine.Option;
@@ -25,7 +23,13 @@ public class TraceCommand implements Runnable {
     boolean log = false;
 
     @Option(names = {"-m", "--method"}, description = "Method Name, Default: *")
-    String method = "^(?!lambda\\$*)(.*)";
+    String method = "^(?!lambda\\$*|getContentLanguages|getSrcPriceCts)(.*)";
+
+    @Option(names = {"-ti", "--traceignore"}, description = "trace ignore file.")
+    String traceIgnoreDirectory;
+
+    @Option(names = {"-tt", "--tracetype"}, description = "trace type.")
+    String traceType = "";
 
 
     @Override
@@ -34,15 +38,42 @@ public class TraceCommand implements Runnable {
 //            String traceClassPath = this.getClass().getClassLoader().getResource("trace/CallTrace.class").getPath();
 //            System.out.println(traceClassPath);
             String directory = "./src/main/resources";
-            String filename = String.format("%s-%s.btrace", classPath, java.time.LocalDate.now());
+            String filename;
+            if(traceType.isEmpty())
+                filename = String.format("%s-%s.btrace", classPath, java.time.LocalDate.now());
+            else
+                filename = String.format("%s-%s-%s.btrace", classPath, java.time.LocalDate.now(), traceType);
+            String traceScopeExcluded = "";
+            String traceClassPath = "../java/trace/CallTrace" + traceType + ".java";
+            if(!traceIgnoreDirectory.isEmpty()) {
+                traceIgnoreDirectory = "/config/" + traceIgnoreDirectory;
+                traceScopeExcluded = parseTraceIgnore();
+                System.out.printf("traceScopeExcluded: " + traceScopeExcluded);
+            }
+            String classScope = "^(?!" + traceScopeExcluded + ")" + "(" + classPath + ")" + "(\\..*)";
             URL resource = getClass().getClassLoader().getResource("trace-execution.sh");
             String extPath = Paths.get(resource.toURI()).toFile().toString();
             System.out.println(extPath);
-            String[] commandOptions = new String[]{extPath, port, classPath, method, String.valueOf(log), filename};
+            String[] commandOptions = new String[]{extPath, port, classScope, method, String.valueOf(log), filename, traceClassPath};
             runProcess(commandOptions, directory);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private String parseTraceIgnore(){
+        InputStream inputStream = this.getClass().getResourceAsStream(traceIgnoreDirectory);
+        BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
+
+        StringBuilder traceScopeExcluded = new StringBuilder();
+        Iterator<String> iterator = in.lines().iterator();
+        while (iterator.hasNext()) {
+            String line = iterator.next();
+            traceScopeExcluded.append(line);
+            if(iterator.hasNext())
+                traceScopeExcluded.append("|");
+        }
+        return traceScopeExcluded.toString();
     }
 
     private void printLines(String cmd, InputStream ins) throws Exception {

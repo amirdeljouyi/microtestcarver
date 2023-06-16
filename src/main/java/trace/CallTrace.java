@@ -9,10 +9,10 @@ import static org.openjdk.btrace.core.BTraceUtils.*;
 @BTrace(trusted = true)
 public class CallTrace {
 
-    final static String SERIALIZE_TYPE = "json";
-    final static String classesScope = "/^(?!java.util.*|org.springframework.data.domain.*|java.lang.String)(.*)/";
+    final static String SERIALIZE_TYPE = "xml";
+    final static String classesScope = "/^(?!java.util.*|org.springframework.data.domain.*|java.lang.String|(.*)(\\$\\$EnhancerBySpringCGLIB\\$\\$))(.*)/";
     @OnMethod(
-            clazz = "${packageName}\\..*/",
+            clazz = "${packageName}/",
             method = "${methodName}/",
             location = @Location(Kind.ENTRY)
     )
@@ -25,7 +25,7 @@ public class CallTrace {
     }
 
     @OnMethod(
-            clazz = "${packageName}\\..*/",
+            clazz = "${packageName}/",
             method = "${methodName}/",
             location = @Location(value = Kind.CALL, clazz = classesScope, method = "/.*/", where = Where.BEFORE)
     )
@@ -41,7 +41,7 @@ public class CallTrace {
         }
     }
     @OnMethod(
-            clazz = "${packageName}\\..*/",
+            clazz = "${packageName}/",
             method = "${methodName}/",
             location = @Location(value = Kind.CALL, clazz = classesScope, method = "/.*/", where = Where.BEFORE)
     )
@@ -61,7 +61,7 @@ public class CallTrace {
     }
 
     @OnMethod(
-            clazz = "${packageName}\\..*/",
+            clazz = "${packageName}/",
             method = "{methodName}/",
             location = @Location(value = Kind.CALL, clazz = classesScope, method = "/.*/", where = Where.BEFORE)
     )
@@ -83,7 +83,7 @@ public class CallTrace {
     }
 
     @OnMethod(
-            clazz = "${packageName}\\..*/",
+            clazz = "${packageName}/",
             method = "${methodName}/",
             location = @Location(value = Kind.CALL, clazz = classesScope, method = "/.*/")
     )
@@ -106,7 +106,7 @@ public class CallTrace {
     }
 
     @OnMethod(
-            clazz = "${packageName}\\..*/",
+            clazz = "${packageName}/",
             method = "${methodName}/",
             location = @Location(value = Kind.CALL, clazz = classesScope, method = "/.*/")
     )
@@ -132,7 +132,7 @@ public class CallTrace {
     }
 
     @OnMethod(
-            clazz = "${packageName}\\..*/",
+            clazz = "${packageName}/",
             method = "${methodName}/",
             location = @Location(value = Kind.CALL, clazz = classesScope, method = "/.*/")
     )
@@ -161,13 +161,13 @@ public class CallTrace {
     }
 
     @OnMethod(
-            clazz = "${packageName}\\..*/",
+            clazz = "${packageName}/",
             method = "${methodName}/",
             location = @Location(value = Kind.CALL, clazz = classesScope, method = "/.*/", where = Where.BEFORE)
     )
     public static void onMethodCall(@Self Object self, @TargetInstance Object instance, @TargetMethodOrField(fqn = true) String method) {
         if (instance != null) {
-            print(method + "[" + Integer.toHexString(BTraceUtils.identityHashCode(instance)) + "]#{");
+            print(method + "[" + Integer.toHexString(BTraceUtils.identityHashCode(instance)) + "]");
         }
     }
 
@@ -186,18 +186,7 @@ public class CallTrace {
     }
 
     @OnMethod(
-            clazz = "${packageName}\\..*/",
-            method = "${methodName}/",
-            location = @Location(value = Kind.CALL, clazz = classesScope, method = "/.*/", where = Where.AFTER)
-    )
-    public static void closeCallback(@Self Object self, @TargetInstance Object instance) {
-        if (instance != null) {
-            print("}#");
-        }
-    }
-
-    @OnMethod(
-            clazz = "${packageName}\\..*/",
+            clazz = "${packageName/",
             method = "${methodName}/",
             location = @Location(Kind.RETURN)
     )
@@ -205,7 +194,7 @@ public class CallTrace {
         print("}:");
     }
     @OnMethod(
-            clazz = "${packageName}\\..*/",
+            clazz = "${packageName}/",
             method = "${methodName}/",
             location = @Location(Kind.RETURN)
     )
