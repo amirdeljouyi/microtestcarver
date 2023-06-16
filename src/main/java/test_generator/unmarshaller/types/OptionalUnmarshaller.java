@@ -9,10 +9,14 @@ import java.util.Set;
 
 public class OptionalUnmarshaller extends AbstractUnmarshaller{
     Set<String> variableNames;
+    int depth;
 
-    public OptionalUnmarshaller(StringBuilder buf, Set<String> variableNames) {
+    final int DEPTH_THRESHOLD = 5;
+
+    public OptionalUnmarshaller(StringBuilder buf, int depth, Set<String> variableNames) {
         super(buf);
         this.variableNames = variableNames;
+        this.depth = depth;
     }
 
     @Override
@@ -23,7 +27,7 @@ public class OptionalUnmarshaller extends AbstractUnmarshaller{
         } else {
             ReflectionSpoonUtil spoonUtil = new ReflectionSpoonUtil();
             UnmarshalledVariable uv = spoonUtil.instantiateRelateToType(typedSource.get(), staticClazz);
-            return ("Optional.of(" + uv.getInlineOrVariable(buf, variableNames) + ")");
+            return ("Optional.of(" + uv.getInlineOrVariable(buf, this.depth + 1, variableNames) + ")");
         }
     }
 

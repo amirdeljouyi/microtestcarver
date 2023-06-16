@@ -10,14 +10,18 @@ import java.util.Set;
 
 public class CollectionUnmarshaller extends AbstractUnmarshaller {
     Set<String> variableNames;
-    public CollectionUnmarshaller(StringBuilder buf, Set<String> variableNames) {
+    int depth;
+
+    final int DEPTH_THRESHOLD = 5;
+
+    public CollectionUnmarshaller(StringBuilder buf, int depth, Set<String> variableNames) {
         super(buf);
         this.variableNames = variableNames;
+        this.depth = depth;
     }
 
     @Override
     public String instantiate(Object source, CtType staticClazz) {
-
         Collection collection = (Collection) source;
         if (collection.size() == 0) {
             return "new " + collection.getClass().getSimpleName() + "<>()";
@@ -37,9 +41,12 @@ public class CollectionUnmarshaller extends AbstractUnmarshaller {
     public String populate(Object source, CtType staticClazz) {
         Collection collection = (Collection) source;
         StringBuilder sb = new StringBuilder();
-        for (Object item: collection){
-            UnmarshalledVariable uv = new UnmarshalledVariable(item, staticClazz);
-            sb.append(variableName + ".add(" + uv.getInlineOrVariable(buf, variableNames) + ");\n");
+
+        if(depth < DEPTH_THRESHOLD) {
+            for (Object item: collection){
+                UnmarshalledVariable uv = new UnmarshalledVariable(item, staticClazz);
+                sb.append(variableName + ".add(" + uv.getInlineOrVariable(buf, depth + 1, variableNames) + ");\n");
+            }
         }
         return sb.toString();
     }

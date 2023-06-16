@@ -11,9 +11,14 @@ import java.util.Set;
 public class MapUnmarshaller extends AbstractUnmarshaller {
 
     Set<String> variableNames;
-    public MapUnmarshaller(StringBuilder buf, Set<String> variableNames) {
+    int depth;
+
+    final int DEPTH_THRESHOLD = 5;
+
+    public MapUnmarshaller(StringBuilder buf, int depth, Set<String> variableNames) {
         super(buf);
         this.variableNames = variableNames;
+        this.depth = depth;
     }
 
     @Override
@@ -39,11 +44,13 @@ public class MapUnmarshaller extends AbstractUnmarshaller {
     public String populate(Object source, CtType staticClazz) {
         Map map = (Map) source;
         StringBuilder sb = new StringBuilder();
-        for (Object item: map.entrySet()){
-            Map.Entry<?, ?> entry = (Map.Entry<?, ?>) item;
-            UnmarshalledVariable uvKey = new UnmarshalledVariable(entry.getKey(), staticClazz);
-            UnmarshalledVariable uvValue = new UnmarshalledVariable(entry.getValue(), staticClazz);
-            sb.append(variableName + ".put(" + uvKey.getInlineOrVariable(buf, variableNames) + ", " + uvValue.getInlineOrVariable(buf, variableNames) + ");\n");
+        if(depth < DEPTH_THRESHOLD) {
+            for (Object item : map.entrySet()) {
+                Map.Entry<?, ?> entry = (Map.Entry<?, ?>) item;
+                UnmarshalledVariable uvKey = new UnmarshalledVariable(entry.getKey(), staticClazz);
+                UnmarshalledVariable uvValue = new UnmarshalledVariable(entry.getValue(), staticClazz);
+                sb.append(variableName + ".put(" + uvKey.getInlineOrVariable(buf, depth + 1, variableNames) + ", " + uvValue.getInlineOrVariable(buf, depth + 1, variableNames) + ");\n");
+            }
         }
         return sb.toString();
     }

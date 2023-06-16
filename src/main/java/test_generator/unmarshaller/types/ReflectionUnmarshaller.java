@@ -10,9 +10,13 @@ import java.util.Set;
 
 public class ReflectionUnmarshaller extends AbstractUnmarshaller{
     Set<String> variableNames;
-    public ReflectionUnmarshaller(StringBuilder buf, Set<String> variableNames) {
+    int depth;
+    final int DEPTH_THRESHOLD = 5;
+
+    public ReflectionUnmarshaller(StringBuilder buf, int depth, Set<String> variableNames) {
         super(buf);
         this.variableNames = variableNames;
+        this.depth = depth;
     }
 
     @Override
@@ -46,21 +50,23 @@ public class ReflectionUnmarshaller extends AbstractUnmarshaller{
         constructBuffer.append(" = ");
         constructBuffer.append(constructor.toUnmarshal() + ";" + "\n");
 
-        for(Map.Entry<CtFieldReference, Field> field: constructor.unresolvedFields.entrySet()){
-            Field fieldValue = field.getValue();
+        if(depth < DEPTH_THRESHOLD) {
+            for (Map.Entry<CtFieldReference, Field> field : constructor.unresolvedFields.entrySet()) {
+                Field fieldValue = field.getValue();
 //            System.out.println("FieldMap: " + field);
-            Object fieldObject = util.getFieldValue(source, fieldValue);
+                Object fieldObject = util.getFieldValue(source, fieldValue);
 //            System.out.println("fieldObject: " + fieldObject);
-            CtFieldReference fieldReference = field.getKey();
+                CtFieldReference fieldReference = field.getKey();
 //            System.out.println("fieldReference: " + fieldReference);;
 
-            if(fieldReference == null)
-                continue;
+                if (fieldReference == null)
+                    continue;
 
 //            StringBuilder sb = new StringBuilder();
-            String setter = spoonUtil.getFieldSetter(staticClazz, fieldReference.getFieldDeclaration(), fieldValue.getName(), fieldObject, buf, variableNames, variableName);
-            if(setter != null)
-                constructBuffer.append(setter);
+                String setter = spoonUtil.getFieldSetter(staticClazz, fieldReference.getFieldDeclaration(), fieldValue.getName(), fieldObject, buf, depth + 1, variableNames, variableName);
+                if (setter != null)
+                    constructBuffer.append(setter);
+            }
         }
         return constructBuffer.toString();
     }
