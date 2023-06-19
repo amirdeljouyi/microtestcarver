@@ -45,7 +45,7 @@ public class TraceCommand implements Runnable {
                 filename = String.format("%s-%s-%s.btrace", classPath, java.time.LocalDate.now(), traceType);
             String traceScopeExcluded = "";
             String traceClassPath = "../java/trace/CallTrace" + traceType + ".java";
-            if(!traceIgnoreDirectory.isEmpty()) {
+            if(traceIgnoreDirectory != null && !traceIgnoreDirectory.isEmpty()) {
                 traceIgnoreDirectory = "/config/" + traceIgnoreDirectory;
                 traceScopeExcluded = parseTraceIgnore();
                 System.out.printf("traceScopeExcluded: " + traceScopeExcluded);
