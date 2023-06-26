@@ -1,6 +1,7 @@
 package test_generator;
 
 import parser.Arg;
+import parser.ArgCollection;
 import parser.Clazz;
 import spoon.Launcher;
 import spoon.reflect.declaration.CtField;
@@ -10,6 +11,7 @@ import spoon.reflect.reference.CtFieldReference;
 import test_generator.unmarshaller.UnmarshalledVariable;
 import test_generator.unmarshaller.utils.ReflectionSpoonUtil;
 
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -120,7 +122,7 @@ public class CombineClazz {
         return subjectBuf.toString();
     }
 
-    public String initSubject(Set<Arg> args, String className, Set<String> variableNames){
+    public String initSubject(ArgCollection args, String className, Set<String> variableNames){
         StringBuilder buffer = new StringBuilder();
         StringBuilder sb = new StringBuilder();
         sb.append("\t\tsubject = new " + className + "(");
@@ -131,8 +133,10 @@ public class CombineClazz {
         return buffer.toString();
     }
 
-    public void invokeMethod(StringBuilder buffer, StringBuilder sb, Set<Arg> args, Set<String> variableNames) {
-        Iterator<Arg> it = args.iterator();
+    public void invokeMethod(StringBuilder buffer, StringBuilder sb, ArgCollection args, Set<String> variableNames) {
+        Collection<Arg> uniqueArgs = args.findUniqueBasedIndex();
+
+        Iterator<Arg> it = uniqueArgs.iterator();
         while (it.hasNext()){
             Arg arg = it.next();
 

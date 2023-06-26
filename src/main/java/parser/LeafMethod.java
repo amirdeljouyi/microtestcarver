@@ -6,7 +6,7 @@ public class LeafMethod {
 
     public String methodName;
 
-    public Set<Arg> args;
+    public ArgCollection args;
     public Set<Arg> fields;
     public Set<String> argTypes;
 
@@ -22,7 +22,7 @@ public class LeafMethod {
         this.clazz = clazz;
         this.methodName = methodName;
 
-        this.args = new HashSet<>();
+        this.args = new ArgCollection();
         this.argTypes = new HashSet<>();
         this.fields = new HashSet<>();
 
@@ -39,7 +39,7 @@ public class LeafMethod {
             this.argTypes.addAll(Arrays.asList(argTypes));
         this.hashObject = hashObject;
 
-        this.args = new HashSet<>();
+        this.args = new ArgCollection();
         this.fields = new HashSet<>();
 
         this.allowDuplication = duplication;
@@ -86,7 +86,7 @@ public class LeafMethod {
         this.args.addAll(args);
     }
 
-    public Set<Arg> getArgs(){
+    public ArgCollection getArgs(){
         return args;
     }
 

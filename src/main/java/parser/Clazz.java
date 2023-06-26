@@ -9,7 +9,7 @@ public class Clazz {
     public String type;
 
     public Set<NodeMethod> methods;
-    public Set<Arg> args;
+    public ArgCollection args;
     public Set<Arg> fields;
 
     public NodeMethod initMethod;
@@ -19,7 +19,7 @@ public class Clazz {
         this.clazzName = clazzName;
 
         methods = new HashSet<>();
-        args = new HashSet<>();
+        args = new ArgCollection();
         fields = new HashSet<>();
     }
 

@@ -194,7 +194,7 @@ public class Parser {
 
     private void tokenIndex(String line) {
         line = line.substring(11, line.length() - 1);
-        lastArg.index = Integer.getInteger(line);
+        lastArg.index = Integer.parseInt(line);
     }
 
     private void tokenName(String line) {

@@ -1,6 +1,7 @@
 package test_generator;
 
 import parser.Arg;
+import parser.ArgCollection;
 import parser.LeafMethod;
 import parser.NodeMethod;
 
@@ -52,7 +53,7 @@ public class TestMethodGenerator {
         sb.append("\t\tgiven(" + field.getKey() + "." + method.getMethodName() + "(");
         clazz.invokeMethod(buffer, sb, method.getArgs(), variableNames);
         sb.append(")).willReturn(");
-        HashSet<Arg> returnField = new HashSet<>();
+        ArgCollection returnField = new ArgCollection();
         returnField.add(method.getReturnField());
         clazz.invokeMethod(buffer, sb, returnField, variableNames);
         sb.append(");");

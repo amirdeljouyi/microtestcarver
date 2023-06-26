@@ -11,7 +11,7 @@ public class Arg {
 
     public Boolean serialized;
     public Object serializedValue;
-    public Integer index;
+    public int index;
     public boolean isPrimitive;
     public boolean isInterface;
     private ArgType argType;
